@@ -1,7 +1,7 @@
 ---
-title: "STA 9750"
+title: "About Me"
 ---
-a brief introduction
+My name is Nadya Thompson. I am currently a Master's student studying Business Analytics at Baruch College. I am building this website for class STA 9750.
 
 ```{r}
 #| include: false
