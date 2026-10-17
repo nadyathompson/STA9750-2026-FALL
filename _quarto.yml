@@ -8,13 +8,25 @@ website:
     Course Projects for STA 9750 at Baruch College
   site-url: "https://nadyathompson.github.io/STA9750-2026-FALL/"
   navbar:
-    background: primary
+    background: $indigo
     search: false
+    pinned: true
+    collapse-below: sm
+    toggle-position: right
+    right:
+      - text: "Mini-Projects"
+        menu:
+          - mp01.qmd
+          - mp02.qmd
+          - mp03.qmd
+          - mp04.qmd
+
     
 format:
   html:
-    theme: brite
-    toc: false
+    theme: _bootswatch.scss
+    toc: true
+#    backgroundcolor: $light
 
 editor:
   mode: source

@@ -1,7 +1,6 @@
-
-  ---
-  title: "Mini-Project Placeholder"
-  ---
+---
+title: "Mini-Project 2 (Coming Soon)"
+---
   
   This is a placeholder for STA9750 Mini-Project 2. Check back soon for more!
   

@@ -7,7 +7,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
 
-<title>mp01 – STA 9750 Submission Material</title>
+<title>Mini-Project 1: Exploring Netflix Viewing Data – STA 9750 Submission Material</title>
 <style>
 /* Default styles provided by pandoc.
 ** See https://pandoc.org/MANUAL.html#variables-for-html for config info.
@@ -26,11 +26,45 @@ ul.task-list li input[type="checkbox"] {
   margin: 0 0.8em 0.2em -1em; /* quarto-specific, see https://github.com/quarto-dev/quarto-cli/issues/4556 */ 
   vertical-align: middle;
 }
+/* CSS for syntax highlighting */
+html { -webkit-text-size-adjust: 100%; }
+pre > code.sourceCode { white-space: pre; position: relative; }
+pre > code.sourceCode > span { display: inline-block; line-height: 1.25; }
+pre > code.sourceCode > span:empty { height: 1.2em; }
+.sourceCode { overflow: visible; }
+code.sourceCode > span { color: inherit; text-decoration: inherit; }
+div.sourceCode { margin: 1em 0; }
+pre.sourceCode { margin: 0; }
+@media screen {
+div.sourceCode { overflow: auto; }
+}
+@media print {
+pre > code.sourceCode { white-space: pre-wrap; }
+pre > code.sourceCode > span { text-indent: -5em; padding-left: 5em; }
+}
+pre.numberSource code
+  { counter-reset: source-line 0; }
+pre.numberSource code > span
+  { position: relative; left: -4em; counter-increment: source-line; }
+pre.numberSource code > span > a:first-child::before
+  { content: counter(source-line);
+    position: relative; left: -1em; text-align: right; vertical-align: baseline;
+    border: none; display: inline-block;
+    -webkit-touch-callout: none; -webkit-user-select: none;
+    -khtml-user-select: none; -moz-user-select: none;
+    -ms-user-select: none; user-select: none;
+    padding: 0 4px; width: 4em;
+  }
+pre.numberSource { margin-left: 3em;  padding-left: 4px; }
+div.sourceCode
+  {   }
+@media screen {
+pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
+}
 </style>
 
 
 <script src="site_libs/quarto-nav/quarto-nav.js"></script>
-<script src="site_libs/quarto-nav/headroom.min.js"></script>
 <script src="site_libs/clipboard/clipboard.min.js"></script>
 <script src="site_libs/quarto-search/autocomplete.umd.js"></script>
 <script src="site_libs/quarto-search/fuse.min.js"></script>
@@ -45,7 +79,7 @@ ul.task-list li input[type="checkbox"] {
 <link href="site_libs/quarto-html/quarto-syntax-highlighting-64a204ab8560d761af7679ceaba22944.css" rel="stylesheet" id="quarto-text-highlighting-styles">
 <script src="site_libs/bootstrap/bootstrap.min.js"></script>
 <link href="site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
-<link href="site_libs/bootstrap/bootstrap-b978b5a48b788a4339b89597eba50e38.min.css" rel="stylesheet" append-hash="true" id="quarto-bootstrap" data-mode="light">
+<link href="site_libs/bootstrap/bootstrap-adc5cd6dcca335c125d18661845a50cc.min.css" rel="stylesheet" append-hash="true" id="quarto-bootstrap" data-mode="light">
 <script id="quarto-search-options" type="application/json">{
   "location": "navbar",
   "copy-button": false,
@@ -77,18 +111,48 @@ ul.task-list li input[type="checkbox"] {
 
 </head>
 
-<body class="nav-fixed fullcontent quarto-light">
+<body class="nav-fixed quarto-light">
 
 <div id="quarto-search-results"></div>
   <header id="quarto-header" class="headroom fixed-top">
-    <nav class="navbar navbar-expand-lg " data-bs-theme="dark">
+    <nav class="navbar navbar-expand-sm " data-bs-theme="dark">
       <div class="navbar-container container-fluid">
       <div class="navbar-brand-container mx-auto">
     <a class="navbar-brand" href="./index.html">
     <span class="navbar-title">STA 9750 Submission Material</span>
     </a>
   </div>
-        <div class="quarto-navbar-tools tools-end">
+          <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarCollapse" aria-controls="navbarCollapse" role="menu" aria-expanded="false" aria-label="Toggle navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
+  <span class="navbar-toggler-icon"></span>
+</button>
+          <div class="collapse navbar-collapse" id="navbarCollapse">
+            <ul class="navbar-nav navbar-nav-scroll ms-auto">
+  <li class="nav-item dropdown ">
+    <a class="nav-link dropdown-toggle" href="#" id="nav-menu-mini-projects" role="link" data-bs-toggle="dropdown" aria-expanded="false">
+ <span class="menu-text">Mini-Projects</span>
+    </a>
+    <ul class="dropdown-menu dropdown-menu-end" aria-labelledby="nav-menu-mini-projects">    
+        <li>
+    <a class="dropdown-item" href="./mp01.html">
+ <span class="dropdown-text">Mini-Project 1: Exploring Netflix Viewing Data</span></a>
+  </li>  
+        <li>
+    <a class="dropdown-item" href="./mp02.html">
+ <span class="dropdown-text">Mini-Project 2 (Coming Soon)</span></a>
+  </li>  
+        <li>
+    <a class="dropdown-item" href="./mp03.html">
+ <span class="dropdown-text">Mini-Project 3 (Coming Soon)</span></a>
+  </li>  
+        <li>
+    <a class="dropdown-item" href="./mp04.html">
+ <span class="dropdown-text">Mini-Project 4 (Coming Soon)</span></a>
+  </li>  
+    </ul>
+  </li>
+</ul>
+          </div> <!-- /navcollapse -->
+            <div class="quarto-navbar-tools">
 </div>
       </div> <!-- /container-fluid -->
     </nav>
@@ -97,23 +161,4181 @@ ul.task-list li input[type="checkbox"] {
 <div id="quarto-content" class="quarto-container page-columns page-rows-contents page-layout-article page-navbar">
 <!-- sidebar -->
 <!-- margin-sidebar -->
-    
+    <div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
+        <nav id="TOC" role="doc-toc" class="toc-active">
+    <h2 id="toc-title">On this page</h2>
+   
+  <ul>
+  <li><a href="#step-1-loading-the-data" id="toc-step-1-loading-the-data" class="nav-link active" data-scroll-target="#step-1-loading-the-data">Step 1: Loading the data</a></li>
+  <li><a href="#step-2-3-fixing-column-titles-and-data-types" id="toc-step-2-3-fixing-column-titles-and-data-types" class="nav-link" data-scroll-target="#step-2-3-fixing-column-titles-and-data-types">Step 2 &amp; 3: Fixing column titles and data types</a></li>
+  <li><a href="#step-4-initial-eda-pass" id="toc-step-4-initial-eda-pass" class="nav-link" data-scroll-target="#step-4-initial-eda-pass">Step 4: Initial EDA Pass</a></li>
+  <li><a href="#step-5-exploratory-questions-part-1---inline-values" id="toc-step-5-exploratory-questions-part-1---inline-values" class="nav-link" data-scroll-target="#step-5-exploratory-questions-part-1---inline-values">Step 5: Exploratory Questions Part 1 - Inline Values</a></li>
+  <li><a href="#step-6-exploratory-questions-part-2---table-answers" id="toc-step-6-exploratory-questions-part-2---table-answers" class="nav-link" data-scroll-target="#step-6-exploratory-questions-part-2---table-answers">Step 6: Exploratory Questions Part 2 - Table Answers</a></li>
+  <li><a href="#step-7-corporate-strategy-memo" id="toc-step-7-corporate-strategy-memo" class="nav-link" data-scroll-target="#step-7-corporate-strategy-memo">Step 7: Corporate Strategy Memo</a></li>
+  </ul>
+</nav>
+    </div>
 <!-- main -->
-<main class="content" id="quarto-document-content"><header id="title-block-header" class="quarto-title-block"></header>
+<main class="content" id="quarto-document-content">
+
+<header id="title-block-header" class="quarto-title-block default">
+<div class="quarto-title">
+<h1 class="title">Mini-Project 1: Exploring Netflix Viewing Data</h1>
+</div>
 
 
 
+<div class="quarto-title-meta">
 
-<table class="caption-top table">
-<tbody>
+    
+  
+    
+  </div>
+  
+
+
+</header>
+
+
+<p><br>
+Using data from Netflix on their catalog and audience viewership, we can run analysis on their performance over the last 3 years, and create a strategy for their business moving forward into 2027.</p>
+<p>In order to analyze this data, we will need to load it from Netflix’s website.<br>
+</p>
+<section id="step-1-loading-the-data" class="level3">
+<h3 class="anchored" data-anchor-id="step-1-loading-the-data">Step 1: Loading the data</h3>
+<div class="cell">
+<details class="code-fold">
+<summary>Show Code</summary>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb1"><pre class="sourceCode r code-overflow-wrap code-with-copy"><code class="sourceCode r"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a>load_netflix_data <span class="ot">&lt;-</span> <span class="cf">function</span>(){</span>
+<span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a>  <span class="co"># Note to students: Make sure you have installed the tidyverse and fs packages</span></span>
+<span id="cb1-3"><a href="#cb1-3" aria-hidden="true" tabindex="-1"></a>  <span class="co">#                   before beginning this assignment. If you aren't sure,</span></span>
+<span id="cb1-4"><a href="#cb1-4" aria-hidden="true" tabindex="-1"></a>  <span class="co">#                   simply run `library(tidyverse)` at your R Console and, if</span></span>
+<span id="cb1-5"><a href="#cb1-5" aria-hidden="true" tabindex="-1"></a>  <span class="co">#                   you don't see an error message, `tidyverse` has been </span></span>
+<span id="cb1-6"><a href="#cb1-6" aria-hidden="true" tabindex="-1"></a>  <span class="co">#                   installed. (Same for `fs`) If you still need to install</span></span>
+<span id="cb1-7"><a href="#cb1-7" aria-hidden="true" tabindex="-1"></a>  <span class="co">#                   either package, use the `install.packages` function as </span></span>
+<span id="cb1-8"><a href="#cb1-8" aria-hidden="true" tabindex="-1"></a>  <span class="co">#                   demonstrated in class.</span></span>
+<span id="cb1-9"><a href="#cb1-9" aria-hidden="true" tabindex="-1"></a>  <span class="fu">library</span>(tidyverse)</span>
+<span id="cb1-10"><a href="#cb1-10" aria-hidden="true" tabindex="-1"></a>  <span class="fu">library</span>(rvest)</span>
+<span id="cb1-11"><a href="#cb1-11" aria-hidden="true" tabindex="-1"></a>  <span class="fu">library</span>(readxl)</span>
+<span id="cb1-12"><a href="#cb1-12" aria-hidden="true" tabindex="-1"></a>  <span class="fu">library</span>(fs)</span>
+<span id="cb1-13"><a href="#cb1-13" aria-hidden="true" tabindex="-1"></a>  </span>
+<span id="cb1-14"><a href="#cb1-14" aria-hidden="true" tabindex="-1"></a>  data_dir <span class="ot">&lt;-</span> <span class="fu">path</span>(<span class="st">"data"</span>, <span class="st">"mp01"</span>)</span>
+<span id="cb1-15"><a href="#cb1-15" aria-hidden="true" tabindex="-1"></a>  </span>
+<span id="cb1-16"><a href="#cb1-16" aria-hidden="true" tabindex="-1"></a>  <span class="cf">if</span>(<span class="sc">!</span><span class="fu">dir_exists</span>(data_dir)){</span>
+<span id="cb1-17"><a href="#cb1-17" aria-hidden="true" tabindex="-1"></a>    <span class="fu">dir_create</span>(data_dir, <span class="at">showWarnings=</span><span class="cn">FALSE</span>, <span class="at">recurse=</span><span class="cn">TRUE</span>)</span>
+<span id="cb1-18"><a href="#cb1-18" aria-hidden="true" tabindex="-1"></a>  }</span>
+<span id="cb1-19"><a href="#cb1-19" aria-hidden="true" tabindex="-1"></a>  </span>
+<span id="cb1-20"><a href="#cb1-20" aria-hidden="true" tabindex="-1"></a>  NETFLIX_URLS <span class="ot">&lt;-</span> <span class="fu">list</span>(</span>
+<span id="cb1-21"><a href="#cb1-21" aria-hidden="true" tabindex="-1"></a>    <span class="st">`</span><span class="at">2023H1</span><span class="st">`</span> <span class="ot">=</span> <span class="st">"https://about.netflix.com/news/what-we-watched-a-netflix-engagement-report"</span>,</span>
+<span id="cb1-22"><a href="#cb1-22" aria-hidden="true" tabindex="-1"></a>    <span class="st">`</span><span class="at">2023H2</span><span class="st">`</span> <span class="ot">=</span> <span class="st">"https://about.netflix.com/news/what-we-watched-the-second-half-of-2023"</span>,</span>
+<span id="cb1-23"><a href="#cb1-23" aria-hidden="true" tabindex="-1"></a>    <span class="st">`</span><span class="at">2024H1</span><span class="st">`</span> <span class="ot">=</span> <span class="st">"https://about.netflix.com/news/what-we-watched-the-first-half-of-2024"</span>,</span>
+<span id="cb1-24"><a href="#cb1-24" aria-hidden="true" tabindex="-1"></a>    <span class="st">`</span><span class="at">2024H2</span><span class="st">`</span> <span class="ot">=</span> <span class="st">"https://about.netflix.com/news/what-we-watched-the-second-half-of-2024"</span>,</span>
+<span id="cb1-25"><a href="#cb1-25" aria-hidden="true" tabindex="-1"></a>    <span class="st">`</span><span class="at">2025H1</span><span class="st">`</span> <span class="ot">=</span> <span class="st">"https://about.netflix.com/news/what-we-watched-the-first-half-of-2025"</span>,</span>
+<span id="cb1-26"><a href="#cb1-26" aria-hidden="true" tabindex="-1"></a>    <span class="st">`</span><span class="at">2025H2</span><span class="st">`</span> <span class="ot">=</span> <span class="st">"https://about.netflix.com/news/what-we-watched-the-second-half-of-2025"</span>,</span>
+<span id="cb1-27"><a href="#cb1-27" aria-hidden="true" tabindex="-1"></a>    <span class="st">`</span><span class="at">2026H1</span><span class="st">`</span> <span class="ot">=</span> <span class="st">"https://about.netflix.com/news/what-we-watched-the-first-half-of-2026"</span></span>
+<span id="cb1-28"><a href="#cb1-28" aria-hidden="true" tabindex="-1"></a>  )</span>
+<span id="cb1-29"><a href="#cb1-29" aria-hidden="true" tabindex="-1"></a>  </span>
+<span id="cb1-30"><a href="#cb1-30" aria-hidden="true" tabindex="-1"></a>  download_if_needed <span class="ot">&lt;-</span> <span class="cf">function</span>(url, local){</span>
+<span id="cb1-31"><a href="#cb1-31" aria-hidden="true" tabindex="-1"></a>    <span class="cf">if</span>(<span class="sc">!</span><span class="fu">file_exists</span>(local)){</span>
+<span id="cb1-32"><a href="#cb1-32" aria-hidden="true" tabindex="-1"></a>      <span class="fu">download.file</span>(url, local, <span class="at">quiet =</span> <span class="cn">TRUE</span>, <span class="at">mode =</span> <span class="st">"wb"</span>)</span>
+<span id="cb1-33"><a href="#cb1-33" aria-hidden="true" tabindex="-1"></a>    }</span>
+<span id="cb1-34"><a href="#cb1-34" aria-hidden="true" tabindex="-1"></a>    </span>
+<span id="cb1-35"><a href="#cb1-35" aria-hidden="true" tabindex="-1"></a>    <span class="fu">return</span>(local)</span>
+<span id="cb1-36"><a href="#cb1-36" aria-hidden="true" tabindex="-1"></a>  }</span>
+<span id="cb1-37"><a href="#cb1-37" aria-hidden="true" tabindex="-1"></a>  </span>
+<span id="cb1-38"><a href="#cb1-38" aria-hidden="true" tabindex="-1"></a>  NETFLIX_URLS <span class="sc">|&gt;</span> </span>
+<span id="cb1-39"><a href="#cb1-39" aria-hidden="true" tabindex="-1"></a>    <span class="fu">map</span>(read_html) <span class="sc">|&gt;</span> </span>
+<span id="cb1-40"><a href="#cb1-40" aria-hidden="true" tabindex="-1"></a>    <span class="fu">map</span>(html_element, <span class="at">xpath =</span> <span class="st">"//a[contains(@href, '.xlsx')]"</span>) <span class="sc">|&gt;</span> </span>
+<span id="cb1-41"><a href="#cb1-41" aria-hidden="true" tabindex="-1"></a>    <span class="fu">map_chr</span>(html_attr, <span class="st">"href"</span>) <span class="sc">|&gt;</span> </span>
+<span id="cb1-42"><a href="#cb1-42" aria-hidden="true" tabindex="-1"></a>    <span class="fu">enframe</span>(<span class="st">"period"</span>, <span class="st">"url"</span>) <span class="sc">|&gt;</span> </span>
+<span id="cb1-43"><a href="#cb1-43" aria-hidden="true" tabindex="-1"></a>    <span class="fu">mutate</span>(<span class="at">path =</span> <span class="fu">path</span>(data_dir, <span class="fu">paste0</span>(period, <span class="st">".xlsx"</span>)), </span>
+<span id="cb1-44"><a href="#cb1-44" aria-hidden="true" tabindex="-1"></a>           <span class="at">path =</span> <span class="fu">map2</span>(url, path, download_if_needed), </span>
+<span id="cb1-45"><a href="#cb1-45" aria-hidden="true" tabindex="-1"></a>           <span class="at">sheets =</span> <span class="fu">map</span>(path, excel_sheets)) <span class="sc">|&gt;</span></span>
+<span id="cb1-46"><a href="#cb1-46" aria-hidden="true" tabindex="-1"></a>    <span class="fu">unnest</span>(sheets) <span class="sc">|&gt;</span> </span>
+<span id="cb1-47"><a href="#cb1-47" aria-hidden="true" tabindex="-1"></a>    <span class="fu">mutate</span>(<span class="at">data =</span> <span class="fu">map2</span>(path, sheets, \(x, y) <span class="fu">read_excel</span>(x, <span class="at">sheet=</span>y, <span class="at">skip=</span><span class="dv">3</span>, <span class="at">na=</span><span class="st">"*"</span>)), </span>
+<span id="cb1-48"><a href="#cb1-48" aria-hidden="true" tabindex="-1"></a>           <span class="at">data =</span> <span class="fu">map</span>(data, \(x) x <span class="sc">|&gt;</span> <span class="fu">mutate</span>(<span class="st">`</span><span class="at">Release Date</span><span class="st">`</span> <span class="ot">=</span> <span class="fu">as.Date</span>(<span class="st">`</span><span class="at">Release Date</span><span class="st">`</span>))), </span>
+<span id="cb1-49"><a href="#cb1-49" aria-hidden="true" tabindex="-1"></a>           <span class="at">data =</span> <span class="fu">map2</span>(data, sheets, \(x, y) x <span class="sc">|&gt;</span> <span class="fu">mutate</span>(<span class="at">sheet=</span>y))) <span class="sc">|&gt;</span> </span>
+<span id="cb1-50"><a href="#cb1-50" aria-hidden="true" tabindex="-1"></a>    <span class="fu">unnest</span>(data) <span class="sc">|&gt;</span> </span>
+<span id="cb1-51"><a href="#cb1-51" aria-hidden="true" tabindex="-1"></a>    <span class="fu">select</span>(<span class="sc">-</span>url, <span class="sc">-</span>path, <span class="sc">-</span>sheets) <span class="sc">|&gt;</span> </span>
+<span id="cb1-52"><a href="#cb1-52" aria-hidden="true" tabindex="-1"></a>    <span class="fu">mutate</span>(<span class="at">year=</span><span class="fu">str_sub</span>(period, <span class="dv">1</span>, <span class="dv">4</span>), </span>
+<span id="cb1-53"><a href="#cb1-53" aria-hidden="true" tabindex="-1"></a>           <span class="at">half=</span><span class="fu">str_sub</span>(period, <span class="at">start=</span><span class="dv">6</span>), </span>
+<span id="cb1-54"><a href="#cb1-54" aria-hidden="true" tabindex="-1"></a>           <span class="at">period_start =</span> <span class="fu">make_date</span>(year, <span class="fu">if_else</span>(half<span class="sc">==</span><span class="dv">1</span>, <span class="dv">1</span>, <span class="dv">7</span>), <span class="dv">1</span>), </span>
+<span id="cb1-55"><a href="#cb1-55" aria-hidden="true" tabindex="-1"></a>           <span class="at">period_end =</span> <span class="fu">make_date</span>(year, <span class="fu">if_else</span>(half<span class="sc">==</span><span class="dv">1</span>, <span class="dv">6</span>, <span class="dv">12</span>), <span class="fu">if_else</span>(half<span class="sc">==</span><span class="dv">1</span>, <span class="dv">30</span>, <span class="dv">31</span>))) <span class="sc">|&gt;</span> </span>
+<span id="cb1-56"><a href="#cb1-56" aria-hidden="true" tabindex="-1"></a>    <span class="fu">filter</span>(<span class="sc">!</span><span class="fu">is.na</span>(<span class="st">`</span><span class="at">Hours Viewed</span><span class="st">`</span>)) <span class="sc">|&gt;</span></span>
+<span id="cb1-57"><a href="#cb1-57" aria-hidden="true" tabindex="-1"></a>    <span class="fu">mutate</span>(<span class="at">live_event =</span> <span class="sc">!</span><span class="fu">is.na</span>(Runtime) <span class="sc">&amp;</span> <span class="fu">str_detect</span>(Runtime, <span class="st">"</span><span class="sc">\\</span><span class="st">d+:</span><span class="sc">\\</span><span class="st">d+</span><span class="sc">\\</span><span class="st">*"</span>), </span>
+<span id="cb1-58"><a href="#cb1-58" aria-hidden="true" tabindex="-1"></a>           <span class="at">clean_time =</span> <span class="fu">str_remove</span>(Runtime, <span class="fu">fixed</span>(<span class="st">"*"</span>)),</span>
+<span id="cb1-59"><a href="#cb1-59" aria-hidden="true" tabindex="-1"></a>           <span class="at">Runtime =</span> <span class="dv">60</span> <span class="sc">*</span> <span class="fu">hour</span>(<span class="fu">hm</span>(clean_time)) <span class="sc">+</span> <span class="fu">minute</span>(<span class="fu">hm</span>(clean_time)),</span>
+<span id="cb1-60"><a href="#cb1-60" aria-hidden="true" tabindex="-1"></a>           <span class="at">title_type =</span> <span class="fu">replace_values</span>(sheet, </span>
+<span id="cb1-61"><a href="#cb1-61" aria-hidden="true" tabindex="-1"></a>                                       <span class="st">"Shows"</span> <span class="sc">~</span> <span class="st">"TV"</span>,</span>
+<span id="cb1-62"><a href="#cb1-62" aria-hidden="true" tabindex="-1"></a>                                       <span class="st">"Film"</span> <span class="sc">~</span> <span class="st">"Movies"</span>,</span>
+<span id="cb1-63"><a href="#cb1-63" aria-hidden="true" tabindex="-1"></a>                                       <span class="st">"Engagement"</span> <span class="sc">~</span> <span class="cn">NA</span>)) <span class="sc">|&gt;</span></span>
+<span id="cb1-64"><a href="#cb1-64" aria-hidden="true" tabindex="-1"></a>    <span class="fu">select</span>(<span class="sc">-</span>clean_time, <span class="sc">-</span>sheet) <span class="sc">|&gt;</span></span>
+<span id="cb1-65"><a href="#cb1-65" aria-hidden="true" tabindex="-1"></a>    <span class="fu">mutate</span>(<span class="at">Runtime =</span> <span class="fu">coalesce</span>(Runtime, <span class="fu">mean</span>(Runtime, <span class="at">na.rm=</span><span class="cn">TRUE</span>)), </span>
+<span id="cb1-66"><a href="#cb1-66" aria-hidden="true" tabindex="-1"></a>           <span class="at">.by=</span>Title, </span>
+<span id="cb1-67"><a href="#cb1-67" aria-hidden="true" tabindex="-1"></a>           <span class="at">Title =</span> stringi<span class="sc">::</span><span class="fu">stri_trans_general</span>(Title, <span class="st">"Latin-ASCII"</span>),</span>
+<span id="cb1-68"><a href="#cb1-68" aria-hidden="true" tabindex="-1"></a>           <span class="at">Title =</span> <span class="fu">str_remove</span>(Title, <span class="st">" // .*"</span>), </span>
+<span id="cb1-69"><a href="#cb1-69" aria-hidden="true" tabindex="-1"></a>           <span class="at">Title =</span> <span class="fu">str_remove</span>(Title, <span class="st">"[^[:ascii:]].*"</span>), </span>
+<span id="cb1-70"><a href="#cb1-70" aria-hidden="true" tabindex="-1"></a>           <span class="at">Title =</span> <span class="fu">str_trim</span>(Title)) <span class="sc">|&gt;</span></span>
+<span id="cb1-71"><a href="#cb1-71" aria-hidden="true" tabindex="-1"></a>    <span class="fu">filter_out</span>(Title <span class="sc">==</span> <span class="st">""</span>) <span class="sc">|&gt;</span></span>
+<span id="cb1-72"><a href="#cb1-72" aria-hidden="true" tabindex="-1"></a>    <span class="fu">select</span>(year, </span>
+<span id="cb1-73"><a href="#cb1-73" aria-hidden="true" tabindex="-1"></a>           period, </span>
+<span id="cb1-74"><a href="#cb1-74" aria-hidden="true" tabindex="-1"></a>           period_start, </span>
+<span id="cb1-75"><a href="#cb1-75" aria-hidden="true" tabindex="-1"></a>           period_end, </span>
+<span id="cb1-76"><a href="#cb1-76" aria-hidden="true" tabindex="-1"></a>           Title, </span>
+<span id="cb1-77"><a href="#cb1-77" aria-hidden="true" tabindex="-1"></a>           <span class="sc">-</span>half, </span>
+<span id="cb1-78"><a href="#cb1-78" aria-hidden="true" tabindex="-1"></a>           Runtime, </span>
+<span id="cb1-79"><a href="#cb1-79" aria-hidden="true" tabindex="-1"></a>           Views, </span>
+<span id="cb1-80"><a href="#cb1-80" aria-hidden="true" tabindex="-1"></a>           <span class="st">`</span><span class="at">Hours Viewed</span><span class="st">`</span>, </span>
+<span id="cb1-81"><a href="#cb1-81" aria-hidden="true" tabindex="-1"></a>           <span class="st">`</span><span class="at">Release Date</span><span class="st">`</span>,</span>
+<span id="cb1-82"><a href="#cb1-82" aria-hidden="true" tabindex="-1"></a>           <span class="st">`</span><span class="at">Available Globally?</span><span class="st">`</span>, </span>
+<span id="cb1-83"><a href="#cb1-83" aria-hidden="true" tabindex="-1"></a>           live_event, </span>
+<span id="cb1-84"><a href="#cb1-84" aria-hidden="true" tabindex="-1"></a>           title_type) <span class="sc">|&gt;</span> </span>
+<span id="cb1-85"><a href="#cb1-85" aria-hidden="true" tabindex="-1"></a>    <span class="fu">group_by</span>(Title) <span class="sc">|&gt;</span> </span>
+<span id="cb1-86"><a href="#cb1-86" aria-hidden="true" tabindex="-1"></a>    <span class="fu">fill</span>(title_type,</span>
+<span id="cb1-87"><a href="#cb1-87" aria-hidden="true" tabindex="-1"></a>         <span class="at">.direction=</span><span class="st">"updown"</span>) <span class="sc">|&gt;</span></span>
+<span id="cb1-88"><a href="#cb1-88" aria-hidden="true" tabindex="-1"></a>    <span class="fu">ungroup</span>()</span>
+<span id="cb1-89"><a href="#cb1-89" aria-hidden="true" tabindex="-1"></a>  </span>
+<span id="cb1-90"><a href="#cb1-90" aria-hidden="true" tabindex="-1"></a>}</span>
+<span id="cb1-91"><a href="#cb1-91" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-92"><a href="#cb1-92" aria-hidden="true" tabindex="-1"></a>NETFLIX_DATA <span class="ot">&lt;-</span> <span class="fu">load_netflix_data</span>() <span class="sc">|&gt;</span></span>
+<span id="cb1-93"><a href="#cb1-93" aria-hidden="true" tabindex="-1"></a>  <span class="fu">rename</span>(<span class="at">title =</span> <span class="st">`</span><span class="at">Title</span><span class="st">`</span>,</span>
+<span id="cb1-94"><a href="#cb1-94" aria-hidden="true" tabindex="-1"></a>         <span class="at">runtime =</span> <span class="st">`</span><span class="at">Runtime</span><span class="st">`</span>,</span>
+<span id="cb1-95"><a href="#cb1-95" aria-hidden="true" tabindex="-1"></a>         <span class="at">views =</span> <span class="st">`</span><span class="at">Views</span><span class="st">`</span>,</span>
+<span id="cb1-96"><a href="#cb1-96" aria-hidden="true" tabindex="-1"></a>         <span class="at">hours_viewed =</span> <span class="st">`</span><span class="at">Hours Viewed</span><span class="st">`</span>,</span>
+<span id="cb1-97"><a href="#cb1-97" aria-hidden="true" tabindex="-1"></a>         <span class="at">release_date =</span> <span class="st">`</span><span class="at">Release Date</span><span class="st">`</span>,</span>
+<span id="cb1-98"><a href="#cb1-98" aria-hidden="true" tabindex="-1"></a>         <span class="at">available_globally =</span> <span class="st">`</span><span class="at">Available Globally?</span><span class="st">`</span>) <span class="sc">|&gt;</span></span>
+<span id="cb1-99"><a href="#cb1-99" aria-hidden="true" tabindex="-1"></a>  <span class="fu">mutate</span>(<span class="at">year =</span> <span class="fu">as.integer</span>(year),</span>
+<span id="cb1-100"><a href="#cb1-100" aria-hidden="true" tabindex="-1"></a>         <span class="at">available_globally =</span> available_globally <span class="sc">==</span> <span class="st">"Yes"</span>)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+</details>
+</div>
+<p>Now that the data is loaded, we need to edit some of the column names to make the data set consistent and compatible with R’s guidelines. We will also change the data type of the “year” column to make it easier to work with.<br>
+</p>
+</section>
+<section id="step-2-3-fixing-column-titles-and-data-types" class="level3">
+<h3 class="anchored" data-anchor-id="step-2-3-fixing-column-titles-and-data-types">Step 2 &amp; 3: Fixing column titles and data types</h3>
+<div class="cell">
+<details class="code-fold">
+<summary>Show Code</summary>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb2"><pre class="sourceCode r code-overflow-wrap code-with-copy"><code class="sourceCode r"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a>NETFLIX_DATA <span class="ot">&lt;-</span> <span class="fu">load_netflix_data</span>() <span class="sc">|&gt;</span></span>
+<span id="cb2-2"><a href="#cb2-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">rename</span>(<span class="at">title =</span> <span class="st">`</span><span class="at">Title</span><span class="st">`</span>,</span>
+<span id="cb2-3"><a href="#cb2-3" aria-hidden="true" tabindex="-1"></a>         <span class="at">runtime =</span> <span class="st">`</span><span class="at">Runtime</span><span class="st">`</span>,</span>
+<span id="cb2-4"><a href="#cb2-4" aria-hidden="true" tabindex="-1"></a>         <span class="at">views =</span> <span class="st">`</span><span class="at">Views</span><span class="st">`</span>,</span>
+<span id="cb2-5"><a href="#cb2-5" aria-hidden="true" tabindex="-1"></a>         <span class="at">hours_viewed =</span> <span class="st">`</span><span class="at">Hours Viewed</span><span class="st">`</span>,</span>
+<span id="cb2-6"><a href="#cb2-6" aria-hidden="true" tabindex="-1"></a>         <span class="at">release_date =</span> <span class="st">`</span><span class="at">Release Date</span><span class="st">`</span>,</span>
+<span id="cb2-7"><a href="#cb2-7" aria-hidden="true" tabindex="-1"></a>         <span class="at">available_globally =</span> <span class="st">`</span><span class="at">Available Globally?</span><span class="st">`</span>) <span class="sc">|&gt;</span></span>
+<span id="cb2-8"><a href="#cb2-8" aria-hidden="true" tabindex="-1"></a>  <span class="fu">mutate</span>(<span class="at">year =</span> <span class="fu">as.integer</span>(year),</span>
+<span id="cb2-9"><a href="#cb2-9" aria-hidden="true" tabindex="-1"></a>         <span class="at">available_globally =</span> available_globally <span class="sc">==</span> <span class="st">"Yes"</span>)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+</details>
+</div>
+<p>Once the data is organized, we can take a look at the data set using the glimpse() and summary() functions. These give us a “zoomed out” look at the data set, with glimpse() giving us the shape and data types of the data frame, as well as a look at the first few rows, and summary() providing statistics on all of the variables.<br>
+</p>
+</section>
+<section id="step-4-initial-eda-pass" class="level3">
+<h3 class="anchored" data-anchor-id="step-4-initial-eda-pass">Step 4: Initial EDA Pass</h3>
+<div class="cell">
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb3"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a><span class="fu">glimpse</span>(NETFLIX_DATA)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>Rows: 115,849
+Columns: 12
+$ year               &lt;int&gt; 2023, 2023, 2023, 2023, 2023, 2023, 2023, 2023, 202…
+$ period             &lt;chr&gt; "2023H1", "2023H1", "2023H1", "2023H1", "2023H1", "…
+$ period_start       &lt;date&gt; 2023-01-01, 2023-01-01, 2023-01-01, 2023-01-01, 20…
+$ period_end         &lt;date&gt; 2023-06-30, 2023-06-30, 2023-06-30, 2023-06-30, 20…
+$ title              &lt;chr&gt; "The Night Agent: Season 1", "Ginny &amp; Georgia: Seas…
+$ runtime            &lt;dbl&gt; 491, 587, 856, 409, 389, 497, 2703, 533, 548, 428, …
+$ views              &lt;dbl&gt; NA, NA, NA, NA, NA, NA, NA, NA, NA, NA, NA, NA, NA,…
+$ hours_viewed       &lt;dbl&gt; 812100000, 665100000, 622800000, 507700000, 5030000…
+$ release_date       &lt;date&gt; 2023-03-23, 2023-01-05, 2022-12-30, 2022-11-23, 20…
+$ available_globally &lt;lgl&gt; TRUE, TRUE, TRUE, TRUE, TRUE, TRUE, FALSE, TRUE, TR…
+$ live_event         &lt;lgl&gt; FALSE, FALSE, FALSE, FALSE, FALSE, FALSE, FALSE, FA…
+$ title_type         &lt;chr&gt; "TV", "TV", "TV", "TV", "TV", "TV", "TV", "TV", "TV…</code></pre>
+</div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb5"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true" tabindex="-1"></a><span class="fu">summary</span>(NETFLIX_DATA)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>      year            period        period_start          period_end        
+ Min.   :2023   Length   :115849   Min.   :2023-01-01   Min.   :2023-06-30  
+ 1st Qu.:2023   N.unique :     7   1st Qu.:2023-07-01   1st Qu.:2023-12-31  
+ Median :2024   N.blank  :     0   Median :2024-07-01   Median :2024-12-31  
+ Mean   :2024   Min.nchar:     6   Mean   :2024-06-28   Mean   :2024-12-27  
+ 3rd Qu.:2025   Max.nchar:     6   3rd Qu.:2025-07-01   3rd Qu.:2025-12-31  
+ Max.   :2026                      Max.   :2026-01-01   Max.   :2026-06-30  
+                                                                            
+       title           runtime            views            hours_viewed      
+ Length   :115849   Min.   :    2.0   Min.   :   100000   Min.   :   100000  
+ N.unique : 31956   1st Qu.:   99.0   1st Qu.:   100000   1st Qu.:   300000  
+ N.blank  :     0   Median :  120.0   Median :   300000   Median :  1000000  
+ Min.nchar:     1   Mean   :  264.8   Mean   :  1471430   Mean   :  5701114  
+ Max.nchar:   217   3rd Qu.:  294.0   3rd Qu.:  1200000   3rd Qu.:  4100000  
+                    Max.   :23853.0   Max.   :481600000   Max.   :964100000  
+                    NAs    :4603      NAs    :18200                          
+  release_date        available_globally live_event          title_type    
+ Min.   :2010-04-01   Mode :logical      Mode :logical   Length   :115849  
+ 1st Qu.:2019-08-01   FALSE:83096        FALSE:115539    N.unique :     2  
+ Median :2021-08-03   TRUE :32749        TRUE :310       N.blank  :     0  
+ Mean   :2021-05-07   NAs  :4                            Min.nchar:     2  
+ 3rd Qu.:2023-03-03                                      Max.nchar:     6  
+ Max.   :2026-06-29                                      NAs      :  3773  
+ NAs    :78750                                                             </code></pre>
+</div>
+</div>
+<p>From glimpse(), we see that the data frame has 11 columns and over 60,000 rows. All of the columns labels are valid, and the data types are correct. This means steps 2 &amp; 3 were a success!<br>
+The summary() function gives us statistical data on all of the columns in the data frame. From this we can quickly gather a few facts:</p>
+<ul>
+<li>The data was collected over a 3 year span, with 7 total periods recorded.</li>
+<li>There are significantly less unique titles than total rows in the data frame. This means multiple shows will appear throughout different periods (re-watches).</li>
+<li>The majority of Netflix’s catalog is not available globally.</li>
+<li>Live events make up a small minority of Netflix’s catalog.</li>
+</ul>
+</section>
+<section id="step-5-exploratory-questions-part-1---inline-values" class="level3">
+<h3 class="anchored" data-anchor-id="step-5-exploratory-questions-part-1---inline-values">Step 5: Exploratory Questions Part 1 - Inline Values</h3>
+<ol type="1">
+<li><p>What date range is covered by this data set?<br>
+The date range covered by this data set is 2023 to 2026.</p></li>
+<li><p>How many different shows and movies are covered in this data set?<br>
+There are 31,956 different shows and movies covered in this dataset.</p></li>
+<li><p>How many total hours have been spent watching shows from the <em>Bridgerton</em> universe?<br>
+Bridgerton was watched for a total of 4,862,800,000 hours.</p></li>
+<li><p>How many total hours have been spent watching the five seasons of <em>Stranger Things</em>?<br>
+5,574,800,000 total hours were spent watching the five seasons of <em>Stranger Things</em>.</p></li>
+<li><p>What percentage of total watch time was spent on the Top 10 titles of 2026H1?<br>
+The top 10 titles of 2026H1 accounted for 3.0% of total watch time.</p></li>
+<li><p>What fraction of Netflix’s catalog is globally available? (Answered by both title and weighted by hours viewed)<br>
+Only 21.7% of titles on Netflix are globally available. 49.0% of hours viewed are from shows that are available globally.</p></li>
+</ol>
+</section>
+<section id="step-6-exploratory-questions-part-2---table-answers" class="level3">
+<h3 class="anchored" data-anchor-id="step-6-exploratory-questions-part-2---table-answers">Step 6: Exploratory Questions Part 2 - Table Answers</h3>
+<ol type="1">
+<li>What was the top title (by total hours viewed) in each period and what fraction of total viewership did it capture?</li>
+</ol>
+<div class="cell">
+<details class="code-fold">
+<summary>Show Code</summary>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb7"><pre class="sourceCode r code-overflow-wrap code-with-copy"><code class="sourceCode r"><span id="cb7-1"><a href="#cb7-1" aria-hidden="true" tabindex="-1"></a>NETFLIX_DATA <span class="sc">|&gt;</span></span>
+<span id="cb7-2"><a href="#cb7-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">group_by</span>(period) <span class="sc">|&gt;</span></span>
+<span id="cb7-3"><a href="#cb7-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">mutate</span>(<span class="at">period_total_hours =</span> <span class="fu">sum</span>(hours_viewed, <span class="at">na.rm =</span> <span class="cn">TRUE</span>)) <span class="sc">|&gt;</span></span>
+<span id="cb7-4"><a href="#cb7-4" aria-hidden="true" tabindex="-1"></a>  <span class="fu">slice_max</span>(hours_viewed) <span class="sc">|&gt;</span></span>
+<span id="cb7-5"><a href="#cb7-5" aria-hidden="true" tabindex="-1"></a>   <span class="fu">mutate</span>(<span class="at">viewership_fraction =</span> hours_viewed<span class="sc">/</span>period_total_hours) <span class="sc">|&gt;</span></span>
+<span id="cb7-6"><a href="#cb7-6" aria-hidden="true" tabindex="-1"></a>  <span class="fu">select</span>(period, title, hours_viewed, viewership_fraction) <span class="sc">|&gt;</span></span>
+<span id="cb7-7"><a href="#cb7-7" aria-hidden="true" tabindex="-1"></a>  <span class="fu">ungroup</span>() <span class="sc">|&gt;</span></span>
+<span id="cb7-8"><a href="#cb7-8" aria-hidden="true" tabindex="-1"></a>  <span class="fu">gt</span>() <span class="sc">|&gt;</span></span>
+<span id="cb7-9"><a href="#cb7-9" aria-hidden="true" tabindex="-1"></a>    <span class="fu">tab_header</span>(</span>
+<span id="cb7-10"><a href="#cb7-10" aria-hidden="true" tabindex="-1"></a>    <span class="at">title =</span> <span class="st">"Netflix's Top Titles"</span>,</span>
+<span id="cb7-11"><a href="#cb7-11" aria-hidden="true" tabindex="-1"></a>    <span class="at">subtitle =</span> <span class="st">"Top titles for each period by total hours viewed, and the share of total viewership"</span></span>
+<span id="cb7-12"><a href="#cb7-12" aria-hidden="true" tabindex="-1"></a>  ) <span class="sc">|&gt;</span> </span>
+<span id="cb7-13"><a href="#cb7-13" aria-hidden="true" tabindex="-1"></a>    <span class="fu">cols_label</span>(</span>
+<span id="cb7-14"><a href="#cb7-14" aria-hidden="true" tabindex="-1"></a>    <span class="at">period =</span> <span class="st">"Period"</span>,</span>
+<span id="cb7-15"><a href="#cb7-15" aria-hidden="true" tabindex="-1"></a>    <span class="at">title =</span> <span class="st">"Title"</span>,</span>
+<span id="cb7-16"><a href="#cb7-16" aria-hidden="true" tabindex="-1"></a>    <span class="at">hours_viewed =</span> <span class="st">"Total Hours Viewed"</span>,</span>
+<span id="cb7-17"><a href="#cb7-17" aria-hidden="true" tabindex="-1"></a>    <span class="at">viewership_fraction =</span> <span class="st">"Share of Viewership"</span></span>
+<span id="cb7-18"><a href="#cb7-18" aria-hidden="true" tabindex="-1"></a>  ) <span class="sc">|&gt;</span></span>
+<span id="cb7-19"><a href="#cb7-19" aria-hidden="true" tabindex="-1"></a>  <span class="fu">fmt_number</span>(</span>
+<span id="cb7-20"><a href="#cb7-20" aria-hidden="true" tabindex="-1"></a>    <span class="at">drop_trailing_zeros =</span> <span class="cn">TRUE</span>,</span>
+<span id="cb7-21"><a href="#cb7-21" aria-hidden="true" tabindex="-1"></a>    <span class="at">sep_mark =</span> <span class="st">","</span></span>
+<span id="cb7-22"><a href="#cb7-22" aria-hidden="true" tabindex="-1"></a>  ) <span class="sc">|&gt;</span></span>
+<span id="cb7-23"><a href="#cb7-23" aria-hidden="true" tabindex="-1"></a>  <span class="fu">fmt_percent</span>(</span>
+<span id="cb7-24"><a href="#cb7-24" aria-hidden="true" tabindex="-1"></a>    <span class="at">columns =</span> viewership_fraction,</span>
+<span id="cb7-25"><a href="#cb7-25" aria-hidden="true" tabindex="-1"></a>    <span class="at">decimals =</span> <span class="dv">2</span>,</span>
+<span id="cb7-26"><a href="#cb7-26" aria-hidden="true" tabindex="-1"></a>  ) <span class="sc">|&gt;</span></span>
+<span id="cb7-27"><a href="#cb7-27" aria-hidden="true" tabindex="-1"></a>  <span class="fu">opt_align_table_header</span>(<span class="at">align =</span> <span class="st">"left"</span>)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+</details>
+<div class="cell-output-display">
+<div id="csazeemcgh" style="padding-left:0px;padding-right:0px;padding-top:10px;padding-bottom:10px;overflow-x:auto;overflow-y:auto;width:auto;height:auto;">
+<style>#csazeemcgh table {
+  font-family: system-ui, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif, 'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol', 'Noto Color Emoji';
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+#csazeemcgh thead, #csazeemcgh tbody, #csazeemcgh tfoot, #csazeemcgh tr, #csazeemcgh td, #csazeemcgh th {
+  border-style: none;
+}
+
+#csazeemcgh p {
+  margin: 0;
+  padding: 0;
+}
+
+#csazeemcgh .gt_table {
+  display: table;
+  border-collapse: collapse;
+  line-height: normal;
+  margin-left: auto;
+  margin-right: auto;
+  color: #333333;
+  font-size: 16px;
+  font-weight: normal;
+  font-style: normal;
+  background-color: #FFFFFF;
+  width: auto;
+  border-top-style: solid;
+  border-top-width: 2px;
+  border-top-color: #A8A8A8;
+  border-right-style: none;
+  border-right-width: 2px;
+  border-right-color: #D3D3D3;
+  border-bottom-style: solid;
+  border-bottom-width: 2px;
+  border-bottom-color: #A8A8A8;
+  border-left-style: none;
+  border-left-width: 2px;
+  border-left-color: #D3D3D3;
+}
+
+#csazeemcgh .gt_caption {
+  padding-top: 4px;
+  padding-bottom: 4px;
+}
+
+#csazeemcgh .gt_title {
+  color: #333333;
+  font-size: 125%;
+  font-weight: initial;
+  padding-top: 4px;
+  padding-bottom: 4px;
+  padding-left: 5px;
+  padding-right: 5px;
+  border-bottom-color: #FFFFFF;
+  border-bottom-width: 0;
+}
+
+#csazeemcgh .gt_subtitle {
+  color: #333333;
+  font-size: 85%;
+  font-weight: initial;
+  padding-top: 3px;
+  padding-bottom: 5px;
+  padding-left: 5px;
+  padding-right: 5px;
+  border-top-color: #FFFFFF;
+  border-top-width: 0;
+}
+
+#csazeemcgh .gt_heading {
+  background-color: #FFFFFF;
+  text-align: left;
+  border-bottom-color: #FFFFFF;
+  border-left-style: none;
+  border-left-width: 1px;
+  border-left-color: #D3D3D3;
+  border-right-style: none;
+  border-right-width: 1px;
+  border-right-color: #D3D3D3;
+}
+
+#csazeemcgh .gt_bottom_border {
+  border-bottom-style: solid;
+  border-bottom-width: 2px;
+  border-bottom-color: #D3D3D3;
+}
+
+#csazeemcgh .gt_col_headings {
+  border-top-style: solid;
+  border-top-width: 2px;
+  border-top-color: #D3D3D3;
+  border-bottom-style: solid;
+  border-bottom-width: 2px;
+  border-bottom-color: #D3D3D3;
+  border-left-style: none;
+  border-left-width: 1px;
+  border-left-color: #D3D3D3;
+  border-right-style: none;
+  border-right-width: 1px;
+  border-right-color: #D3D3D3;
+}
+
+#csazeemcgh .gt_col_heading {
+  color: #333333;
+  background-color: #FFFFFF;
+  font-size: 100%;
+  font-weight: normal;
+  text-transform: inherit;
+  border-left-style: none;
+  border-left-width: 1px;
+  border-left-color: #D3D3D3;
+  border-right-style: none;
+  border-right-width: 1px;
+  border-right-color: #D3D3D3;
+  vertical-align: bottom;
+  padding-top: 5px;
+  padding-bottom: 6px;
+  padding-left: 5px;
+  padding-right: 5px;
+  overflow-x: hidden;
+}
+
+#csazeemcgh .gt_column_spanner_outer {
+  color: #333333;
+  background-color: #FFFFFF;
+  font-size: 100%;
+  font-weight: normal;
+  text-transform: inherit;
+  padding-top: 0;
+  padding-bottom: 0;
+  padding-left: 4px;
+  padding-right: 4px;
+}
+
+#csazeemcgh .gt_column_spanner_outer:first-child {
+  padding-left: 0;
+}
+
+#csazeemcgh .gt_column_spanner_outer:last-child {
+  padding-right: 0;
+}
+
+#csazeemcgh .gt_column_spanner {
+  border-bottom-style: solid;
+  border-bottom-width: 2px;
+  border-bottom-color: #D3D3D3;
+  vertical-align: bottom;
+  padding-top: 5px;
+  padding-bottom: 5px;
+  overflow-x: hidden;
+  display: inline-block;
+  width: 100%;
+}
+
+#csazeemcgh .gt_spanner_row {
+  border-bottom-style: hidden;
+}
+
+#csazeemcgh .gt_group_heading {
+  padding-top: 8px;
+  padding-bottom: 8px;
+  padding-left: 5px;
+  padding-right: 5px;
+  color: #333333;
+  background-color: #FFFFFF;
+  font-size: 100%;
+  font-weight: initial;
+  text-transform: inherit;
+  border-top-style: solid;
+  border-top-width: 2px;
+  border-top-color: #D3D3D3;
+  border-bottom-style: solid;
+  border-bottom-width: 2px;
+  border-bottom-color: #D3D3D3;
+  border-left-style: none;
+  border-left-width: 1px;
+  border-left-color: #D3D3D3;
+  border-right-style: none;
+  border-right-width: 1px;
+  border-right-color: #D3D3D3;
+  vertical-align: middle;
+  text-align: left;
+}
+
+#csazeemcgh .gt_empty_group_heading {
+  padding: 0.5px;
+  color: #333333;
+  background-color: #FFFFFF;
+  font-size: 100%;
+  font-weight: initial;
+  border-top-style: solid;
+  border-top-width: 2px;
+  border-top-color: #D3D3D3;
+  border-bottom-style: solid;
+  border-bottom-width: 2px;
+  border-bottom-color: #D3D3D3;
+  vertical-align: middle;
+}
+
+#csazeemcgh .gt_from_md > :first-child {
+  margin-top: 0;
+}
+
+#csazeemcgh .gt_from_md > :last-child {
+  margin-bottom: 0;
+}
+
+#csazeemcgh .gt_row {
+  padding-top: 8px;
+  padding-bottom: 8px;
+  padding-left: 5px;
+  padding-right: 5px;
+  margin: 10px;
+  border-top-style: solid;
+  border-top-width: 1px;
+  border-top-color: #D3D3D3;
+  border-left-style: none;
+  border-left-width: 1px;
+  border-left-color: #D3D3D3;
+  border-right-style: none;
+  border-right-width: 1px;
+  border-right-color: #D3D3D3;
+  vertical-align: middle;
+  overflow-x: hidden;
+}
+
+#csazeemcgh .gt_stub {
+  color: #333333;
+  background-color: #FFFFFF;
+  font-size: 100%;
+  font-weight: initial;
+  text-transform: inherit;
+  border-right-style: solid;
+  border-right-width: 2px;
+  border-right-color: #D3D3D3;
+  padding-left: 5px;
+  padding-right: 5px;
+}
+
+#csazeemcgh .gt_stub_row_group {
+  color: #333333;
+  background-color: #FFFFFF;
+  font-size: 100%;
+  font-weight: initial;
+  text-transform: inherit;
+  border-right-style: solid;
+  border-right-width: 2px;
+  border-right-color: #D3D3D3;
+  padding-left: 5px;
+  padding-right: 5px;
+  vertical-align: top;
+}
+
+#csazeemcgh .gt_row_group_first td {
+  border-top-width: 2px;
+}
+
+#csazeemcgh .gt_row_group_first th {
+  border-top-width: 2px;
+}
+
+#csazeemcgh .gt_summary_row {
+  color: #333333;
+  background-color: #FFFFFF;
+  text-transform: inherit;
+  padding-top: 8px;
+  padding-bottom: 8px;
+  padding-left: 5px;
+  padding-right: 5px;
+}
+
+#csazeemcgh .gt_first_summary_row {
+  border-top-style: solid;
+  border-top-color: #D3D3D3;
+}
+
+#csazeemcgh .gt_first_summary_row.thick {
+  border-top-width: 2px;
+}
+
+#csazeemcgh .gt_last_summary_row {
+  padding-top: 8px;
+  padding-bottom: 8px;
+  padding-left: 5px;
+  padding-right: 5px;
+  border-bottom-style: solid;
+  border-bottom-width: 2px;
+  border-bottom-color: #D3D3D3;
+}
+
+#csazeemcgh .gt_grand_summary_row {
+  color: #333333;
+  background-color: #FFFFFF;
+  text-transform: inherit;
+  padding-top: 8px;
+  padding-bottom: 8px;
+  padding-left: 5px;
+  padding-right: 5px;
+}
+
+#csazeemcgh .gt_first_grand_summary_row {
+  padding-top: 8px;
+  padding-bottom: 8px;
+  padding-left: 5px;
+  padding-right: 5px;
+  border-top-style: double;
+  border-top-width: 6px;
+  border-top-color: #D3D3D3;
+}
+
+#csazeemcgh .gt_last_grand_summary_row_top {
+  padding-top: 8px;
+  padding-bottom: 8px;
+  padding-left: 5px;
+  padding-right: 5px;
+  border-bottom-style: double;
+  border-bottom-width: 6px;
+  border-bottom-color: #D3D3D3;
+}
+
+#csazeemcgh .gt_striped {
+  background-color: rgba(128, 128, 128, 0.05);
+}
+
+#csazeemcgh .gt_table_body {
+  border-top-style: solid;
+  border-top-width: 2px;
+  border-top-color: #D3D3D3;
+  border-bottom-style: solid;
+  border-bottom-width: 2px;
+  border-bottom-color: #D3D3D3;
+}
+
+#csazeemcgh .gt_footnotes {
+  color: #333333;
+  background-color: #FFFFFF;
+  border-bottom-style: none;
+  border-bottom-width: 2px;
+  border-bottom-color: #D3D3D3;
+  border-left-style: none;
+  border-left-width: 2px;
+  border-left-color: #D3D3D3;
+  border-right-style: none;
+  border-right-width: 2px;
+  border-right-color: #D3D3D3;
+}
+
+#csazeemcgh .gt_footnote {
+  margin: 0px;
+  font-size: 90%;
+  padding-top: 4px;
+  padding-bottom: 4px;
+  padding-left: 5px;
+  padding-right: 5px;
+}
+
+#csazeemcgh .gt_sourcenotes {
+  color: #333333;
+  background-color: #FFFFFF;
+  border-bottom-style: none;
+  border-bottom-width: 2px;
+  border-bottom-color: #D3D3D3;
+  border-left-style: none;
+  border-left-width: 2px;
+  border-left-color: #D3D3D3;
+  border-right-style: none;
+  border-right-width: 2px;
+  border-right-color: #D3D3D3;
+}
+
+#csazeemcgh .gt_sourcenote {
+  font-size: 90%;
+  padding-top: 4px;
+  padding-bottom: 4px;
+  padding-left: 5px;
+  padding-right: 5px;
+}
+
+#csazeemcgh .gt_left {
+  text-align: left;
+}
+
+#csazeemcgh .gt_center {
+  text-align: center;
+}
+
+#csazeemcgh .gt_right {
+  text-align: right;
+  font-variant-numeric: tabular-nums;
+}
+
+#csazeemcgh .gt_font_normal {
+  font-weight: normal;
+}
+
+#csazeemcgh .gt_font_bold {
+  font-weight: bold;
+}
+
+#csazeemcgh .gt_font_italic {
+  font-style: italic;
+}
+
+#csazeemcgh .gt_super {
+  font-size: 65%;
+}
+
+#csazeemcgh .gt_footnote_marks {
+  font-size: 75%;
+  vertical-align: 0.4em;
+  position: initial;
+}
+
+#csazeemcgh .gt_asterisk {
+  font-size: 100%;
+  vertical-align: 0;
+}
+
+#csazeemcgh .gt_indent_1 {
+  text-indent: 5px;
+}
+
+#csazeemcgh .gt_indent_2 {
+  text-indent: 10px;
+}
+
+#csazeemcgh .gt_indent_3 {
+  text-indent: 15px;
+}
+
+#csazeemcgh .gt_indent_4 {
+  text-indent: 20px;
+}
+
+#csazeemcgh .gt_indent_5 {
+  text-indent: 25px;
+}
+
+#csazeemcgh .katex-display {
+  display: inline-flex !important;
+  margin-bottom: 0.75em !important;
+}
+
+#csazeemcgh div.Reactable > div.rt-table > div.rt-thead > div.rt-tr.rt-tr-group-header > div.rt-th-group:after {
+  height: 0px !important;
+}
+</style>
+
+<table class="gt_table caption-top table table-sm table-striped small" data-quarto-bootstrap="false">
+<thead>
+<tr class="gt_heading header">
+<td colspan="4" class="gt_heading gt_title gt_font_normal">Netflix's Top Titles</td>
+</tr>
+<tr class="gt_heading even">
+<td colspan="4" class="gt_heading gt_subtitle gt_font_normal gt_bottom_border">Top titles for each period by total hours viewed, and the share of total viewership</td>
+</tr>
+<tr class="gt_col_headings header">
+<th id="period" class="gt_col_heading gt_columns_bottom_border gt_left" data-quarto-table-cell-role="th" scope="col">Period</th>
+<th id="title" class="gt_col_heading gt_columns_bottom_border gt_left" data-quarto-table-cell-role="th" scope="col">Title</th>
+<th id="hours_viewed" class="gt_col_heading gt_columns_bottom_border gt_right" data-quarto-table-cell-role="th" scope="col">Total Hours Viewed</th>
+<th id="viewership_fraction" class="gt_col_heading gt_columns_bottom_border gt_right" data-quarto-table-cell-role="th" scope="col">Share of Viewership</th>
+</tr>
+</thead>
+<tbody class="gt_table_body">
 <tr class="odd">
-<td>title: “Mini-Project Placeholder”</td>
+<td class="gt_row gt_left" headers="period">2023H1</td>
+<td class="gt_row gt_left" headers="title">The Night Agent: Season 1</td>
+<td class="gt_row gt_right" headers="hours_viewed">812,100,000</td>
+<td class="gt_row gt_right" headers="viewership_fraction">0.87%</td>
+</tr>
+<tr class="even">
+<td class="gt_row gt_left" headers="period">2023H2</td>
+<td class="gt_row gt_left" headers="title">King the Land: Limited Series</td>
+<td class="gt_row gt_right" headers="hours_viewed">630,200,000</td>
+<td class="gt_row gt_right" headers="viewership_fraction">0.70%</td>
+</tr>
+<tr class="odd">
+<td class="gt_row gt_left" headers="period">2024H1</td>
+<td class="gt_row gt_left" headers="title">Bridgerton: Season 3</td>
+<td class="gt_row gt_right" headers="hours_viewed">733,800,000</td>
+<td class="gt_row gt_right" headers="viewership_fraction">0.78%</td>
+</tr>
+<tr class="even">
+<td class="gt_row gt_left" headers="period">2024H2</td>
+<td class="gt_row gt_left" headers="title">Squid Game: Season 2</td>
+<td class="gt_row gt_right" headers="hours_viewed">619,900,000</td>
+<td class="gt_row gt_right" headers="viewership_fraction">0.66%</td>
+</tr>
+<tr class="odd">
+<td class="gt_row gt_left" headers="period">2025H1</td>
+<td class="gt_row gt_left" headers="title">Squid Game: Season 2</td>
+<td class="gt_row gt_right" headers="hours_viewed">840,300,000</td>
+<td class="gt_row gt_right" headers="viewership_fraction">0.88%</td>
+</tr>
+<tr class="even">
+<td class="gt_row gt_left" headers="period">2025H2</td>
+<td class="gt_row gt_left" headers="title">Wednesday: Season 2</td>
+<td class="gt_row gt_right" headers="hours_viewed">964,100,000</td>
+<td class="gt_row gt_right" headers="viewership_fraction">1.00%</td>
+</tr>
+<tr class="odd">
+<td class="gt_row gt_left" headers="period">2026H1</td>
+<td class="gt_row gt_left" headers="title">Bridgerton: Season 4</td>
+<td class="gt_row gt_right" headers="hours_viewed">889,800,000</td>
+<td class="gt_row gt_right" headers="viewership_fraction">0.91%</td>
 </tr>
 </tbody>
 </table>
-<p>This is a placeholder for STA9750 Mini-Project 1. Check back soon for more!</p>
+
+</div>
+</div>
+</div>
+<p><br>
+</p>
+<ol start="2" type="1">
+<li>How has Netflix’s catalog changed in size over the periods for which we have questions?</li>
+</ol>
+<div class="cell">
+<details class="code-fold">
+<summary>Show Code</summary>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb8"><pre class="sourceCode r code-overflow-wrap code-with-copy"><code class="sourceCode r"><span id="cb8-1"><a href="#cb8-1" aria-hidden="true" tabindex="-1"></a>NETFLIX_DATA <span class="sc">|&gt;</span></span>
+<span id="cb8-2"><a href="#cb8-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">group_by</span>(period) <span class="sc">|&gt;</span></span>
+<span id="cb8-3"><a href="#cb8-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">summarize</span>(<span class="at">total_titles =</span> <span class="fu">n</span>(), <span class="at">total_runtime =</span> <span class="fu">sum</span>(runtime, <span class="at">na.rm=</span><span class="cn">TRUE</span>)) <span class="sc">|&gt;</span></span>
+<span id="cb8-4"><a href="#cb8-4" aria-hidden="true" tabindex="-1"></a>  <span class="fu">gt</span>() <span class="sc">|&gt;</span></span>
+<span id="cb8-5"><a href="#cb8-5" aria-hidden="true" tabindex="-1"></a>    <span class="fu">tab_header</span>(</span>
+<span id="cb8-6"><a href="#cb8-6" aria-hidden="true" tabindex="-1"></a>    <span class="at">title =</span> <span class="st">"Netflix's Catalog Size from 2023 - 2026"</span>,</span>
+<span id="cb8-7"><a href="#cb8-7" aria-hidden="true" tabindex="-1"></a>    <span class="at">subtitle =</span> <span class="st">"Catalog size by number of titles and total runtime"</span></span>
+<span id="cb8-8"><a href="#cb8-8" aria-hidden="true" tabindex="-1"></a>  ) <span class="sc">|&gt;</span></span>
+<span id="cb8-9"><a href="#cb8-9" aria-hidden="true" tabindex="-1"></a>    <span class="fu">cols_label</span>(</span>
+<span id="cb8-10"><a href="#cb8-10" aria-hidden="true" tabindex="-1"></a>    <span class="at">period =</span> <span class="st">"Period"</span>,</span>
+<span id="cb8-11"><a href="#cb8-11" aria-hidden="true" tabindex="-1"></a>    <span class="at">total_titles =</span> <span class="st">"Total Titles"</span>,</span>
+<span id="cb8-12"><a href="#cb8-12" aria-hidden="true" tabindex="-1"></a>    <span class="at">total_runtime =</span> <span class="st">"Total Runtime"</span></span>
+<span id="cb8-13"><a href="#cb8-13" aria-hidden="true" tabindex="-1"></a>    ) <span class="sc">|&gt;</span></span>
+<span id="cb8-14"><a href="#cb8-14" aria-hidden="true" tabindex="-1"></a>  <span class="fu">fmt_number</span>(</span>
+<span id="cb8-15"><a href="#cb8-15" aria-hidden="true" tabindex="-1"></a>    <span class="at">decimals =</span> <span class="dv">0</span>,</span>
+<span id="cb8-16"><a href="#cb8-16" aria-hidden="true" tabindex="-1"></a>    <span class="at">drop_trailing_zeros =</span> <span class="cn">TRUE</span>,</span>
+<span id="cb8-17"><a href="#cb8-17" aria-hidden="true" tabindex="-1"></a>    <span class="at">sep_mark =</span> <span class="st">","</span></span>
+<span id="cb8-18"><a href="#cb8-18" aria-hidden="true" tabindex="-1"></a>  ) <span class="sc">|&gt;</span></span>
+<span id="cb8-19"><a href="#cb8-19" aria-hidden="true" tabindex="-1"></a>  <span class="fu">opt_align_table_header</span>(<span class="at">align =</span> <span class="st">"left"</span>)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+</details>
+<div class="cell-output-display">
+<div id="ffynsxbqxp" style="padding-left:0px;padding-right:0px;padding-top:10px;padding-bottom:10px;overflow-x:auto;overflow-y:auto;width:auto;height:auto;">
+<style>#ffynsxbqxp table {
+  font-family: system-ui, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif, 'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol', 'Noto Color Emoji';
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+#ffynsxbqxp thead, #ffynsxbqxp tbody, #ffynsxbqxp tfoot, #ffynsxbqxp tr, #ffynsxbqxp td, #ffynsxbqxp th {
+  border-style: none;
+}
+
+#ffynsxbqxp p {
+  margin: 0;
+  padding: 0;
+}
+
+#ffynsxbqxp .gt_table {
+  display: table;
+  border-collapse: collapse;
+  line-height: normal;
+  margin-left: auto;
+  margin-right: auto;
+  color: #333333;
+  font-size: 16px;
+  font-weight: normal;
+  font-style: normal;
+  background-color: #FFFFFF;
+  width: auto;
+  border-top-style: solid;
+  border-top-width: 2px;
+  border-top-color: #A8A8A8;
+  border-right-style: none;
+  border-right-width: 2px;
+  border-right-color: #D3D3D3;
+  border-bottom-style: solid;
+  border-bottom-width: 2px;
+  border-bottom-color: #A8A8A8;
+  border-left-style: none;
+  border-left-width: 2px;
+  border-left-color: #D3D3D3;
+}
+
+#ffynsxbqxp .gt_caption {
+  padding-top: 4px;
+  padding-bottom: 4px;
+}
+
+#ffynsxbqxp .gt_title {
+  color: #333333;
+  font-size: 125%;
+  font-weight: initial;
+  padding-top: 4px;
+  padding-bottom: 4px;
+  padding-left: 5px;
+  padding-right: 5px;
+  border-bottom-color: #FFFFFF;
+  border-bottom-width: 0;
+}
+
+#ffynsxbqxp .gt_subtitle {
+  color: #333333;
+  font-size: 85%;
+  font-weight: initial;
+  padding-top: 3px;
+  padding-bottom: 5px;
+  padding-left: 5px;
+  padding-right: 5px;
+  border-top-color: #FFFFFF;
+  border-top-width: 0;
+}
+
+#ffynsxbqxp .gt_heading {
+  background-color: #FFFFFF;
+  text-align: left;
+  border-bottom-color: #FFFFFF;
+  border-left-style: none;
+  border-left-width: 1px;
+  border-left-color: #D3D3D3;
+  border-right-style: none;
+  border-right-width: 1px;
+  border-right-color: #D3D3D3;
+}
+
+#ffynsxbqxp .gt_bottom_border {
+  border-bottom-style: solid;
+  border-bottom-width: 2px;
+  border-bottom-color: #D3D3D3;
+}
+
+#ffynsxbqxp .gt_col_headings {
+  border-top-style: solid;
+  border-top-width: 2px;
+  border-top-color: #D3D3D3;
+  border-bottom-style: solid;
+  border-bottom-width: 2px;
+  border-bottom-color: #D3D3D3;
+  border-left-style: none;
+  border-left-width: 1px;
+  border-left-color: #D3D3D3;
+  border-right-style: none;
+  border-right-width: 1px;
+  border-right-color: #D3D3D3;
+}
+
+#ffynsxbqxp .gt_col_heading {
+  color: #333333;
+  background-color: #FFFFFF;
+  font-size: 100%;
+  font-weight: normal;
+  text-transform: inherit;
+  border-left-style: none;
+  border-left-width: 1px;
+  border-left-color: #D3D3D3;
+  border-right-style: none;
+  border-right-width: 1px;
+  border-right-color: #D3D3D3;
+  vertical-align: bottom;
+  padding-top: 5px;
+  padding-bottom: 6px;
+  padding-left: 5px;
+  padding-right: 5px;
+  overflow-x: hidden;
+}
+
+#ffynsxbqxp .gt_column_spanner_outer {
+  color: #333333;
+  background-color: #FFFFFF;
+  font-size: 100%;
+  font-weight: normal;
+  text-transform: inherit;
+  padding-top: 0;
+  padding-bottom: 0;
+  padding-left: 4px;
+  padding-right: 4px;
+}
+
+#ffynsxbqxp .gt_column_spanner_outer:first-child {
+  padding-left: 0;
+}
+
+#ffynsxbqxp .gt_column_spanner_outer:last-child {
+  padding-right: 0;
+}
+
+#ffynsxbqxp .gt_column_spanner {
+  border-bottom-style: solid;
+  border-bottom-width: 2px;
+  border-bottom-color: #D3D3D3;
+  vertical-align: bottom;
+  padding-top: 5px;
+  padding-bottom: 5px;
+  overflow-x: hidden;
+  display: inline-block;
+  width: 100%;
+}
+
+#ffynsxbqxp .gt_spanner_row {
+  border-bottom-style: hidden;
+}
+
+#ffynsxbqxp .gt_group_heading {
+  padding-top: 8px;
+  padding-bottom: 8px;
+  padding-left: 5px;
+  padding-right: 5px;
+  color: #333333;
+  background-color: #FFFFFF;
+  font-size: 100%;
+  font-weight: initial;
+  text-transform: inherit;
+  border-top-style: solid;
+  border-top-width: 2px;
+  border-top-color: #D3D3D3;
+  border-bottom-style: solid;
+  border-bottom-width: 2px;
+  border-bottom-color: #D3D3D3;
+  border-left-style: none;
+  border-left-width: 1px;
+  border-left-color: #D3D3D3;
+  border-right-style: none;
+  border-right-width: 1px;
+  border-right-color: #D3D3D3;
+  vertical-align: middle;
+  text-align: left;
+}
+
+#ffynsxbqxp .gt_empty_group_heading {
+  padding: 0.5px;
+  color: #333333;
+  background-color: #FFFFFF;
+  font-size: 100%;
+  font-weight: initial;
+  border-top-style: solid;
+  border-top-width: 2px;
+  border-top-color: #D3D3D3;
+  border-bottom-style: solid;
+  border-bottom-width: 2px;
+  border-bottom-color: #D3D3D3;
+  vertical-align: middle;
+}
+
+#ffynsxbqxp .gt_from_md > :first-child {
+  margin-top: 0;
+}
+
+#ffynsxbqxp .gt_from_md > :last-child {
+  margin-bottom: 0;
+}
+
+#ffynsxbqxp .gt_row {
+  padding-top: 8px;
+  padding-bottom: 8px;
+  padding-left: 5px;
+  padding-right: 5px;
+  margin: 10px;
+  border-top-style: solid;
+  border-top-width: 1px;
+  border-top-color: #D3D3D3;
+  border-left-style: none;
+  border-left-width: 1px;
+  border-left-color: #D3D3D3;
+  border-right-style: none;
+  border-right-width: 1px;
+  border-right-color: #D3D3D3;
+  vertical-align: middle;
+  overflow-x: hidden;
+}
+
+#ffynsxbqxp .gt_stub {
+  color: #333333;
+  background-color: #FFFFFF;
+  font-size: 100%;
+  font-weight: initial;
+  text-transform: inherit;
+  border-right-style: solid;
+  border-right-width: 2px;
+  border-right-color: #D3D3D3;
+  padding-left: 5px;
+  padding-right: 5px;
+}
+
+#ffynsxbqxp .gt_stub_row_group {
+  color: #333333;
+  background-color: #FFFFFF;
+  font-size: 100%;
+  font-weight: initial;
+  text-transform: inherit;
+  border-right-style: solid;
+  border-right-width: 2px;
+  border-right-color: #D3D3D3;
+  padding-left: 5px;
+  padding-right: 5px;
+  vertical-align: top;
+}
+
+#ffynsxbqxp .gt_row_group_first td {
+  border-top-width: 2px;
+}
+
+#ffynsxbqxp .gt_row_group_first th {
+  border-top-width: 2px;
+}
+
+#ffynsxbqxp .gt_summary_row {
+  color: #333333;
+  background-color: #FFFFFF;
+  text-transform: inherit;
+  padding-top: 8px;
+  padding-bottom: 8px;
+  padding-left: 5px;
+  padding-right: 5px;
+}
+
+#ffynsxbqxp .gt_first_summary_row {
+  border-top-style: solid;
+  border-top-color: #D3D3D3;
+}
+
+#ffynsxbqxp .gt_first_summary_row.thick {
+  border-top-width: 2px;
+}
+
+#ffynsxbqxp .gt_last_summary_row {
+  padding-top: 8px;
+  padding-bottom: 8px;
+  padding-left: 5px;
+  padding-right: 5px;
+  border-bottom-style: solid;
+  border-bottom-width: 2px;
+  border-bottom-color: #D3D3D3;
+}
+
+#ffynsxbqxp .gt_grand_summary_row {
+  color: #333333;
+  background-color: #FFFFFF;
+  text-transform: inherit;
+  padding-top: 8px;
+  padding-bottom: 8px;
+  padding-left: 5px;
+  padding-right: 5px;
+}
+
+#ffynsxbqxp .gt_first_grand_summary_row {
+  padding-top: 8px;
+  padding-bottom: 8px;
+  padding-left: 5px;
+  padding-right: 5px;
+  border-top-style: double;
+  border-top-width: 6px;
+  border-top-color: #D3D3D3;
+}
+
+#ffynsxbqxp .gt_last_grand_summary_row_top {
+  padding-top: 8px;
+  padding-bottom: 8px;
+  padding-left: 5px;
+  padding-right: 5px;
+  border-bottom-style: double;
+  border-bottom-width: 6px;
+  border-bottom-color: #D3D3D3;
+}
+
+#ffynsxbqxp .gt_striped {
+  background-color: rgba(128, 128, 128, 0.05);
+}
+
+#ffynsxbqxp .gt_table_body {
+  border-top-style: solid;
+  border-top-width: 2px;
+  border-top-color: #D3D3D3;
+  border-bottom-style: solid;
+  border-bottom-width: 2px;
+  border-bottom-color: #D3D3D3;
+}
+
+#ffynsxbqxp .gt_footnotes {
+  color: #333333;
+  background-color: #FFFFFF;
+  border-bottom-style: none;
+  border-bottom-width: 2px;
+  border-bottom-color: #D3D3D3;
+  border-left-style: none;
+  border-left-width: 2px;
+  border-left-color: #D3D3D3;
+  border-right-style: none;
+  border-right-width: 2px;
+  border-right-color: #D3D3D3;
+}
+
+#ffynsxbqxp .gt_footnote {
+  margin: 0px;
+  font-size: 90%;
+  padding-top: 4px;
+  padding-bottom: 4px;
+  padding-left: 5px;
+  padding-right: 5px;
+}
+
+#ffynsxbqxp .gt_sourcenotes {
+  color: #333333;
+  background-color: #FFFFFF;
+  border-bottom-style: none;
+  border-bottom-width: 2px;
+  border-bottom-color: #D3D3D3;
+  border-left-style: none;
+  border-left-width: 2px;
+  border-left-color: #D3D3D3;
+  border-right-style: none;
+  border-right-width: 2px;
+  border-right-color: #D3D3D3;
+}
+
+#ffynsxbqxp .gt_sourcenote {
+  font-size: 90%;
+  padding-top: 4px;
+  padding-bottom: 4px;
+  padding-left: 5px;
+  padding-right: 5px;
+}
+
+#ffynsxbqxp .gt_left {
+  text-align: left;
+}
+
+#ffynsxbqxp .gt_center {
+  text-align: center;
+}
+
+#ffynsxbqxp .gt_right {
+  text-align: right;
+  font-variant-numeric: tabular-nums;
+}
+
+#ffynsxbqxp .gt_font_normal {
+  font-weight: normal;
+}
+
+#ffynsxbqxp .gt_font_bold {
+  font-weight: bold;
+}
+
+#ffynsxbqxp .gt_font_italic {
+  font-style: italic;
+}
+
+#ffynsxbqxp .gt_super {
+  font-size: 65%;
+}
+
+#ffynsxbqxp .gt_footnote_marks {
+  font-size: 75%;
+  vertical-align: 0.4em;
+  position: initial;
+}
+
+#ffynsxbqxp .gt_asterisk {
+  font-size: 100%;
+  vertical-align: 0;
+}
+
+#ffynsxbqxp .gt_indent_1 {
+  text-indent: 5px;
+}
+
+#ffynsxbqxp .gt_indent_2 {
+  text-indent: 10px;
+}
+
+#ffynsxbqxp .gt_indent_3 {
+  text-indent: 15px;
+}
+
+#ffynsxbqxp .gt_indent_4 {
+  text-indent: 20px;
+}
+
+#ffynsxbqxp .gt_indent_5 {
+  text-indent: 25px;
+}
+
+#ffynsxbqxp .katex-display {
+  display: inline-flex !important;
+  margin-bottom: 0.75em !important;
+}
+
+#ffynsxbqxp div.Reactable > div.rt-table > div.rt-thead > div.rt-tr.rt-tr-group-header > div.rt-th-group:after {
+  height: 0px !important;
+}
+</style>
+
+<table class="gt_table caption-top table table-sm table-striped small" data-quarto-bootstrap="false">
+<thead>
+<tr class="gt_heading header">
+<td colspan="3" class="gt_heading gt_title gt_font_normal">Netflix's Catalog Size from 2023 - 2026</td>
+</tr>
+<tr class="gt_heading even">
+<td colspan="3" class="gt_heading gt_subtitle gt_font_normal gt_bottom_border">Catalog size by number of titles and total runtime</td>
+</tr>
+<tr class="gt_col_headings header">
+<th id="period" class="gt_col_heading gt_columns_bottom_border gt_left" data-quarto-table-cell-role="th" scope="col">Period</th>
+<th id="total_titles" class="gt_col_heading gt_columns_bottom_border gt_right" data-quarto-table-cell-role="th" scope="col">Total Titles</th>
+<th id="total_runtime" class="gt_col_heading gt_columns_bottom_border gt_right" data-quarto-table-cell-role="th" scope="col">Total Runtime</th>
+</tr>
+</thead>
+<tbody class="gt_table_body">
+<tr class="odd">
+<td class="gt_row gt_left" headers="period">2023H1</td>
+<td class="gt_row gt_right" headers="total_titles">18,196</td>
+<td class="gt_row gt_right" headers="total_runtime">3,520,733</td>
+</tr>
+<tr class="even">
+<td class="gt_row gt_left" headers="period">2023H2</td>
+<td class="gt_row gt_right" headers="total_titles">15,981</td>
+<td class="gt_row gt_right" headers="total_runtime">3,998,445</td>
+</tr>
+<tr class="odd">
+<td class="gt_row gt_left" headers="period">2024H1</td>
+<td class="gt_row gt_right" headers="total_titles">16,149</td>
+<td class="gt_row gt_right" headers="total_runtime">4,094,474</td>
+</tr>
+<tr class="even">
+<td class="gt_row gt_left" headers="period">2024H2</td>
+<td class="gt_row gt_right" headers="total_titles">15,550</td>
+<td class="gt_row gt_right" headers="total_runtime">4,143,785</td>
+</tr>
+<tr class="odd">
+<td class="gt_row gt_left" headers="period">2025H1</td>
+<td class="gt_row gt_right" headers="total_titles">16,170</td>
+<td class="gt_row gt_right" headers="total_runtime">4,427,375</td>
+</tr>
+<tr class="even">
+<td class="gt_row gt_left" headers="period">2025H2</td>
+<td class="gt_row gt_right" headers="total_titles">16,450</td>
+<td class="gt_row gt_right" headers="total_runtime">4,513,722</td>
+</tr>
+<tr class="odd">
+<td class="gt_row gt_left" headers="period">2026H1</td>
+<td class="gt_row gt_right" headers="total_titles">17,353</td>
+<td class="gt_row gt_right" headers="total_runtime">4,754,407</td>
+</tr>
+</tbody>
+</table>
+
+</div>
+</div>
+</div>
+<p>From this chart, we can see that the amount of Netflix titles sharply decreased after the first half of 2023, and it has slowly increased since then, gaining about 1372 titles between 2023H2 and 2026H1. In contrast, the total runtime of Netflix’s catalog has increased every period.<br>
+</p>
+<ol start="3" type="1">
+<li>Which titles have had the most consistently high viewership across all periods? These shows are likely to be ‘staples’ that viewers fall back on as ‘comfort food’, e.g., re-runs of Friends.</li>
+</ol>
+<div class="cell">
+<details class="code-fold">
+<summary>Show Code</summary>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb9"><pre class="sourceCode r code-overflow-wrap code-with-copy"><code class="sourceCode r"><span id="cb9-1"><a href="#cb9-1" aria-hidden="true" tabindex="-1"></a>table_3 <span class="ot">&lt;-</span> NETFLIX_DATA <span class="sc">|&gt;</span></span>
+<span id="cb9-2"><a href="#cb9-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">group_by</span>(title) <span class="sc">|&gt;</span></span>
+<span id="cb9-3"><a href="#cb9-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">summarize</span>(</span>
+<span id="cb9-4"><a href="#cb9-4" aria-hidden="true" tabindex="-1"></a>    <span class="at">avg_views =</span> <span class="fu">mean</span>(views, <span class="at">na.rm=</span><span class="cn">TRUE</span>),</span>
+<span id="cb9-5"><a href="#cb9-5" aria-hidden="true" tabindex="-1"></a>    <span class="at">min_views =</span> <span class="fu">min</span>(views, <span class="at">na.rm=</span><span class="cn">TRUE</span>),</span>
+<span id="cb9-6"><a href="#cb9-6" aria-hidden="true" tabindex="-1"></a>    <span class="at">sd_views =</span> <span class="fu">sd</span>(views, <span class="at">na.rm=</span><span class="cn">TRUE</span>),</span>
+<span id="cb9-7"><a href="#cb9-7" aria-hidden="true" tabindex="-1"></a>    <span class="at">periods_viewed =</span> <span class="fu">n_distinct</span>(period),</span>
+<span id="cb9-8"><a href="#cb9-8" aria-hidden="true" tabindex="-1"></a>  ) <span class="sc">|&gt;</span></span>
+<span id="cb9-9"><a href="#cb9-9" aria-hidden="true" tabindex="-1"></a>  <span class="fu">ungroup</span>() <span class="sc">|&gt;</span></span>
+<span id="cb9-10"><a href="#cb9-10" aria-hidden="true" tabindex="-1"></a>  <span class="fu">mutate</span>(</span>
+<span id="cb9-11"><a href="#cb9-11" aria-hidden="true" tabindex="-1"></a>    <span class="at">rank_avg =</span> <span class="fu">percent_rank</span>(avg_views)<span class="sc">*</span><span class="dv">10</span>,</span>
+<span id="cb9-12"><a href="#cb9-12" aria-hidden="true" tabindex="-1"></a>    <span class="at">rank_min =</span> <span class="fu">percent_rank</span>(min_views)<span class="sc">*</span><span class="dv">10</span>,</span>
+<span id="cb9-13"><a href="#cb9-13" aria-hidden="true" tabindex="-1"></a>    <span class="at">rank_sd  =</span> (<span class="dv">1</span> <span class="sc">-</span> <span class="fu">percent_rank</span>(sd_views))<span class="sc">*</span><span class="dv">10</span>,</span>
+<span id="cb9-14"><a href="#cb9-14" aria-hidden="true" tabindex="-1"></a>    <span class="co">#consistency_score = ((rank_avg) + (rank_min) + (rank_sd)) #unweighted scores</span></span>
+<span id="cb9-15"><a href="#cb9-15" aria-hidden="true" tabindex="-1"></a>    <span class="at">consistency_score =</span> ((rank_avg <span class="sc">*</span> <span class="fl">0.50</span>) <span class="sc">+</span> (rank_min <span class="sc">*</span> <span class="fl">0.25</span>) <span class="sc">+</span> (rank_sd <span class="sc">*</span> <span class="fl">0.25</span>)) <span class="co">#weighted scores</span></span>
+<span id="cb9-16"><a href="#cb9-16" aria-hidden="true" tabindex="-1"></a>  ) <span class="sc">|&gt;</span></span>
+<span id="cb9-17"><a href="#cb9-17" aria-hidden="true" tabindex="-1"></a>  <span class="fu">filter</span>(periods_viewed <span class="sc">==</span> <span class="dv">7</span>) <span class="sc">|&gt;</span></span>
+<span id="cb9-18"><a href="#cb9-18" aria-hidden="true" tabindex="-1"></a>  <span class="fu">arrange</span>(<span class="fu">desc</span>(consistency_score)) <span class="sc">|&gt;</span></span>
+<span id="cb9-19"><a href="#cb9-19" aria-hidden="true" tabindex="-1"></a>  <span class="fu">head</span>(<span class="dv">7</span>)</span>
+<span id="cb9-20"><a href="#cb9-20" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb9-21"><a href="#cb9-21" aria-hidden="true" tabindex="-1"></a>table_3 <span class="sc">|&gt;</span>  <span class="fu">gt</span>() <span class="sc">|&gt;</span></span>
+<span id="cb9-22"><a href="#cb9-22" aria-hidden="true" tabindex="-1"></a>    <span class="fu">tab_header</span>(</span>
+<span id="cb9-23"><a href="#cb9-23" aria-hidden="true" tabindex="-1"></a>    <span class="at">title =</span> <span class="st">"Most Consistently Watched Titles from 2023 - 2026"</span>,</span>
+<span id="cb9-24"><a href="#cb9-24" aria-hidden="true" tabindex="-1"></a>    <span class="at">subtitle =</span> <span class="st">"Shows with the highest and most consistent viewership across all periods"</span></span>
+<span id="cb9-25"><a href="#cb9-25" aria-hidden="true" tabindex="-1"></a>  ) <span class="sc">|&gt;</span></span>
+<span id="cb9-26"><a href="#cb9-26" aria-hidden="true" tabindex="-1"></a>    <span class="fu">cols_hide</span>(<span class="at">columns =</span> <span class="fu">c</span>(periods_viewed, rank_sd, rank_avg, rank_min)) <span class="sc">|&gt;</span></span>
+<span id="cb9-27"><a href="#cb9-27" aria-hidden="true" tabindex="-1"></a>    <span class="fu">cols_label</span>(</span>
+<span id="cb9-28"><a href="#cb9-28" aria-hidden="true" tabindex="-1"></a>    <span class="at">title =</span> <span class="st">"Title"</span>,</span>
+<span id="cb9-29"><a href="#cb9-29" aria-hidden="true" tabindex="-1"></a>    <span class="at">avg_views =</span> <span class="st">"Average Views"</span>,</span>
+<span id="cb9-30"><a href="#cb9-30" aria-hidden="true" tabindex="-1"></a>    <span class="at">min_views =</span> <span class="st">"Minimum Views"</span>,</span>
+<span id="cb9-31"><a href="#cb9-31" aria-hidden="true" tabindex="-1"></a>    <span class="at">sd_views =</span> <span class="st">"Std. Dev. Views"</span>,</span>
+<span id="cb9-32"><a href="#cb9-32" aria-hidden="true" tabindex="-1"></a>    <span class="at">consistency_score =</span> <span class="st">"Consistency Score"</span></span>
+<span id="cb9-33"><a href="#cb9-33" aria-hidden="true" tabindex="-1"></a>    ) <span class="sc">|&gt;</span></span>
+<span id="cb9-34"><a href="#cb9-34" aria-hidden="true" tabindex="-1"></a>  <span class="fu">fmt_number</span>(</span>
+<span id="cb9-35"><a href="#cb9-35" aria-hidden="true" tabindex="-1"></a>    <span class="at">decimals =</span> <span class="dv">2</span>,</span>
+<span id="cb9-36"><a href="#cb9-36" aria-hidden="true" tabindex="-1"></a>    <span class="at">drop_trailing_zeros =</span> <span class="cn">TRUE</span>,</span>
+<span id="cb9-37"><a href="#cb9-37" aria-hidden="true" tabindex="-1"></a>    <span class="at">sep_mark =</span> <span class="st">","</span></span>
+<span id="cb9-38"><a href="#cb9-38" aria-hidden="true" tabindex="-1"></a>  ) <span class="sc">|&gt;</span></span>
+<span id="cb9-39"><a href="#cb9-39" aria-hidden="true" tabindex="-1"></a>  <span class="fu">tab_source_note</span>(</span>
+<span id="cb9-40"><a href="#cb9-40" aria-hidden="true" tabindex="-1"></a>    <span class="at">source_note =</span> <span class="st">"Note: Titles were ranked based on a 'consistency score'. Average viewership, minimum viewership, and standard deviation contribute to score. See code for weighted formula."</span>) <span class="sc">|&gt;</span></span>
+<span id="cb9-41"><a href="#cb9-41" aria-hidden="true" tabindex="-1"></a>  <span class="fu">opt_align_table_header</span>(<span class="at">align =</span> <span class="st">"left"</span>)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+</details>
+<div class="cell-output-display">
+<div id="bcuvuhspyq" style="padding-left:0px;padding-right:0px;padding-top:10px;padding-bottom:10px;overflow-x:auto;overflow-y:auto;width:auto;height:auto;">
+<style>#bcuvuhspyq table {
+  font-family: system-ui, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif, 'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol', 'Noto Color Emoji';
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+#bcuvuhspyq thead, #bcuvuhspyq tbody, #bcuvuhspyq tfoot, #bcuvuhspyq tr, #bcuvuhspyq td, #bcuvuhspyq th {
+  border-style: none;
+}
+
+#bcuvuhspyq p {
+  margin: 0;
+  padding: 0;
+}
+
+#bcuvuhspyq .gt_table {
+  display: table;
+  border-collapse: collapse;
+  line-height: normal;
+  margin-left: auto;
+  margin-right: auto;
+  color: #333333;
+  font-size: 16px;
+  font-weight: normal;
+  font-style: normal;
+  background-color: #FFFFFF;
+  width: auto;
+  border-top-style: solid;
+  border-top-width: 2px;
+  border-top-color: #A8A8A8;
+  border-right-style: none;
+  border-right-width: 2px;
+  border-right-color: #D3D3D3;
+  border-bottom-style: solid;
+  border-bottom-width: 2px;
+  border-bottom-color: #A8A8A8;
+  border-left-style: none;
+  border-left-width: 2px;
+  border-left-color: #D3D3D3;
+}
+
+#bcuvuhspyq .gt_caption {
+  padding-top: 4px;
+  padding-bottom: 4px;
+}
+
+#bcuvuhspyq .gt_title {
+  color: #333333;
+  font-size: 125%;
+  font-weight: initial;
+  padding-top: 4px;
+  padding-bottom: 4px;
+  padding-left: 5px;
+  padding-right: 5px;
+  border-bottom-color: #FFFFFF;
+  border-bottom-width: 0;
+}
+
+#bcuvuhspyq .gt_subtitle {
+  color: #333333;
+  font-size: 85%;
+  font-weight: initial;
+  padding-top: 3px;
+  padding-bottom: 5px;
+  padding-left: 5px;
+  padding-right: 5px;
+  border-top-color: #FFFFFF;
+  border-top-width: 0;
+}
+
+#bcuvuhspyq .gt_heading {
+  background-color: #FFFFFF;
+  text-align: left;
+  border-bottom-color: #FFFFFF;
+  border-left-style: none;
+  border-left-width: 1px;
+  border-left-color: #D3D3D3;
+  border-right-style: none;
+  border-right-width: 1px;
+  border-right-color: #D3D3D3;
+}
+
+#bcuvuhspyq .gt_bottom_border {
+  border-bottom-style: solid;
+  border-bottom-width: 2px;
+  border-bottom-color: #D3D3D3;
+}
+
+#bcuvuhspyq .gt_col_headings {
+  border-top-style: solid;
+  border-top-width: 2px;
+  border-top-color: #D3D3D3;
+  border-bottom-style: solid;
+  border-bottom-width: 2px;
+  border-bottom-color: #D3D3D3;
+  border-left-style: none;
+  border-left-width: 1px;
+  border-left-color: #D3D3D3;
+  border-right-style: none;
+  border-right-width: 1px;
+  border-right-color: #D3D3D3;
+}
+
+#bcuvuhspyq .gt_col_heading {
+  color: #333333;
+  background-color: #FFFFFF;
+  font-size: 100%;
+  font-weight: normal;
+  text-transform: inherit;
+  border-left-style: none;
+  border-left-width: 1px;
+  border-left-color: #D3D3D3;
+  border-right-style: none;
+  border-right-width: 1px;
+  border-right-color: #D3D3D3;
+  vertical-align: bottom;
+  padding-top: 5px;
+  padding-bottom: 6px;
+  padding-left: 5px;
+  padding-right: 5px;
+  overflow-x: hidden;
+}
+
+#bcuvuhspyq .gt_column_spanner_outer {
+  color: #333333;
+  background-color: #FFFFFF;
+  font-size: 100%;
+  font-weight: normal;
+  text-transform: inherit;
+  padding-top: 0;
+  padding-bottom: 0;
+  padding-left: 4px;
+  padding-right: 4px;
+}
+
+#bcuvuhspyq .gt_column_spanner_outer:first-child {
+  padding-left: 0;
+}
+
+#bcuvuhspyq .gt_column_spanner_outer:last-child {
+  padding-right: 0;
+}
+
+#bcuvuhspyq .gt_column_spanner {
+  border-bottom-style: solid;
+  border-bottom-width: 2px;
+  border-bottom-color: #D3D3D3;
+  vertical-align: bottom;
+  padding-top: 5px;
+  padding-bottom: 5px;
+  overflow-x: hidden;
+  display: inline-block;
+  width: 100%;
+}
+
+#bcuvuhspyq .gt_spanner_row {
+  border-bottom-style: hidden;
+}
+
+#bcuvuhspyq .gt_group_heading {
+  padding-top: 8px;
+  padding-bottom: 8px;
+  padding-left: 5px;
+  padding-right: 5px;
+  color: #333333;
+  background-color: #FFFFFF;
+  font-size: 100%;
+  font-weight: initial;
+  text-transform: inherit;
+  border-top-style: solid;
+  border-top-width: 2px;
+  border-top-color: #D3D3D3;
+  border-bottom-style: solid;
+  border-bottom-width: 2px;
+  border-bottom-color: #D3D3D3;
+  border-left-style: none;
+  border-left-width: 1px;
+  border-left-color: #D3D3D3;
+  border-right-style: none;
+  border-right-width: 1px;
+  border-right-color: #D3D3D3;
+  vertical-align: middle;
+  text-align: left;
+}
+
+#bcuvuhspyq .gt_empty_group_heading {
+  padding: 0.5px;
+  color: #333333;
+  background-color: #FFFFFF;
+  font-size: 100%;
+  font-weight: initial;
+  border-top-style: solid;
+  border-top-width: 2px;
+  border-top-color: #D3D3D3;
+  border-bottom-style: solid;
+  border-bottom-width: 2px;
+  border-bottom-color: #D3D3D3;
+  vertical-align: middle;
+}
+
+#bcuvuhspyq .gt_from_md > :first-child {
+  margin-top: 0;
+}
+
+#bcuvuhspyq .gt_from_md > :last-child {
+  margin-bottom: 0;
+}
+
+#bcuvuhspyq .gt_row {
+  padding-top: 8px;
+  padding-bottom: 8px;
+  padding-left: 5px;
+  padding-right: 5px;
+  margin: 10px;
+  border-top-style: solid;
+  border-top-width: 1px;
+  border-top-color: #D3D3D3;
+  border-left-style: none;
+  border-left-width: 1px;
+  border-left-color: #D3D3D3;
+  border-right-style: none;
+  border-right-width: 1px;
+  border-right-color: #D3D3D3;
+  vertical-align: middle;
+  overflow-x: hidden;
+}
+
+#bcuvuhspyq .gt_stub {
+  color: #333333;
+  background-color: #FFFFFF;
+  font-size: 100%;
+  font-weight: initial;
+  text-transform: inherit;
+  border-right-style: solid;
+  border-right-width: 2px;
+  border-right-color: #D3D3D3;
+  padding-left: 5px;
+  padding-right: 5px;
+}
+
+#bcuvuhspyq .gt_stub_row_group {
+  color: #333333;
+  background-color: #FFFFFF;
+  font-size: 100%;
+  font-weight: initial;
+  text-transform: inherit;
+  border-right-style: solid;
+  border-right-width: 2px;
+  border-right-color: #D3D3D3;
+  padding-left: 5px;
+  padding-right: 5px;
+  vertical-align: top;
+}
+
+#bcuvuhspyq .gt_row_group_first td {
+  border-top-width: 2px;
+}
+
+#bcuvuhspyq .gt_row_group_first th {
+  border-top-width: 2px;
+}
+
+#bcuvuhspyq .gt_summary_row {
+  color: #333333;
+  background-color: #FFFFFF;
+  text-transform: inherit;
+  padding-top: 8px;
+  padding-bottom: 8px;
+  padding-left: 5px;
+  padding-right: 5px;
+}
+
+#bcuvuhspyq .gt_first_summary_row {
+  border-top-style: solid;
+  border-top-color: #D3D3D3;
+}
+
+#bcuvuhspyq .gt_first_summary_row.thick {
+  border-top-width: 2px;
+}
+
+#bcuvuhspyq .gt_last_summary_row {
+  padding-top: 8px;
+  padding-bottom: 8px;
+  padding-left: 5px;
+  padding-right: 5px;
+  border-bottom-style: solid;
+  border-bottom-width: 2px;
+  border-bottom-color: #D3D3D3;
+}
+
+#bcuvuhspyq .gt_grand_summary_row {
+  color: #333333;
+  background-color: #FFFFFF;
+  text-transform: inherit;
+  padding-top: 8px;
+  padding-bottom: 8px;
+  padding-left: 5px;
+  padding-right: 5px;
+}
+
+#bcuvuhspyq .gt_first_grand_summary_row {
+  padding-top: 8px;
+  padding-bottom: 8px;
+  padding-left: 5px;
+  padding-right: 5px;
+  border-top-style: double;
+  border-top-width: 6px;
+  border-top-color: #D3D3D3;
+}
+
+#bcuvuhspyq .gt_last_grand_summary_row_top {
+  padding-top: 8px;
+  padding-bottom: 8px;
+  padding-left: 5px;
+  padding-right: 5px;
+  border-bottom-style: double;
+  border-bottom-width: 6px;
+  border-bottom-color: #D3D3D3;
+}
+
+#bcuvuhspyq .gt_striped {
+  background-color: rgba(128, 128, 128, 0.05);
+}
+
+#bcuvuhspyq .gt_table_body {
+  border-top-style: solid;
+  border-top-width: 2px;
+  border-top-color: #D3D3D3;
+  border-bottom-style: solid;
+  border-bottom-width: 2px;
+  border-bottom-color: #D3D3D3;
+}
+
+#bcuvuhspyq .gt_footnotes {
+  color: #333333;
+  background-color: #FFFFFF;
+  border-bottom-style: none;
+  border-bottom-width: 2px;
+  border-bottom-color: #D3D3D3;
+  border-left-style: none;
+  border-left-width: 2px;
+  border-left-color: #D3D3D3;
+  border-right-style: none;
+  border-right-width: 2px;
+  border-right-color: #D3D3D3;
+}
+
+#bcuvuhspyq .gt_footnote {
+  margin: 0px;
+  font-size: 90%;
+  padding-top: 4px;
+  padding-bottom: 4px;
+  padding-left: 5px;
+  padding-right: 5px;
+}
+
+#bcuvuhspyq .gt_sourcenotes {
+  color: #333333;
+  background-color: #FFFFFF;
+  border-bottom-style: none;
+  border-bottom-width: 2px;
+  border-bottom-color: #D3D3D3;
+  border-left-style: none;
+  border-left-width: 2px;
+  border-left-color: #D3D3D3;
+  border-right-style: none;
+  border-right-width: 2px;
+  border-right-color: #D3D3D3;
+}
+
+#bcuvuhspyq .gt_sourcenote {
+  font-size: 90%;
+  padding-top: 4px;
+  padding-bottom: 4px;
+  padding-left: 5px;
+  padding-right: 5px;
+}
+
+#bcuvuhspyq .gt_left {
+  text-align: left;
+}
+
+#bcuvuhspyq .gt_center {
+  text-align: center;
+}
+
+#bcuvuhspyq .gt_right {
+  text-align: right;
+  font-variant-numeric: tabular-nums;
+}
+
+#bcuvuhspyq .gt_font_normal {
+  font-weight: normal;
+}
+
+#bcuvuhspyq .gt_font_bold {
+  font-weight: bold;
+}
+
+#bcuvuhspyq .gt_font_italic {
+  font-style: italic;
+}
+
+#bcuvuhspyq .gt_super {
+  font-size: 65%;
+}
+
+#bcuvuhspyq .gt_footnote_marks {
+  font-size: 75%;
+  vertical-align: 0.4em;
+  position: initial;
+}
+
+#bcuvuhspyq .gt_asterisk {
+  font-size: 100%;
+  vertical-align: 0;
+}
+
+#bcuvuhspyq .gt_indent_1 {
+  text-indent: 5px;
+}
+
+#bcuvuhspyq .gt_indent_2 {
+  text-indent: 10px;
+}
+
+#bcuvuhspyq .gt_indent_3 {
+  text-indent: 15px;
+}
+
+#bcuvuhspyq .gt_indent_4 {
+  text-indent: 20px;
+}
+
+#bcuvuhspyq .gt_indent_5 {
+  text-indent: 25px;
+}
+
+#bcuvuhspyq .katex-display {
+  display: inline-flex !important;
+  margin-bottom: 0.75em !important;
+}
+
+#bcuvuhspyq div.Reactable > div.rt-table > div.rt-thead > div.rt-tr.rt-tr-group-header > div.rt-th-group:after {
+  height: 0px !important;
+}
+</style>
+
+<table class="gt_table caption-top table table-sm table-striped small" data-quarto-bootstrap="false">
+<thead>
+<tr class="gt_heading header">
+<td colspan="5" class="gt_heading gt_title gt_font_normal">Most Consistently Watched Titles from 2023 - 2026</td>
+</tr>
+<tr class="gt_heading even">
+<td colspan="5" class="gt_heading gt_subtitle gt_font_normal gt_bottom_border">Shows with the highest and most consistent viewership across all periods</td>
+</tr>
+<tr class="gt_col_headings header">
+<th id="title" class="gt_col_heading gt_columns_bottom_border gt_left" data-quarto-table-cell-role="th" scope="col">Title</th>
+<th id="avg_views" class="gt_col_heading gt_columns_bottom_border gt_right" data-quarto-table-cell-role="th" scope="col">Average Views</th>
+<th id="min_views" class="gt_col_heading gt_columns_bottom_border gt_right" data-quarto-table-cell-role="th" scope="col">Minimum Views</th>
+<th id="sd_views" class="gt_col_heading gt_columns_bottom_border gt_right" data-quarto-table-cell-role="th" scope="col">Std. Dev. Views</th>
+<th id="consistency_score" class="gt_col_heading gt_columns_bottom_border gt_right" data-quarto-table-cell-role="th" scope="col">Consistency Score</th>
+</tr>
+</thead>
+<tbody class="gt_table_body">
+<tr class="odd">
+<td class="gt_row gt_left" headers="title">Better Call Saul: Season 5</td>
+<td class="gt_row gt_right" headers="avg_views">2,650,000</td>
+<td class="gt_row gt_right" headers="min_views">2,500,000</td>
+<td class="gt_row gt_right" headers="sd_views">104,880.88</td>
+<td class="gt_row gt_right" headers="consistency_score">8.03</td>
+</tr>
+<tr class="even">
+<td class="gt_row gt_left" headers="title">Breaking Bad: Season 5</td>
+<td class="gt_row gt_right" headers="avg_views">6,250,000</td>
+<td class="gt_row gt_right" headers="min_views">5,800,000</td>
+<td class="gt_row gt_right" headers="sd_views">301,662.06</td>
+<td class="gt_row gt_right" headers="consistency_score">7.99</td>
+</tr>
+<tr class="odd">
+<td class="gt_row gt_left" headers="title">Better Call Saul: Season 4</td>
+<td class="gt_row gt_right" headers="avg_views">2,750,000</td>
+<td class="gt_row gt_right" headers="min_views">2,600,000</td>
+<td class="gt_row gt_right" headers="sd_views">122,474.49</td>
+<td class="gt_row gt_right" headers="consistency_score">7.99</td>
+</tr>
+<tr class="even">
+<td class="gt_row gt_left" headers="title">Spirited Away</td>
+<td class="gt_row gt_right" headers="avg_views">6,433,333.33</td>
+<td class="gt_row gt_right" headers="min_views">6,200,000</td>
+<td class="gt_row gt_right" headers="sd_views">338,624.67</td>
+<td class="gt_row gt_right" headers="consistency_score">7.96</td>
+</tr>
+<tr class="odd">
+<td class="gt_row gt_left" headers="title">Breaking Bad: Season 4</td>
+<td class="gt_row gt_right" headers="avg_views">6,933,333.33</td>
+<td class="gt_row gt_right" headers="min_views">6,400,000</td>
+<td class="gt_row gt_right" headers="sd_views">366,969.57</td>
+<td class="gt_row gt_right" headers="consistency_score">7.92</td>
+</tr>
+<tr class="even">
+<td class="gt_row gt_left" headers="title">Superstore: Season 3</td>
+<td class="gt_row gt_right" headers="avg_views">1,916,666.67</td>
+<td class="gt_row gt_right" headers="min_views">1,800,000</td>
+<td class="gt_row gt_right" headers="sd_views">75,277.27</td>
+<td class="gt_row gt_right" headers="consistency_score">7.91</td>
+</tr>
+<tr class="odd">
+<td class="gt_row gt_left" headers="title">El Camino: A Breaking Bad Movie</td>
+<td class="gt_row gt_right" headers="avg_views">5,166,666.67</td>
+<td class="gt_row gt_right" headers="min_views">4,800,000</td>
+<td class="gt_row gt_right" headers="sd_views">307,679.49</td>
+<td class="gt_row gt_right" headers="consistency_score">7.9</td>
+</tr>
+</tbody><tfoot>
+<tr class="gt_sourcenotes odd">
+<td colspan="5" class="gt_sourcenote">Note: Titles were ranked based on a 'consistency score'. Average viewership, minimum viewership, and standard deviation contribute to score. See code for weighted formula.</td>
+</tr>
+</tfoot>
+
+</table>
+
+</div>
+</div>
+</div>
+<p>The shows with consistently high viewership across all 7 periods recorded were Better Call Saul, Superstore, and Breaking Bad. Multiple seasons of Better Call Saul and Breaking Bad appeared in the list, so people are re-watching these shows often. Consistent viewership could also happen if a title is consistently getting new viewers. 2 movies made the list. One is also Breaking Bad related (meaning 5/7 of this list is BB related), and one is the beloved Studio Ghibli film, Spirited Away.<br>
+</p>
+<p>In order to calculate the consistency score, I counted how many times each show appeared in the database, and limited the search to only shows that appeared in all 7 periods. Then I ranked those shows based on average viewership, the minimum amount of views they recieved, and the standard deviation of their views. I added those metrics together in a weighted formula, with average views accounting for 50% of the score, and minimum/std. dev. views each accounting for 25% of the score.<br>
+</p>
+<ol start="4" type="1">
+<li>Within each period, what fraction of time was spent on ‘shows’ vs movies?</li>
+</ol>
+<div class="cell">
+<details class="code-fold">
+<summary>Show Code</summary>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb10"><pre class="sourceCode r code-overflow-wrap code-with-copy"><code class="sourceCode r"><span id="cb10-1"><a href="#cb10-1" aria-hidden="true" tabindex="-1"></a>table_4 <span class="ot">&lt;-</span> NETFLIX_DATA <span class="sc">|&gt;</span></span>
+<span id="cb10-2"><a href="#cb10-2" aria-hidden="true" tabindex="-1"></a>  <span class="co">#mutate function will create a "TV" definition for 2023H1 since the titles were not separated by type. </span></span>
+<span id="cb10-3"><a href="#cb10-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">mutate</span>(</span>
+<span id="cb10-4"><a href="#cb10-4" aria-hidden="true" tabindex="-1"></a>    <span class="at">content_type =</span> <span class="fu">case_when</span>(</span>
+<span id="cb10-5"><a href="#cb10-5" aria-hidden="true" tabindex="-1"></a>      period <span class="sc">==</span> <span class="st">"2023H1"</span> <span class="sc">&amp;</span> (runtime <span class="sc">&gt;</span> <span class="dv">240</span> <span class="sc">|</span> <span class="fu">str_detect</span>(title, <span class="fu">regex</span>(<span class="st">"Season|series"</span>, <span class="at">ignore_case =</span> <span class="cn">TRUE</span>))) <span class="sc">~</span> <span class="st">"Show"</span>,</span>
+<span id="cb10-6"><a href="#cb10-6" aria-hidden="true" tabindex="-1"></a>      period <span class="sc">==</span> <span class="st">"2023H1"</span> <span class="sc">~</span> <span class="st">"Movie"</span>,</span>
+<span id="cb10-7"><a href="#cb10-7" aria-hidden="true" tabindex="-1"></a>  <span class="co">#For all other periods, title_type will be used to differentiate shows vs movies</span></span>
+<span id="cb10-8"><a href="#cb10-8" aria-hidden="true" tabindex="-1"></a>      title_type <span class="sc">==</span> <span class="st">"TV"</span> <span class="sc">~</span> <span class="st">"Show"</span>,</span>
+<span id="cb10-9"><a href="#cb10-9" aria-hidden="true" tabindex="-1"></a>      <span class="cn">TRUE</span> <span class="sc">~</span> <span class="st">"Movie"</span></span>
+<span id="cb10-10"><a href="#cb10-10" aria-hidden="true" tabindex="-1"></a>    )</span>
+<span id="cb10-11"><a href="#cb10-11" aria-hidden="true" tabindex="-1"></a>  ) <span class="sc">|&gt;</span></span>
+<span id="cb10-12"><a href="#cb10-12" aria-hidden="true" tabindex="-1"></a>  <span class="fu">group_by</span>(period, content_type) <span class="sc">|&gt;</span></span>
+<span id="cb10-13"><a href="#cb10-13" aria-hidden="true" tabindex="-1"></a>  <span class="fu">summarise</span>(<span class="at">total_hours =</span> <span class="fu">sum</span>(hours_viewed, <span class="at">na.rm =</span> <span class="cn">TRUE</span>), <span class="at">.groups =</span> <span class="st">"drop"</span>) <span class="sc">|&gt;</span></span>
+<span id="cb10-14"><a href="#cb10-14" aria-hidden="true" tabindex="-1"></a>  <span class="fu">group_by</span>(period) <span class="sc">|&gt;</span></span>
+<span id="cb10-15"><a href="#cb10-15" aria-hidden="true" tabindex="-1"></a>  <span class="fu">mutate</span>(<span class="at">fraction =</span> total_hours <span class="sc">/</span> <span class="fu">sum</span>(total_hours)) <span class="sc">|&gt;</span></span>
+<span id="cb10-16"><a href="#cb10-16" aria-hidden="true" tabindex="-1"></a>  <span class="fu">ungroup</span>() <span class="sc">|&gt;</span></span>
+<span id="cb10-17"><a href="#cb10-17" aria-hidden="true" tabindex="-1"></a>  <span class="fu">select</span>(period, content_type, fraction) <span class="sc">|&gt;</span></span>
+<span id="cb10-18"><a href="#cb10-18" aria-hidden="true" tabindex="-1"></a>  <span class="fu">pivot_wider</span>(<span class="at">names_from =</span> content_type, <span class="at">values_from =</span> fraction, <span class="at">values_fill =</span> <span class="dv">0</span>)</span>
+<span id="cb10-19"><a href="#cb10-19" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb10-20"><a href="#cb10-20" aria-hidden="true" tabindex="-1"></a>table_4 <span class="sc">|&gt;</span></span>
+<span id="cb10-21"><a href="#cb10-21" aria-hidden="true" tabindex="-1"></a>  <span class="fu">gt</span>() <span class="sc">|&gt;</span></span>
+<span id="cb10-22"><a href="#cb10-22" aria-hidden="true" tabindex="-1"></a>  <span class="fu">tab_header</span>(</span>
+<span id="cb10-23"><a href="#cb10-23" aria-hidden="true" tabindex="-1"></a>    <span class="at">title =</span> <span class="st">"Total Viewing Hours: Shows vs. Movies"</span>,</span>
+<span id="cb10-24"><a href="#cb10-24" aria-hidden="true" tabindex="-1"></a>    <span class="at">subtitle =</span> <span class="st">"Percent of total hours viewed for movies and shows per period"</span></span>
+<span id="cb10-25"><a href="#cb10-25" aria-hidden="true" tabindex="-1"></a>  ) <span class="sc">|&gt;</span></span>
+<span id="cb10-26"><a href="#cb10-26" aria-hidden="true" tabindex="-1"></a>  <span class="fu">cols_label</span>(</span>
+<span id="cb10-27"><a href="#cb10-27" aria-hidden="true" tabindex="-1"></a>    <span class="at">period =</span> <span class="st">"Period"</span>,</span>
+<span id="cb10-28"><a href="#cb10-28" aria-hidden="true" tabindex="-1"></a>    <span class="at">Movie =</span> <span class="st">"Movies"</span>,</span>
+<span id="cb10-29"><a href="#cb10-29" aria-hidden="true" tabindex="-1"></a>    <span class="at">Show =</span> <span class="st">"Shows"</span></span>
+<span id="cb10-30"><a href="#cb10-30" aria-hidden="true" tabindex="-1"></a>  ) <span class="sc">|&gt;</span></span>
+<span id="cb10-31"><a href="#cb10-31" aria-hidden="true" tabindex="-1"></a>  <span class="fu">fmt_percent</span>(</span>
+<span id="cb10-32"><a href="#cb10-32" aria-hidden="true" tabindex="-1"></a>    <span class="at">columns =</span> <span class="fu">c</span>(Movie, Show),</span>
+<span id="cb10-33"><a href="#cb10-33" aria-hidden="true" tabindex="-1"></a>    <span class="at">decimals =</span> <span class="dv">1</span></span>
+<span id="cb10-34"><a href="#cb10-34" aria-hidden="true" tabindex="-1"></a>  ) <span class="sc">|&gt;</span></span>
+<span id="cb10-35"><a href="#cb10-35" aria-hidden="true" tabindex="-1"></a>  <span class="fu">tab_source_note</span>(</span>
+<span id="cb10-36"><a href="#cb10-36" aria-hidden="true" tabindex="-1"></a>    <span class="at">source_note =</span> <span class="st">"Note: Titles from 2023H1 do not have a title_type indicator. Shows from this period are defined as having a runtime &gt; 240 minutes or containing the word 'Season' in the title."</span></span>
+<span id="cb10-37"><a href="#cb10-37" aria-hidden="true" tabindex="-1"></a>  ) <span class="sc">|&gt;</span></span>
+<span id="cb10-38"><a href="#cb10-38" aria-hidden="true" tabindex="-1"></a>  <span class="fu">opt_align_table_header</span>(<span class="at">align =</span> <span class="st">"left"</span>)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+</details>
+<div class="cell-output-display">
+<div id="xlungdmwai" style="padding-left:0px;padding-right:0px;padding-top:10px;padding-bottom:10px;overflow-x:auto;overflow-y:auto;width:auto;height:auto;">
+<style>#xlungdmwai table {
+  font-family: system-ui, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif, 'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol', 'Noto Color Emoji';
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+#xlungdmwai thead, #xlungdmwai tbody, #xlungdmwai tfoot, #xlungdmwai tr, #xlungdmwai td, #xlungdmwai th {
+  border-style: none;
+}
+
+#xlungdmwai p {
+  margin: 0;
+  padding: 0;
+}
+
+#xlungdmwai .gt_table {
+  display: table;
+  border-collapse: collapse;
+  line-height: normal;
+  margin-left: auto;
+  margin-right: auto;
+  color: #333333;
+  font-size: 16px;
+  font-weight: normal;
+  font-style: normal;
+  background-color: #FFFFFF;
+  width: auto;
+  border-top-style: solid;
+  border-top-width: 2px;
+  border-top-color: #A8A8A8;
+  border-right-style: none;
+  border-right-width: 2px;
+  border-right-color: #D3D3D3;
+  border-bottom-style: solid;
+  border-bottom-width: 2px;
+  border-bottom-color: #A8A8A8;
+  border-left-style: none;
+  border-left-width: 2px;
+  border-left-color: #D3D3D3;
+}
+
+#xlungdmwai .gt_caption {
+  padding-top: 4px;
+  padding-bottom: 4px;
+}
+
+#xlungdmwai .gt_title {
+  color: #333333;
+  font-size: 125%;
+  font-weight: initial;
+  padding-top: 4px;
+  padding-bottom: 4px;
+  padding-left: 5px;
+  padding-right: 5px;
+  border-bottom-color: #FFFFFF;
+  border-bottom-width: 0;
+}
+
+#xlungdmwai .gt_subtitle {
+  color: #333333;
+  font-size: 85%;
+  font-weight: initial;
+  padding-top: 3px;
+  padding-bottom: 5px;
+  padding-left: 5px;
+  padding-right: 5px;
+  border-top-color: #FFFFFF;
+  border-top-width: 0;
+}
+
+#xlungdmwai .gt_heading {
+  background-color: #FFFFFF;
+  text-align: left;
+  border-bottom-color: #FFFFFF;
+  border-left-style: none;
+  border-left-width: 1px;
+  border-left-color: #D3D3D3;
+  border-right-style: none;
+  border-right-width: 1px;
+  border-right-color: #D3D3D3;
+}
+
+#xlungdmwai .gt_bottom_border {
+  border-bottom-style: solid;
+  border-bottom-width: 2px;
+  border-bottom-color: #D3D3D3;
+}
+
+#xlungdmwai .gt_col_headings {
+  border-top-style: solid;
+  border-top-width: 2px;
+  border-top-color: #D3D3D3;
+  border-bottom-style: solid;
+  border-bottom-width: 2px;
+  border-bottom-color: #D3D3D3;
+  border-left-style: none;
+  border-left-width: 1px;
+  border-left-color: #D3D3D3;
+  border-right-style: none;
+  border-right-width: 1px;
+  border-right-color: #D3D3D3;
+}
+
+#xlungdmwai .gt_col_heading {
+  color: #333333;
+  background-color: #FFFFFF;
+  font-size: 100%;
+  font-weight: normal;
+  text-transform: inherit;
+  border-left-style: none;
+  border-left-width: 1px;
+  border-left-color: #D3D3D3;
+  border-right-style: none;
+  border-right-width: 1px;
+  border-right-color: #D3D3D3;
+  vertical-align: bottom;
+  padding-top: 5px;
+  padding-bottom: 6px;
+  padding-left: 5px;
+  padding-right: 5px;
+  overflow-x: hidden;
+}
+
+#xlungdmwai .gt_column_spanner_outer {
+  color: #333333;
+  background-color: #FFFFFF;
+  font-size: 100%;
+  font-weight: normal;
+  text-transform: inherit;
+  padding-top: 0;
+  padding-bottom: 0;
+  padding-left: 4px;
+  padding-right: 4px;
+}
+
+#xlungdmwai .gt_column_spanner_outer:first-child {
+  padding-left: 0;
+}
+
+#xlungdmwai .gt_column_spanner_outer:last-child {
+  padding-right: 0;
+}
+
+#xlungdmwai .gt_column_spanner {
+  border-bottom-style: solid;
+  border-bottom-width: 2px;
+  border-bottom-color: #D3D3D3;
+  vertical-align: bottom;
+  padding-top: 5px;
+  padding-bottom: 5px;
+  overflow-x: hidden;
+  display: inline-block;
+  width: 100%;
+}
+
+#xlungdmwai .gt_spanner_row {
+  border-bottom-style: hidden;
+}
+
+#xlungdmwai .gt_group_heading {
+  padding-top: 8px;
+  padding-bottom: 8px;
+  padding-left: 5px;
+  padding-right: 5px;
+  color: #333333;
+  background-color: #FFFFFF;
+  font-size: 100%;
+  font-weight: initial;
+  text-transform: inherit;
+  border-top-style: solid;
+  border-top-width: 2px;
+  border-top-color: #D3D3D3;
+  border-bottom-style: solid;
+  border-bottom-width: 2px;
+  border-bottom-color: #D3D3D3;
+  border-left-style: none;
+  border-left-width: 1px;
+  border-left-color: #D3D3D3;
+  border-right-style: none;
+  border-right-width: 1px;
+  border-right-color: #D3D3D3;
+  vertical-align: middle;
+  text-align: left;
+}
+
+#xlungdmwai .gt_empty_group_heading {
+  padding: 0.5px;
+  color: #333333;
+  background-color: #FFFFFF;
+  font-size: 100%;
+  font-weight: initial;
+  border-top-style: solid;
+  border-top-width: 2px;
+  border-top-color: #D3D3D3;
+  border-bottom-style: solid;
+  border-bottom-width: 2px;
+  border-bottom-color: #D3D3D3;
+  vertical-align: middle;
+}
+
+#xlungdmwai .gt_from_md > :first-child {
+  margin-top: 0;
+}
+
+#xlungdmwai .gt_from_md > :last-child {
+  margin-bottom: 0;
+}
+
+#xlungdmwai .gt_row {
+  padding-top: 8px;
+  padding-bottom: 8px;
+  padding-left: 5px;
+  padding-right: 5px;
+  margin: 10px;
+  border-top-style: solid;
+  border-top-width: 1px;
+  border-top-color: #D3D3D3;
+  border-left-style: none;
+  border-left-width: 1px;
+  border-left-color: #D3D3D3;
+  border-right-style: none;
+  border-right-width: 1px;
+  border-right-color: #D3D3D3;
+  vertical-align: middle;
+  overflow-x: hidden;
+}
+
+#xlungdmwai .gt_stub {
+  color: #333333;
+  background-color: #FFFFFF;
+  font-size: 100%;
+  font-weight: initial;
+  text-transform: inherit;
+  border-right-style: solid;
+  border-right-width: 2px;
+  border-right-color: #D3D3D3;
+  padding-left: 5px;
+  padding-right: 5px;
+}
+
+#xlungdmwai .gt_stub_row_group {
+  color: #333333;
+  background-color: #FFFFFF;
+  font-size: 100%;
+  font-weight: initial;
+  text-transform: inherit;
+  border-right-style: solid;
+  border-right-width: 2px;
+  border-right-color: #D3D3D3;
+  padding-left: 5px;
+  padding-right: 5px;
+  vertical-align: top;
+}
+
+#xlungdmwai .gt_row_group_first td {
+  border-top-width: 2px;
+}
+
+#xlungdmwai .gt_row_group_first th {
+  border-top-width: 2px;
+}
+
+#xlungdmwai .gt_summary_row {
+  color: #333333;
+  background-color: #FFFFFF;
+  text-transform: inherit;
+  padding-top: 8px;
+  padding-bottom: 8px;
+  padding-left: 5px;
+  padding-right: 5px;
+}
+
+#xlungdmwai .gt_first_summary_row {
+  border-top-style: solid;
+  border-top-color: #D3D3D3;
+}
+
+#xlungdmwai .gt_first_summary_row.thick {
+  border-top-width: 2px;
+}
+
+#xlungdmwai .gt_last_summary_row {
+  padding-top: 8px;
+  padding-bottom: 8px;
+  padding-left: 5px;
+  padding-right: 5px;
+  border-bottom-style: solid;
+  border-bottom-width: 2px;
+  border-bottom-color: #D3D3D3;
+}
+
+#xlungdmwai .gt_grand_summary_row {
+  color: #333333;
+  background-color: #FFFFFF;
+  text-transform: inherit;
+  padding-top: 8px;
+  padding-bottom: 8px;
+  padding-left: 5px;
+  padding-right: 5px;
+}
+
+#xlungdmwai .gt_first_grand_summary_row {
+  padding-top: 8px;
+  padding-bottom: 8px;
+  padding-left: 5px;
+  padding-right: 5px;
+  border-top-style: double;
+  border-top-width: 6px;
+  border-top-color: #D3D3D3;
+}
+
+#xlungdmwai .gt_last_grand_summary_row_top {
+  padding-top: 8px;
+  padding-bottom: 8px;
+  padding-left: 5px;
+  padding-right: 5px;
+  border-bottom-style: double;
+  border-bottom-width: 6px;
+  border-bottom-color: #D3D3D3;
+}
+
+#xlungdmwai .gt_striped {
+  background-color: rgba(128, 128, 128, 0.05);
+}
+
+#xlungdmwai .gt_table_body {
+  border-top-style: solid;
+  border-top-width: 2px;
+  border-top-color: #D3D3D3;
+  border-bottom-style: solid;
+  border-bottom-width: 2px;
+  border-bottom-color: #D3D3D3;
+}
+
+#xlungdmwai .gt_footnotes {
+  color: #333333;
+  background-color: #FFFFFF;
+  border-bottom-style: none;
+  border-bottom-width: 2px;
+  border-bottom-color: #D3D3D3;
+  border-left-style: none;
+  border-left-width: 2px;
+  border-left-color: #D3D3D3;
+  border-right-style: none;
+  border-right-width: 2px;
+  border-right-color: #D3D3D3;
+}
+
+#xlungdmwai .gt_footnote {
+  margin: 0px;
+  font-size: 90%;
+  padding-top: 4px;
+  padding-bottom: 4px;
+  padding-left: 5px;
+  padding-right: 5px;
+}
+
+#xlungdmwai .gt_sourcenotes {
+  color: #333333;
+  background-color: #FFFFFF;
+  border-bottom-style: none;
+  border-bottom-width: 2px;
+  border-bottom-color: #D3D3D3;
+  border-left-style: none;
+  border-left-width: 2px;
+  border-left-color: #D3D3D3;
+  border-right-style: none;
+  border-right-width: 2px;
+  border-right-color: #D3D3D3;
+}
+
+#xlungdmwai .gt_sourcenote {
+  font-size: 90%;
+  padding-top: 4px;
+  padding-bottom: 4px;
+  padding-left: 5px;
+  padding-right: 5px;
+}
+
+#xlungdmwai .gt_left {
+  text-align: left;
+}
+
+#xlungdmwai .gt_center {
+  text-align: center;
+}
+
+#xlungdmwai .gt_right {
+  text-align: right;
+  font-variant-numeric: tabular-nums;
+}
+
+#xlungdmwai .gt_font_normal {
+  font-weight: normal;
+}
+
+#xlungdmwai .gt_font_bold {
+  font-weight: bold;
+}
+
+#xlungdmwai .gt_font_italic {
+  font-style: italic;
+}
+
+#xlungdmwai .gt_super {
+  font-size: 65%;
+}
+
+#xlungdmwai .gt_footnote_marks {
+  font-size: 75%;
+  vertical-align: 0.4em;
+  position: initial;
+}
+
+#xlungdmwai .gt_asterisk {
+  font-size: 100%;
+  vertical-align: 0;
+}
+
+#xlungdmwai .gt_indent_1 {
+  text-indent: 5px;
+}
+
+#xlungdmwai .gt_indent_2 {
+  text-indent: 10px;
+}
+
+#xlungdmwai .gt_indent_3 {
+  text-indent: 15px;
+}
+
+#xlungdmwai .gt_indent_4 {
+  text-indent: 20px;
+}
+
+#xlungdmwai .gt_indent_5 {
+  text-indent: 25px;
+}
+
+#xlungdmwai .katex-display {
+  display: inline-flex !important;
+  margin-bottom: 0.75em !important;
+}
+
+#xlungdmwai div.Reactable > div.rt-table > div.rt-thead > div.rt-tr.rt-tr-group-header > div.rt-th-group:after {
+  height: 0px !important;
+}
+</style>
+
+<table class="gt_table caption-top table table-sm table-striped small" data-quarto-bootstrap="false">
+<thead>
+<tr class="gt_heading header">
+<td colspan="3" class="gt_heading gt_title gt_font_normal">Total Viewing Hours: Shows vs. Movies</td>
+</tr>
+<tr class="gt_heading even">
+<td colspan="3" class="gt_heading gt_subtitle gt_font_normal gt_bottom_border">Percent of total hours viewed for movies and shows per period</td>
+</tr>
+<tr class="gt_col_headings header">
+<th id="period" class="gt_col_heading gt_columns_bottom_border gt_left" data-quarto-table-cell-role="th" scope="col">Period</th>
+<th id="Movie" class="gt_col_heading gt_columns_bottom_border gt_right" data-quarto-table-cell-role="th" scope="col">Movies</th>
+<th id="Show" class="gt_col_heading gt_columns_bottom_border gt_right" data-quarto-table-cell-role="th" scope="col">Shows</th>
+</tr>
+</thead>
+<tbody class="gt_table_body">
+<tr class="odd">
+<td class="gt_row gt_left" headers="period">2023H1</td>
+<td class="gt_row gt_right" headers="Movie">29.4%</td>
+<td class="gt_row gt_right" headers="Show">70.6%</td>
+</tr>
+<tr class="even">
+<td class="gt_row gt_left" headers="period">2023H2</td>
+<td class="gt_row gt_right" headers="Movie">27.9%</td>
+<td class="gt_row gt_right" headers="Show">72.1%</td>
+</tr>
+<tr class="odd">
+<td class="gt_row gt_left" headers="period">2024H1</td>
+<td class="gt_row gt_right" headers="Movie">27.4%</td>
+<td class="gt_row gt_right" headers="Show">72.6%</td>
+</tr>
+<tr class="even">
+<td class="gt_row gt_left" headers="period">2024H2</td>
+<td class="gt_row gt_right" headers="Movie">27.5%</td>
+<td class="gt_row gt_right" headers="Show">72.5%</td>
+</tr>
+<tr class="odd">
+<td class="gt_row gt_left" headers="period">2025H1</td>
+<td class="gt_row gt_right" headers="Movie">25.3%</td>
+<td class="gt_row gt_right" headers="Show">74.7%</td>
+</tr>
+<tr class="even">
+<td class="gt_row gt_left" headers="period">2025H2</td>
+<td class="gt_row gt_right" headers="Movie">25.8%</td>
+<td class="gt_row gt_right" headers="Show">74.2%</td>
+</tr>
+<tr class="odd">
+<td class="gt_row gt_left" headers="period">2026H1</td>
+<td class="gt_row gt_right" headers="Movie">23.9%</td>
+<td class="gt_row gt_right" headers="Show">76.1%</td>
+</tr>
+</tbody><tfoot>
+<tr class="gt_sourcenotes odd">
+<td colspan="3" class="gt_sourcenote">Note: Titles from 2023H1 do not have a title_type indicator. Shows from this period are defined as having a runtime &gt; 240 minutes or containing the word 'Season' in the title.</td>
+</tr>
+</tfoot>
+
+</table>
+
+</div>
+</div>
+</div>
+<p><br>
+5. How does the performance of live events compare to pre-taped content? Does the average live event draw more viewership than an average piece of pre-taped content? How about a ‘top tier’ live event vs ‘top tier’ pre-taped content?</p>
+<div class="cell">
+<details class="code-fold">
+<summary>Show Code</summary>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb11"><pre class="sourceCode r code-overflow-wrap code-with-copy"><code class="sourceCode r"><span id="cb11-1"><a href="#cb11-1" aria-hidden="true" tabindex="-1"></a>table_5a <span class="ot">&lt;-</span> NETFLIX_DATA <span class="sc">|&gt;</span></span>
+<span id="cb11-2"><a href="#cb11-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">mutate</span>(<span class="at">event_type =</span> <span class="fu">if_else</span>(live_event <span class="sc">==</span> <span class="cn">TRUE</span>, <span class="st">"Live Event"</span>, <span class="st">"Pre-Taped"</span>)) <span class="sc">|&gt;</span></span>
+<span id="cb11-3"><a href="#cb11-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">group_by</span>(event_type) <span class="sc">|&gt;</span></span>
+<span id="cb11-4"><a href="#cb11-4" aria-hidden="true" tabindex="-1"></a>  <span class="fu">summarise</span>(</span>
+<span id="cb11-5"><a href="#cb11-5" aria-hidden="true" tabindex="-1"></a>    <span class="at">num_titles =</span> <span class="fu">n</span>(),</span>
+<span id="cb11-6"><a href="#cb11-6" aria-hidden="true" tabindex="-1"></a>    <span class="at">avg_views =</span> <span class="fu">mean</span>(views, <span class="at">na.rm =</span> <span class="cn">TRUE</span>),</span>
+<span id="cb11-7"><a href="#cb11-7" aria-hidden="true" tabindex="-1"></a>    <span class="at">median_views =</span> <span class="fu">median</span>(views, <span class="at">na.rm =</span> <span class="cn">TRUE</span>),</span>
+<span id="cb11-8"><a href="#cb11-8" aria-hidden="true" tabindex="-1"></a>    <span class="at">avg_hours =</span> <span class="fu">mean</span>(hours_viewed, <span class="at">na.rm =</span> <span class="cn">TRUE</span>),</span>
+<span id="cb11-9"><a href="#cb11-9" aria-hidden="true" tabindex="-1"></a>    <span class="at">median_hours =</span> <span class="fu">median</span>(hours_viewed, <span class="at">na.rm =</span> <span class="cn">TRUE</span>)</span>
+<span id="cb11-10"><a href="#cb11-10" aria-hidden="true" tabindex="-1"></a>  )</span>
+<span id="cb11-11"><a href="#cb11-11" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb11-12"><a href="#cb11-12" aria-hidden="true" tabindex="-1"></a>table_5a <span class="sc">|&gt;</span></span>
+<span id="cb11-13"><a href="#cb11-13" aria-hidden="true" tabindex="-1"></a>  <span class="fu">gt</span>() <span class="sc">|&gt;</span></span>
+<span id="cb11-14"><a href="#cb11-14" aria-hidden="true" tabindex="-1"></a>  <span class="fu">tab_header</span>(</span>
+<span id="cb11-15"><a href="#cb11-15" aria-hidden="true" tabindex="-1"></a>    <span class="at">title =</span> <span class="st">"Live Events vs. Pre-Taped Content Performance"</span>,</span>
+<span id="cb11-16"><a href="#cb11-16" aria-hidden="true" tabindex="-1"></a>  ) <span class="sc">|&gt;</span></span>
+<span id="cb11-17"><a href="#cb11-17" aria-hidden="true" tabindex="-1"></a>  <span class="fu">cols_label</span>(</span>
+<span id="cb11-18"><a href="#cb11-18" aria-hidden="true" tabindex="-1"></a>    <span class="at">event_type =</span> <span class="st">"Event Type"</span>,</span>
+<span id="cb11-19"><a href="#cb11-19" aria-hidden="true" tabindex="-1"></a>    <span class="at">num_titles =</span> <span class="st">"Total Titles"</span>,</span>
+<span id="cb11-20"><a href="#cb11-20" aria-hidden="true" tabindex="-1"></a>    <span class="at">avg_views =</span> <span class="st">"Average Views"</span>,</span>
+<span id="cb11-21"><a href="#cb11-21" aria-hidden="true" tabindex="-1"></a>    <span class="at">median_views =</span> <span class="st">"Median Views"</span>,</span>
+<span id="cb11-22"><a href="#cb11-22" aria-hidden="true" tabindex="-1"></a>    <span class="at">avg_hours =</span> <span class="st">"Average Hours Viewed"</span>,</span>
+<span id="cb11-23"><a href="#cb11-23" aria-hidden="true" tabindex="-1"></a>    <span class="at">median_hours =</span> <span class="st">"Median Hours Viewed"</span></span>
+<span id="cb11-24"><a href="#cb11-24" aria-hidden="true" tabindex="-1"></a>  ) <span class="sc">|&gt;</span></span>
+<span id="cb11-25"><a href="#cb11-25" aria-hidden="true" tabindex="-1"></a>  <span class="fu">fmt_number</span>(</span>
+<span id="cb11-26"><a href="#cb11-26" aria-hidden="true" tabindex="-1"></a>    <span class="co">#columns = c(num_titles, avg_views, median_views, avg_hours, median_hours),</span></span>
+<span id="cb11-27"><a href="#cb11-27" aria-hidden="true" tabindex="-1"></a>    <span class="at">decimals =</span> <span class="dv">0</span>,</span>
+<span id="cb11-28"><a href="#cb11-28" aria-hidden="true" tabindex="-1"></a>    <span class="at">sep_mark =</span> <span class="st">","</span></span>
+<span id="cb11-29"><a href="#cb11-29" aria-hidden="true" tabindex="-1"></a>  ) <span class="sc">|&gt;</span></span>
+<span id="cb11-30"><a href="#cb11-30" aria-hidden="true" tabindex="-1"></a>  <span class="fu">opt_align_table_header</span>(<span class="at">align =</span> <span class="st">"left"</span>)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+</details>
+<div class="cell-output-display">
+<div id="xdrylxsnqw" style="padding-left:0px;padding-right:0px;padding-top:10px;padding-bottom:10px;overflow-x:auto;overflow-y:auto;width:auto;height:auto;">
+<style>#xdrylxsnqw table {
+  font-family: system-ui, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif, 'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol', 'Noto Color Emoji';
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+#xdrylxsnqw thead, #xdrylxsnqw tbody, #xdrylxsnqw tfoot, #xdrylxsnqw tr, #xdrylxsnqw td, #xdrylxsnqw th {
+  border-style: none;
+}
+
+#xdrylxsnqw p {
+  margin: 0;
+  padding: 0;
+}
+
+#xdrylxsnqw .gt_table {
+  display: table;
+  border-collapse: collapse;
+  line-height: normal;
+  margin-left: auto;
+  margin-right: auto;
+  color: #333333;
+  font-size: 16px;
+  font-weight: normal;
+  font-style: normal;
+  background-color: #FFFFFF;
+  width: auto;
+  border-top-style: solid;
+  border-top-width: 2px;
+  border-top-color: #A8A8A8;
+  border-right-style: none;
+  border-right-width: 2px;
+  border-right-color: #D3D3D3;
+  border-bottom-style: solid;
+  border-bottom-width: 2px;
+  border-bottom-color: #A8A8A8;
+  border-left-style: none;
+  border-left-width: 2px;
+  border-left-color: #D3D3D3;
+}
+
+#xdrylxsnqw .gt_caption {
+  padding-top: 4px;
+  padding-bottom: 4px;
+}
+
+#xdrylxsnqw .gt_title {
+  color: #333333;
+  font-size: 125%;
+  font-weight: initial;
+  padding-top: 4px;
+  padding-bottom: 4px;
+  padding-left: 5px;
+  padding-right: 5px;
+  border-bottom-color: #FFFFFF;
+  border-bottom-width: 0;
+}
+
+#xdrylxsnqw .gt_subtitle {
+  color: #333333;
+  font-size: 85%;
+  font-weight: initial;
+  padding-top: 3px;
+  padding-bottom: 5px;
+  padding-left: 5px;
+  padding-right: 5px;
+  border-top-color: #FFFFFF;
+  border-top-width: 0;
+}
+
+#xdrylxsnqw .gt_heading {
+  background-color: #FFFFFF;
+  text-align: left;
+  border-bottom-color: #FFFFFF;
+  border-left-style: none;
+  border-left-width: 1px;
+  border-left-color: #D3D3D3;
+  border-right-style: none;
+  border-right-width: 1px;
+  border-right-color: #D3D3D3;
+}
+
+#xdrylxsnqw .gt_bottom_border {
+  border-bottom-style: solid;
+  border-bottom-width: 2px;
+  border-bottom-color: #D3D3D3;
+}
+
+#xdrylxsnqw .gt_col_headings {
+  border-top-style: solid;
+  border-top-width: 2px;
+  border-top-color: #D3D3D3;
+  border-bottom-style: solid;
+  border-bottom-width: 2px;
+  border-bottom-color: #D3D3D3;
+  border-left-style: none;
+  border-left-width: 1px;
+  border-left-color: #D3D3D3;
+  border-right-style: none;
+  border-right-width: 1px;
+  border-right-color: #D3D3D3;
+}
+
+#xdrylxsnqw .gt_col_heading {
+  color: #333333;
+  background-color: #FFFFFF;
+  font-size: 100%;
+  font-weight: normal;
+  text-transform: inherit;
+  border-left-style: none;
+  border-left-width: 1px;
+  border-left-color: #D3D3D3;
+  border-right-style: none;
+  border-right-width: 1px;
+  border-right-color: #D3D3D3;
+  vertical-align: bottom;
+  padding-top: 5px;
+  padding-bottom: 6px;
+  padding-left: 5px;
+  padding-right: 5px;
+  overflow-x: hidden;
+}
+
+#xdrylxsnqw .gt_column_spanner_outer {
+  color: #333333;
+  background-color: #FFFFFF;
+  font-size: 100%;
+  font-weight: normal;
+  text-transform: inherit;
+  padding-top: 0;
+  padding-bottom: 0;
+  padding-left: 4px;
+  padding-right: 4px;
+}
+
+#xdrylxsnqw .gt_column_spanner_outer:first-child {
+  padding-left: 0;
+}
+
+#xdrylxsnqw .gt_column_spanner_outer:last-child {
+  padding-right: 0;
+}
+
+#xdrylxsnqw .gt_column_spanner {
+  border-bottom-style: solid;
+  border-bottom-width: 2px;
+  border-bottom-color: #D3D3D3;
+  vertical-align: bottom;
+  padding-top: 5px;
+  padding-bottom: 5px;
+  overflow-x: hidden;
+  display: inline-block;
+  width: 100%;
+}
+
+#xdrylxsnqw .gt_spanner_row {
+  border-bottom-style: hidden;
+}
+
+#xdrylxsnqw .gt_group_heading {
+  padding-top: 8px;
+  padding-bottom: 8px;
+  padding-left: 5px;
+  padding-right: 5px;
+  color: #333333;
+  background-color: #FFFFFF;
+  font-size: 100%;
+  font-weight: initial;
+  text-transform: inherit;
+  border-top-style: solid;
+  border-top-width: 2px;
+  border-top-color: #D3D3D3;
+  border-bottom-style: solid;
+  border-bottom-width: 2px;
+  border-bottom-color: #D3D3D3;
+  border-left-style: none;
+  border-left-width: 1px;
+  border-left-color: #D3D3D3;
+  border-right-style: none;
+  border-right-width: 1px;
+  border-right-color: #D3D3D3;
+  vertical-align: middle;
+  text-align: left;
+}
+
+#xdrylxsnqw .gt_empty_group_heading {
+  padding: 0.5px;
+  color: #333333;
+  background-color: #FFFFFF;
+  font-size: 100%;
+  font-weight: initial;
+  border-top-style: solid;
+  border-top-width: 2px;
+  border-top-color: #D3D3D3;
+  border-bottom-style: solid;
+  border-bottom-width: 2px;
+  border-bottom-color: #D3D3D3;
+  vertical-align: middle;
+}
+
+#xdrylxsnqw .gt_from_md > :first-child {
+  margin-top: 0;
+}
+
+#xdrylxsnqw .gt_from_md > :last-child {
+  margin-bottom: 0;
+}
+
+#xdrylxsnqw .gt_row {
+  padding-top: 8px;
+  padding-bottom: 8px;
+  padding-left: 5px;
+  padding-right: 5px;
+  margin: 10px;
+  border-top-style: solid;
+  border-top-width: 1px;
+  border-top-color: #D3D3D3;
+  border-left-style: none;
+  border-left-width: 1px;
+  border-left-color: #D3D3D3;
+  border-right-style: none;
+  border-right-width: 1px;
+  border-right-color: #D3D3D3;
+  vertical-align: middle;
+  overflow-x: hidden;
+}
+
+#xdrylxsnqw .gt_stub {
+  color: #333333;
+  background-color: #FFFFFF;
+  font-size: 100%;
+  font-weight: initial;
+  text-transform: inherit;
+  border-right-style: solid;
+  border-right-width: 2px;
+  border-right-color: #D3D3D3;
+  padding-left: 5px;
+  padding-right: 5px;
+}
+
+#xdrylxsnqw .gt_stub_row_group {
+  color: #333333;
+  background-color: #FFFFFF;
+  font-size: 100%;
+  font-weight: initial;
+  text-transform: inherit;
+  border-right-style: solid;
+  border-right-width: 2px;
+  border-right-color: #D3D3D3;
+  padding-left: 5px;
+  padding-right: 5px;
+  vertical-align: top;
+}
+
+#xdrylxsnqw .gt_row_group_first td {
+  border-top-width: 2px;
+}
+
+#xdrylxsnqw .gt_row_group_first th {
+  border-top-width: 2px;
+}
+
+#xdrylxsnqw .gt_summary_row {
+  color: #333333;
+  background-color: #FFFFFF;
+  text-transform: inherit;
+  padding-top: 8px;
+  padding-bottom: 8px;
+  padding-left: 5px;
+  padding-right: 5px;
+}
+
+#xdrylxsnqw .gt_first_summary_row {
+  border-top-style: solid;
+  border-top-color: #D3D3D3;
+}
+
+#xdrylxsnqw .gt_first_summary_row.thick {
+  border-top-width: 2px;
+}
+
+#xdrylxsnqw .gt_last_summary_row {
+  padding-top: 8px;
+  padding-bottom: 8px;
+  padding-left: 5px;
+  padding-right: 5px;
+  border-bottom-style: solid;
+  border-bottom-width: 2px;
+  border-bottom-color: #D3D3D3;
+}
+
+#xdrylxsnqw .gt_grand_summary_row {
+  color: #333333;
+  background-color: #FFFFFF;
+  text-transform: inherit;
+  padding-top: 8px;
+  padding-bottom: 8px;
+  padding-left: 5px;
+  padding-right: 5px;
+}
+
+#xdrylxsnqw .gt_first_grand_summary_row {
+  padding-top: 8px;
+  padding-bottom: 8px;
+  padding-left: 5px;
+  padding-right: 5px;
+  border-top-style: double;
+  border-top-width: 6px;
+  border-top-color: #D3D3D3;
+}
+
+#xdrylxsnqw .gt_last_grand_summary_row_top {
+  padding-top: 8px;
+  padding-bottom: 8px;
+  padding-left: 5px;
+  padding-right: 5px;
+  border-bottom-style: double;
+  border-bottom-width: 6px;
+  border-bottom-color: #D3D3D3;
+}
+
+#xdrylxsnqw .gt_striped {
+  background-color: rgba(128, 128, 128, 0.05);
+}
+
+#xdrylxsnqw .gt_table_body {
+  border-top-style: solid;
+  border-top-width: 2px;
+  border-top-color: #D3D3D3;
+  border-bottom-style: solid;
+  border-bottom-width: 2px;
+  border-bottom-color: #D3D3D3;
+}
+
+#xdrylxsnqw .gt_footnotes {
+  color: #333333;
+  background-color: #FFFFFF;
+  border-bottom-style: none;
+  border-bottom-width: 2px;
+  border-bottom-color: #D3D3D3;
+  border-left-style: none;
+  border-left-width: 2px;
+  border-left-color: #D3D3D3;
+  border-right-style: none;
+  border-right-width: 2px;
+  border-right-color: #D3D3D3;
+}
+
+#xdrylxsnqw .gt_footnote {
+  margin: 0px;
+  font-size: 90%;
+  padding-top: 4px;
+  padding-bottom: 4px;
+  padding-left: 5px;
+  padding-right: 5px;
+}
+
+#xdrylxsnqw .gt_sourcenotes {
+  color: #333333;
+  background-color: #FFFFFF;
+  border-bottom-style: none;
+  border-bottom-width: 2px;
+  border-bottom-color: #D3D3D3;
+  border-left-style: none;
+  border-left-width: 2px;
+  border-left-color: #D3D3D3;
+  border-right-style: none;
+  border-right-width: 2px;
+  border-right-color: #D3D3D3;
+}
+
+#xdrylxsnqw .gt_sourcenote {
+  font-size: 90%;
+  padding-top: 4px;
+  padding-bottom: 4px;
+  padding-left: 5px;
+  padding-right: 5px;
+}
+
+#xdrylxsnqw .gt_left {
+  text-align: left;
+}
+
+#xdrylxsnqw .gt_center {
+  text-align: center;
+}
+
+#xdrylxsnqw .gt_right {
+  text-align: right;
+  font-variant-numeric: tabular-nums;
+}
+
+#xdrylxsnqw .gt_font_normal {
+  font-weight: normal;
+}
+
+#xdrylxsnqw .gt_font_bold {
+  font-weight: bold;
+}
+
+#xdrylxsnqw .gt_font_italic {
+  font-style: italic;
+}
+
+#xdrylxsnqw .gt_super {
+  font-size: 65%;
+}
+
+#xdrylxsnqw .gt_footnote_marks {
+  font-size: 75%;
+  vertical-align: 0.4em;
+  position: initial;
+}
+
+#xdrylxsnqw .gt_asterisk {
+  font-size: 100%;
+  vertical-align: 0;
+}
+
+#xdrylxsnqw .gt_indent_1 {
+  text-indent: 5px;
+}
+
+#xdrylxsnqw .gt_indent_2 {
+  text-indent: 10px;
+}
+
+#xdrylxsnqw .gt_indent_3 {
+  text-indent: 15px;
+}
+
+#xdrylxsnqw .gt_indent_4 {
+  text-indent: 20px;
+}
+
+#xdrylxsnqw .gt_indent_5 {
+  text-indent: 25px;
+}
+
+#xdrylxsnqw .katex-display {
+  display: inline-flex !important;
+  margin-bottom: 0.75em !important;
+}
+
+#xdrylxsnqw div.Reactable > div.rt-table > div.rt-thead > div.rt-tr.rt-tr-group-header > div.rt-th-group:after {
+  height: 0px !important;
+}
+</style>
+
+<table class="gt_table caption-top table table-sm table-striped small" data-quarto-bootstrap="false">
+<thead>
+<tr class="gt_heading header">
+<td colspan="6" class="gt_heading gt_title gt_font_normal gt_bottom_border">Live Events vs. Pre-Taped Content Performance</td>
+</tr>
+<tr class="gt_col_headings even">
+<th id="event_type" class="gt_col_heading gt_columns_bottom_border gt_left" data-quarto-table-cell-role="th" scope="col">Event Type</th>
+<th id="num_titles" class="gt_col_heading gt_columns_bottom_border gt_right" data-quarto-table-cell-role="th" scope="col">Total Titles</th>
+<th id="avg_views" class="gt_col_heading gt_columns_bottom_border gt_right" data-quarto-table-cell-role="th" scope="col">Average Views</th>
+<th id="median_views" class="gt_col_heading gt_columns_bottom_border gt_right" data-quarto-table-cell-role="th" scope="col">Median Views</th>
+<th id="avg_hours" class="gt_col_heading gt_columns_bottom_border gt_right" data-quarto-table-cell-role="th" scope="col">Average Hours Viewed</th>
+<th id="median_hours" class="gt_col_heading gt_columns_bottom_border gt_right" data-quarto-table-cell-role="th" scope="col">Median Hours Viewed</th>
+</tr>
+</thead>
+<tbody class="gt_table_body">
+<tr class="odd">
+<td class="gt_row gt_left" headers="event_type">Live Event</td>
+<td class="gt_row gt_right" headers="num_titles">310</td>
+<td class="gt_row gt_right" headers="avg_views">1,527,742</td>
+<td class="gt_row gt_right" headers="median_views">900,000</td>
+<td class="gt_row gt_right" headers="avg_hours">3,560,000</td>
+<td class="gt_row gt_right" headers="median_hours">1,700,000</td>
+</tr>
+<tr class="even">
+<td class="gt_row gt_left" headers="event_type">Pre-Taped</td>
+<td class="gt_row gt_right" headers="num_titles">115,539</td>
+<td class="gt_row gt_right" headers="avg_views">1,471,251</td>
+<td class="gt_row gt_right" headers="median_views">300,000</td>
+<td class="gt_row gt_right" headers="avg_hours">5,706,858</td>
+<td class="gt_row gt_right" headers="median_hours">1,000,000</td>
+</tr>
+</tbody>
+</table>
+
+</div>
+</div>
+</div>
+<div class="cell">
+<details class="code-fold">
+<summary>Show Code</summary>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb12"><pre class="sourceCode r code-overflow-wrap code-with-copy"><code class="sourceCode r"><span id="cb12-1"><a href="#cb12-1" aria-hidden="true" tabindex="-1"></a>table_5b <span class="ot">&lt;-</span> NETFLIX_DATA <span class="sc">|&gt;</span></span>
+<span id="cb12-2"><a href="#cb12-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">mutate</span>(<span class="at">event_type =</span> <span class="fu">if_else</span>(live_event <span class="sc">==</span> <span class="cn">TRUE</span>, <span class="st">"Live Event"</span>, <span class="st">"Pre-Taped"</span>)) <span class="sc">|&gt;</span></span>
+<span id="cb12-3"><a href="#cb12-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">group_by</span>(event_type) <span class="sc">|&gt;</span></span>
+<span id="cb12-4"><a href="#cb12-4" aria-hidden="true" tabindex="-1"></a>  <span class="fu">slice_max</span>(views) <span class="sc">|&gt;</span></span>
+<span id="cb12-5"><a href="#cb12-5" aria-hidden="true" tabindex="-1"></a>  <span class="fu">ungroup</span>() <span class="sc">|&gt;</span></span>
+<span id="cb12-6"><a href="#cb12-6" aria-hidden="true" tabindex="-1"></a>  <span class="fu">select</span>(event_type, title, views, release_date, period)</span>
+<span id="cb12-7"><a href="#cb12-7" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb12-8"><a href="#cb12-8" aria-hidden="true" tabindex="-1"></a>table_5b <span class="sc">|&gt;</span></span>
+<span id="cb12-9"><a href="#cb12-9" aria-hidden="true" tabindex="-1"></a>  <span class="fu">gt</span>() <span class="sc">|&gt;</span></span>
+<span id="cb12-10"><a href="#cb12-10" aria-hidden="true" tabindex="-1"></a>  <span class="fu">tab_header</span>(</span>
+<span id="cb12-11"><a href="#cb12-11" aria-hidden="true" tabindex="-1"></a>    <span class="at">title =</span> <span class="st">"Most Viewed Live Event vs. Most Viewed Pre-Taped Title"</span>) <span class="sc">|&gt;</span></span>
+<span id="cb12-12"><a href="#cb12-12" aria-hidden="true" tabindex="-1"></a>  <span class="fu">cols_label</span>(</span>
+<span id="cb12-13"><a href="#cb12-13" aria-hidden="true" tabindex="-1"></a>    <span class="at">event_type =</span> <span class="st">"Event Type"</span>,</span>
+<span id="cb12-14"><a href="#cb12-14" aria-hidden="true" tabindex="-1"></a>    <span class="at">title =</span> <span class="st">"Title"</span>,</span>
+<span id="cb12-15"><a href="#cb12-15" aria-hidden="true" tabindex="-1"></a>    <span class="at">views =</span> <span class="st">"Total Views"</span>,</span>
+<span id="cb12-16"><a href="#cb12-16" aria-hidden="true" tabindex="-1"></a>    <span class="at">release_date =</span> <span class="st">"Release Date"</span>,</span>
+<span id="cb12-17"><a href="#cb12-17" aria-hidden="true" tabindex="-1"></a>    <span class="at">period =</span> <span class="st">"Period"</span></span>
+<span id="cb12-18"><a href="#cb12-18" aria-hidden="true" tabindex="-1"></a>  ) <span class="sc">|&gt;</span></span>
+<span id="cb12-19"><a href="#cb12-19" aria-hidden="true" tabindex="-1"></a>    <span class="fu">fmt_number</span>(</span>
+<span id="cb12-20"><a href="#cb12-20" aria-hidden="true" tabindex="-1"></a>    <span class="at">decimals =</span> <span class="dv">0</span>,</span>
+<span id="cb12-21"><a href="#cb12-21" aria-hidden="true" tabindex="-1"></a>    <span class="at">sep_mark =</span> <span class="st">","</span></span>
+<span id="cb12-22"><a href="#cb12-22" aria-hidden="true" tabindex="-1"></a>  ) <span class="sc">|&gt;</span></span>
+<span id="cb12-23"><a href="#cb12-23" aria-hidden="true" tabindex="-1"></a>  <span class="fu">opt_align_table_header</span>(<span class="at">align =</span> <span class="st">"left"</span>)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+</details>
+<div class="cell-output-display">
+<div id="tvgqqbllmk" style="padding-left:0px;padding-right:0px;padding-top:10px;padding-bottom:10px;overflow-x:auto;overflow-y:auto;width:auto;height:auto;">
+<style>#tvgqqbllmk table {
+  font-family: system-ui, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif, 'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol', 'Noto Color Emoji';
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+#tvgqqbllmk thead, #tvgqqbllmk tbody, #tvgqqbllmk tfoot, #tvgqqbllmk tr, #tvgqqbllmk td, #tvgqqbllmk th {
+  border-style: none;
+}
+
+#tvgqqbllmk p {
+  margin: 0;
+  padding: 0;
+}
+
+#tvgqqbllmk .gt_table {
+  display: table;
+  border-collapse: collapse;
+  line-height: normal;
+  margin-left: auto;
+  margin-right: auto;
+  color: #333333;
+  font-size: 16px;
+  font-weight: normal;
+  font-style: normal;
+  background-color: #FFFFFF;
+  width: auto;
+  border-top-style: solid;
+  border-top-width: 2px;
+  border-top-color: #A8A8A8;
+  border-right-style: none;
+  border-right-width: 2px;
+  border-right-color: #D3D3D3;
+  border-bottom-style: solid;
+  border-bottom-width: 2px;
+  border-bottom-color: #A8A8A8;
+  border-left-style: none;
+  border-left-width: 2px;
+  border-left-color: #D3D3D3;
+}
+
+#tvgqqbllmk .gt_caption {
+  padding-top: 4px;
+  padding-bottom: 4px;
+}
+
+#tvgqqbllmk .gt_title {
+  color: #333333;
+  font-size: 125%;
+  font-weight: initial;
+  padding-top: 4px;
+  padding-bottom: 4px;
+  padding-left: 5px;
+  padding-right: 5px;
+  border-bottom-color: #FFFFFF;
+  border-bottom-width: 0;
+}
+
+#tvgqqbllmk .gt_subtitle {
+  color: #333333;
+  font-size: 85%;
+  font-weight: initial;
+  padding-top: 3px;
+  padding-bottom: 5px;
+  padding-left: 5px;
+  padding-right: 5px;
+  border-top-color: #FFFFFF;
+  border-top-width: 0;
+}
+
+#tvgqqbllmk .gt_heading {
+  background-color: #FFFFFF;
+  text-align: left;
+  border-bottom-color: #FFFFFF;
+  border-left-style: none;
+  border-left-width: 1px;
+  border-left-color: #D3D3D3;
+  border-right-style: none;
+  border-right-width: 1px;
+  border-right-color: #D3D3D3;
+}
+
+#tvgqqbllmk .gt_bottom_border {
+  border-bottom-style: solid;
+  border-bottom-width: 2px;
+  border-bottom-color: #D3D3D3;
+}
+
+#tvgqqbllmk .gt_col_headings {
+  border-top-style: solid;
+  border-top-width: 2px;
+  border-top-color: #D3D3D3;
+  border-bottom-style: solid;
+  border-bottom-width: 2px;
+  border-bottom-color: #D3D3D3;
+  border-left-style: none;
+  border-left-width: 1px;
+  border-left-color: #D3D3D3;
+  border-right-style: none;
+  border-right-width: 1px;
+  border-right-color: #D3D3D3;
+}
+
+#tvgqqbllmk .gt_col_heading {
+  color: #333333;
+  background-color: #FFFFFF;
+  font-size: 100%;
+  font-weight: normal;
+  text-transform: inherit;
+  border-left-style: none;
+  border-left-width: 1px;
+  border-left-color: #D3D3D3;
+  border-right-style: none;
+  border-right-width: 1px;
+  border-right-color: #D3D3D3;
+  vertical-align: bottom;
+  padding-top: 5px;
+  padding-bottom: 6px;
+  padding-left: 5px;
+  padding-right: 5px;
+  overflow-x: hidden;
+}
+
+#tvgqqbllmk .gt_column_spanner_outer {
+  color: #333333;
+  background-color: #FFFFFF;
+  font-size: 100%;
+  font-weight: normal;
+  text-transform: inherit;
+  padding-top: 0;
+  padding-bottom: 0;
+  padding-left: 4px;
+  padding-right: 4px;
+}
+
+#tvgqqbllmk .gt_column_spanner_outer:first-child {
+  padding-left: 0;
+}
+
+#tvgqqbllmk .gt_column_spanner_outer:last-child {
+  padding-right: 0;
+}
+
+#tvgqqbllmk .gt_column_spanner {
+  border-bottom-style: solid;
+  border-bottom-width: 2px;
+  border-bottom-color: #D3D3D3;
+  vertical-align: bottom;
+  padding-top: 5px;
+  padding-bottom: 5px;
+  overflow-x: hidden;
+  display: inline-block;
+  width: 100%;
+}
+
+#tvgqqbllmk .gt_spanner_row {
+  border-bottom-style: hidden;
+}
+
+#tvgqqbllmk .gt_group_heading {
+  padding-top: 8px;
+  padding-bottom: 8px;
+  padding-left: 5px;
+  padding-right: 5px;
+  color: #333333;
+  background-color: #FFFFFF;
+  font-size: 100%;
+  font-weight: initial;
+  text-transform: inherit;
+  border-top-style: solid;
+  border-top-width: 2px;
+  border-top-color: #D3D3D3;
+  border-bottom-style: solid;
+  border-bottom-width: 2px;
+  border-bottom-color: #D3D3D3;
+  border-left-style: none;
+  border-left-width: 1px;
+  border-left-color: #D3D3D3;
+  border-right-style: none;
+  border-right-width: 1px;
+  border-right-color: #D3D3D3;
+  vertical-align: middle;
+  text-align: left;
+}
+
+#tvgqqbllmk .gt_empty_group_heading {
+  padding: 0.5px;
+  color: #333333;
+  background-color: #FFFFFF;
+  font-size: 100%;
+  font-weight: initial;
+  border-top-style: solid;
+  border-top-width: 2px;
+  border-top-color: #D3D3D3;
+  border-bottom-style: solid;
+  border-bottom-width: 2px;
+  border-bottom-color: #D3D3D3;
+  vertical-align: middle;
+}
+
+#tvgqqbllmk .gt_from_md > :first-child {
+  margin-top: 0;
+}
+
+#tvgqqbllmk .gt_from_md > :last-child {
+  margin-bottom: 0;
+}
+
+#tvgqqbllmk .gt_row {
+  padding-top: 8px;
+  padding-bottom: 8px;
+  padding-left: 5px;
+  padding-right: 5px;
+  margin: 10px;
+  border-top-style: solid;
+  border-top-width: 1px;
+  border-top-color: #D3D3D3;
+  border-left-style: none;
+  border-left-width: 1px;
+  border-left-color: #D3D3D3;
+  border-right-style: none;
+  border-right-width: 1px;
+  border-right-color: #D3D3D3;
+  vertical-align: middle;
+  overflow-x: hidden;
+}
+
+#tvgqqbllmk .gt_stub {
+  color: #333333;
+  background-color: #FFFFFF;
+  font-size: 100%;
+  font-weight: initial;
+  text-transform: inherit;
+  border-right-style: solid;
+  border-right-width: 2px;
+  border-right-color: #D3D3D3;
+  padding-left: 5px;
+  padding-right: 5px;
+}
+
+#tvgqqbllmk .gt_stub_row_group {
+  color: #333333;
+  background-color: #FFFFFF;
+  font-size: 100%;
+  font-weight: initial;
+  text-transform: inherit;
+  border-right-style: solid;
+  border-right-width: 2px;
+  border-right-color: #D3D3D3;
+  padding-left: 5px;
+  padding-right: 5px;
+  vertical-align: top;
+}
+
+#tvgqqbllmk .gt_row_group_first td {
+  border-top-width: 2px;
+}
+
+#tvgqqbllmk .gt_row_group_first th {
+  border-top-width: 2px;
+}
+
+#tvgqqbllmk .gt_summary_row {
+  color: #333333;
+  background-color: #FFFFFF;
+  text-transform: inherit;
+  padding-top: 8px;
+  padding-bottom: 8px;
+  padding-left: 5px;
+  padding-right: 5px;
+}
+
+#tvgqqbllmk .gt_first_summary_row {
+  border-top-style: solid;
+  border-top-color: #D3D3D3;
+}
+
+#tvgqqbllmk .gt_first_summary_row.thick {
+  border-top-width: 2px;
+}
+
+#tvgqqbllmk .gt_last_summary_row {
+  padding-top: 8px;
+  padding-bottom: 8px;
+  padding-left: 5px;
+  padding-right: 5px;
+  border-bottom-style: solid;
+  border-bottom-width: 2px;
+  border-bottom-color: #D3D3D3;
+}
+
+#tvgqqbllmk .gt_grand_summary_row {
+  color: #333333;
+  background-color: #FFFFFF;
+  text-transform: inherit;
+  padding-top: 8px;
+  padding-bottom: 8px;
+  padding-left: 5px;
+  padding-right: 5px;
+}
+
+#tvgqqbllmk .gt_first_grand_summary_row {
+  padding-top: 8px;
+  padding-bottom: 8px;
+  padding-left: 5px;
+  padding-right: 5px;
+  border-top-style: double;
+  border-top-width: 6px;
+  border-top-color: #D3D3D3;
+}
+
+#tvgqqbllmk .gt_last_grand_summary_row_top {
+  padding-top: 8px;
+  padding-bottom: 8px;
+  padding-left: 5px;
+  padding-right: 5px;
+  border-bottom-style: double;
+  border-bottom-width: 6px;
+  border-bottom-color: #D3D3D3;
+}
+
+#tvgqqbllmk .gt_striped {
+  background-color: rgba(128, 128, 128, 0.05);
+}
+
+#tvgqqbllmk .gt_table_body {
+  border-top-style: solid;
+  border-top-width: 2px;
+  border-top-color: #D3D3D3;
+  border-bottom-style: solid;
+  border-bottom-width: 2px;
+  border-bottom-color: #D3D3D3;
+}
+
+#tvgqqbllmk .gt_footnotes {
+  color: #333333;
+  background-color: #FFFFFF;
+  border-bottom-style: none;
+  border-bottom-width: 2px;
+  border-bottom-color: #D3D3D3;
+  border-left-style: none;
+  border-left-width: 2px;
+  border-left-color: #D3D3D3;
+  border-right-style: none;
+  border-right-width: 2px;
+  border-right-color: #D3D3D3;
+}
+
+#tvgqqbllmk .gt_footnote {
+  margin: 0px;
+  font-size: 90%;
+  padding-top: 4px;
+  padding-bottom: 4px;
+  padding-left: 5px;
+  padding-right: 5px;
+}
+
+#tvgqqbllmk .gt_sourcenotes {
+  color: #333333;
+  background-color: #FFFFFF;
+  border-bottom-style: none;
+  border-bottom-width: 2px;
+  border-bottom-color: #D3D3D3;
+  border-left-style: none;
+  border-left-width: 2px;
+  border-left-color: #D3D3D3;
+  border-right-style: none;
+  border-right-width: 2px;
+  border-right-color: #D3D3D3;
+}
+
+#tvgqqbllmk .gt_sourcenote {
+  font-size: 90%;
+  padding-top: 4px;
+  padding-bottom: 4px;
+  padding-left: 5px;
+  padding-right: 5px;
+}
+
+#tvgqqbllmk .gt_left {
+  text-align: left;
+}
+
+#tvgqqbllmk .gt_center {
+  text-align: center;
+}
+
+#tvgqqbllmk .gt_right {
+  text-align: right;
+  font-variant-numeric: tabular-nums;
+}
+
+#tvgqqbllmk .gt_font_normal {
+  font-weight: normal;
+}
+
+#tvgqqbllmk .gt_font_bold {
+  font-weight: bold;
+}
+
+#tvgqqbllmk .gt_font_italic {
+  font-style: italic;
+}
+
+#tvgqqbllmk .gt_super {
+  font-size: 65%;
+}
+
+#tvgqqbllmk .gt_footnote_marks {
+  font-size: 75%;
+  vertical-align: 0.4em;
+  position: initial;
+}
+
+#tvgqqbllmk .gt_asterisk {
+  font-size: 100%;
+  vertical-align: 0;
+}
+
+#tvgqqbllmk .gt_indent_1 {
+  text-indent: 5px;
+}
+
+#tvgqqbllmk .gt_indent_2 {
+  text-indent: 10px;
+}
+
+#tvgqqbllmk .gt_indent_3 {
+  text-indent: 15px;
+}
+
+#tvgqqbllmk .gt_indent_4 {
+  text-indent: 20px;
+}
+
+#tvgqqbllmk .gt_indent_5 {
+  text-indent: 25px;
+}
+
+#tvgqqbllmk .katex-display {
+  display: inline-flex !important;
+  margin-bottom: 0.75em !important;
+}
+
+#tvgqqbllmk div.Reactable > div.rt-table > div.rt-thead > div.rt-tr.rt-tr-group-header > div.rt-th-group:after {
+  height: 0px !important;
+}
+</style>
+
+<table class="gt_table caption-top table table-sm table-striped small" data-quarto-bootstrap="false">
+<thead>
+<tr class="gt_heading header">
+<td colspan="5" class="gt_heading gt_title gt_font_normal gt_bottom_border">Most Viewed Live Event vs. Most Viewed Pre-Taped Title</td>
+</tr>
+<tr class="gt_col_headings even">
+<th id="event_type" class="gt_col_heading gt_columns_bottom_border gt_left" data-quarto-table-cell-role="th" scope="col">Event Type</th>
+<th id="title" class="gt_col_heading gt_columns_bottom_border gt_left" data-quarto-table-cell-role="th" scope="col">Title</th>
+<th id="views" class="gt_col_heading gt_columns_bottom_border gt_right" data-quarto-table-cell-role="th" scope="col">Total Views</th>
+<th id="release_date" class="gt_col_heading gt_columns_bottom_border gt_right" data-quarto-table-cell-role="th" scope="col">Release Date</th>
+<th id="period" class="gt_col_heading gt_columns_bottom_border gt_left" data-quarto-table-cell-role="th" scope="col">Period</th>
+</tr>
+</thead>
+<tbody class="gt_table_body">
+<tr class="odd">
+<td class="gt_row gt_left" headers="event_type">Live Event</td>
+<td class="gt_row gt_left" headers="title">Jake Paul vs. Mike Tyson</td>
+<td class="gt_row gt_right" headers="views">48,900,000</td>
+<td class="gt_row gt_right" headers="release_date">2024-11-15</td>
+<td class="gt_row gt_left" headers="period">2024H2</td>
+</tr>
+<tr class="even">
+<td class="gt_row gt_left" headers="event_type">Pre-Taped</td>
+<td class="gt_row gt_left" headers="title">KPop Demon Hunters</td>
+<td class="gt_row gt_right" headers="views">481,600,000</td>
+<td class="gt_row gt_right" headers="release_date">2025-06-20</td>
+<td class="gt_row gt_left" headers="period">2025H2</td>
+</tr>
+</tbody>
+</table>
+
+</div>
+</div>
+</div>
+<p><br>
+From these tables, we can see that live events have higher viewers on average compared to pre-taped content. Pre-taped content on average is viewed for more hours, but this is largely due to the nature of live events. Most people will watch a live event once, while it is happening. Also, the ability to watch a live event after it airs depends on the title.<br>
+</p>
+</section>
+<section id="step-7-corporate-strategy-memo" class="level3">
+<h3 class="anchored" data-anchor-id="step-7-corporate-strategy-memo">Step 7: Corporate Strategy Memo</h3>
+<p><br>
+<strong>Invest in Bite-Sized Content to Promote Larger Titles</strong><br>
+When it comes to “bite-sized” content, people typically look to social media platforms such as Tik-Tok, Instagram, and Youtube. Most of the content on these platforms are user generated, and the quality can vary depending on who posted.</p>
+<p>Bite-sized content makes up a very small portion of Netflix’s catalog, about 0.66%. However, the average bite gets a total of 2,355,616 views, and the top bites rack in tens of millions of views.</p>
+<div class="cell">
+<details class="code-fold">
+<summary>Show Code</summary>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb13"><pre class="sourceCode r code-overflow-wrap code-with-copy"><code class="sourceCode r"><span id="cb13-1"><a href="#cb13-1" aria-hidden="true" tabindex="-1"></a>NETFLIX_DATA <span class="sc">|&gt;</span></span>
+<span id="cb13-2"><a href="#cb13-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">group_by</span>(period) <span class="sc">|&gt;</span></span>
+<span id="cb13-3"><a href="#cb13-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">filter</span>(runtime <span class="sc">&lt;</span> <span class="dv">30</span>) <span class="sc">|&gt;</span></span>
+<span id="cb13-4"><a href="#cb13-4" aria-hidden="true" tabindex="-1"></a>  <span class="fu">slice_max</span>(<span class="at">n=</span><span class="dv">1</span>, views, <span class="at">with_ties =</span> <span class="cn">FALSE</span>) <span class="sc">|&gt;</span></span>
+<span id="cb13-5"><a href="#cb13-5" aria-hidden="true" tabindex="-1"></a>  <span class="fu">select</span>(period, title, runtime, views, hours_viewed, title_type) <span class="sc">|&gt;</span></span>
+<span id="cb13-6"><a href="#cb13-6" aria-hidden="true" tabindex="-1"></a>  <span class="fu">ungroup</span>() <span class="sc">|&gt;</span></span>
+<span id="cb13-7"><a href="#cb13-7" aria-hidden="true" tabindex="-1"></a><span class="fu">gt</span>() <span class="sc">|&gt;</span></span>
+<span id="cb13-8"><a href="#cb13-8" aria-hidden="true" tabindex="-1"></a>    <span class="fu">tab_header</span>(</span>
+<span id="cb13-9"><a href="#cb13-9" aria-hidden="true" tabindex="-1"></a>    <span class="at">title =</span> <span class="st">"Top Bite-Sized Titles"</span>,</span>
+<span id="cb13-10"><a href="#cb13-10" aria-hidden="true" tabindex="-1"></a>    <span class="at">subtitle =</span> <span class="st">"Highest viewed titles in each period with short runtimes (Under 30 Minutes)"</span></span>
+<span id="cb13-11"><a href="#cb13-11" aria-hidden="true" tabindex="-1"></a>  ) <span class="sc">|&gt;</span></span>
+<span id="cb13-12"><a href="#cb13-12" aria-hidden="true" tabindex="-1"></a>  <span class="fu">cols_label</span>(</span>
+<span id="cb13-13"><a href="#cb13-13" aria-hidden="true" tabindex="-1"></a>    <span class="at">period =</span> <span class="st">"Period"</span>,</span>
+<span id="cb13-14"><a href="#cb13-14" aria-hidden="true" tabindex="-1"></a>    <span class="at">title =</span> <span class="st">"Title"</span>,</span>
+<span id="cb13-15"><a href="#cb13-15" aria-hidden="true" tabindex="-1"></a>    <span class="at">runtime =</span> <span class="st">"Runtime"</span>,</span>
+<span id="cb13-16"><a href="#cb13-16" aria-hidden="true" tabindex="-1"></a>    <span class="at">views =</span> <span class="st">"Views"</span>,</span>
+<span id="cb13-17"><a href="#cb13-17" aria-hidden="true" tabindex="-1"></a>    <span class="at">hours_viewed =</span> <span class="st">"Hours Viewed"</span>,</span>
+<span id="cb13-18"><a href="#cb13-18" aria-hidden="true" tabindex="-1"></a>    <span class="at">title_type =</span> <span class="st">"Title Type"</span></span>
+<span id="cb13-19"><a href="#cb13-19" aria-hidden="true" tabindex="-1"></a>  ) <span class="sc">|&gt;</span></span>
+<span id="cb13-20"><a href="#cb13-20" aria-hidden="true" tabindex="-1"></a>  <span class="fu">fmt_number</span>(</span>
+<span id="cb13-21"><a href="#cb13-21" aria-hidden="true" tabindex="-1"></a>    <span class="at">decimals =</span> <span class="dv">0</span>,</span>
+<span id="cb13-22"><a href="#cb13-22" aria-hidden="true" tabindex="-1"></a>    <span class="at">drop_trailing_zeros =</span> <span class="cn">TRUE</span>,</span>
+<span id="cb13-23"><a href="#cb13-23" aria-hidden="true" tabindex="-1"></a>    <span class="at">sep_mark =</span> <span class="st">","</span></span>
+<span id="cb13-24"><a href="#cb13-24" aria-hidden="true" tabindex="-1"></a>  ) <span class="sc">|&gt;</span></span>
+<span id="cb13-25"><a href="#cb13-25" aria-hidden="true" tabindex="-1"></a>  <span class="fu">tab_source_note</span>(</span>
+<span id="cb13-26"><a href="#cb13-26" aria-hidden="true" tabindex="-1"></a>    <span class="at">source_note =</span> <span class="st">"Note: Views were not recorded in 2023H1. Title shown has the most hours viewed."</span></span>
+<span id="cb13-27"><a href="#cb13-27" aria-hidden="true" tabindex="-1"></a>  ) <span class="sc">|&gt;</span></span>
+<span id="cb13-28"><a href="#cb13-28" aria-hidden="true" tabindex="-1"></a>  <span class="fu">opt_align_table_header</span>(<span class="at">align =</span> <span class="st">"left"</span>)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+</details>
+<div class="cell-output-display">
+<div id="cwhjjhsxom" style="padding-left:0px;padding-right:0px;padding-top:10px;padding-bottom:10px;overflow-x:auto;overflow-y:auto;width:auto;height:auto;">
+<style>#cwhjjhsxom table {
+  font-family: system-ui, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif, 'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol', 'Noto Color Emoji';
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+#cwhjjhsxom thead, #cwhjjhsxom tbody, #cwhjjhsxom tfoot, #cwhjjhsxom tr, #cwhjjhsxom td, #cwhjjhsxom th {
+  border-style: none;
+}
+
+#cwhjjhsxom p {
+  margin: 0;
+  padding: 0;
+}
+
+#cwhjjhsxom .gt_table {
+  display: table;
+  border-collapse: collapse;
+  line-height: normal;
+  margin-left: auto;
+  margin-right: auto;
+  color: #333333;
+  font-size: 16px;
+  font-weight: normal;
+  font-style: normal;
+  background-color: #FFFFFF;
+  width: auto;
+  border-top-style: solid;
+  border-top-width: 2px;
+  border-top-color: #A8A8A8;
+  border-right-style: none;
+  border-right-width: 2px;
+  border-right-color: #D3D3D3;
+  border-bottom-style: solid;
+  border-bottom-width: 2px;
+  border-bottom-color: #A8A8A8;
+  border-left-style: none;
+  border-left-width: 2px;
+  border-left-color: #D3D3D3;
+}
+
+#cwhjjhsxom .gt_caption {
+  padding-top: 4px;
+  padding-bottom: 4px;
+}
+
+#cwhjjhsxom .gt_title {
+  color: #333333;
+  font-size: 125%;
+  font-weight: initial;
+  padding-top: 4px;
+  padding-bottom: 4px;
+  padding-left: 5px;
+  padding-right: 5px;
+  border-bottom-color: #FFFFFF;
+  border-bottom-width: 0;
+}
+
+#cwhjjhsxom .gt_subtitle {
+  color: #333333;
+  font-size: 85%;
+  font-weight: initial;
+  padding-top: 3px;
+  padding-bottom: 5px;
+  padding-left: 5px;
+  padding-right: 5px;
+  border-top-color: #FFFFFF;
+  border-top-width: 0;
+}
+
+#cwhjjhsxom .gt_heading {
+  background-color: #FFFFFF;
+  text-align: left;
+  border-bottom-color: #FFFFFF;
+  border-left-style: none;
+  border-left-width: 1px;
+  border-left-color: #D3D3D3;
+  border-right-style: none;
+  border-right-width: 1px;
+  border-right-color: #D3D3D3;
+}
+
+#cwhjjhsxom .gt_bottom_border {
+  border-bottom-style: solid;
+  border-bottom-width: 2px;
+  border-bottom-color: #D3D3D3;
+}
+
+#cwhjjhsxom .gt_col_headings {
+  border-top-style: solid;
+  border-top-width: 2px;
+  border-top-color: #D3D3D3;
+  border-bottom-style: solid;
+  border-bottom-width: 2px;
+  border-bottom-color: #D3D3D3;
+  border-left-style: none;
+  border-left-width: 1px;
+  border-left-color: #D3D3D3;
+  border-right-style: none;
+  border-right-width: 1px;
+  border-right-color: #D3D3D3;
+}
+
+#cwhjjhsxom .gt_col_heading {
+  color: #333333;
+  background-color: #FFFFFF;
+  font-size: 100%;
+  font-weight: normal;
+  text-transform: inherit;
+  border-left-style: none;
+  border-left-width: 1px;
+  border-left-color: #D3D3D3;
+  border-right-style: none;
+  border-right-width: 1px;
+  border-right-color: #D3D3D3;
+  vertical-align: bottom;
+  padding-top: 5px;
+  padding-bottom: 6px;
+  padding-left: 5px;
+  padding-right: 5px;
+  overflow-x: hidden;
+}
+
+#cwhjjhsxom .gt_column_spanner_outer {
+  color: #333333;
+  background-color: #FFFFFF;
+  font-size: 100%;
+  font-weight: normal;
+  text-transform: inherit;
+  padding-top: 0;
+  padding-bottom: 0;
+  padding-left: 4px;
+  padding-right: 4px;
+}
+
+#cwhjjhsxom .gt_column_spanner_outer:first-child {
+  padding-left: 0;
+}
+
+#cwhjjhsxom .gt_column_spanner_outer:last-child {
+  padding-right: 0;
+}
+
+#cwhjjhsxom .gt_column_spanner {
+  border-bottom-style: solid;
+  border-bottom-width: 2px;
+  border-bottom-color: #D3D3D3;
+  vertical-align: bottom;
+  padding-top: 5px;
+  padding-bottom: 5px;
+  overflow-x: hidden;
+  display: inline-block;
+  width: 100%;
+}
+
+#cwhjjhsxom .gt_spanner_row {
+  border-bottom-style: hidden;
+}
+
+#cwhjjhsxom .gt_group_heading {
+  padding-top: 8px;
+  padding-bottom: 8px;
+  padding-left: 5px;
+  padding-right: 5px;
+  color: #333333;
+  background-color: #FFFFFF;
+  font-size: 100%;
+  font-weight: initial;
+  text-transform: inherit;
+  border-top-style: solid;
+  border-top-width: 2px;
+  border-top-color: #D3D3D3;
+  border-bottom-style: solid;
+  border-bottom-width: 2px;
+  border-bottom-color: #D3D3D3;
+  border-left-style: none;
+  border-left-width: 1px;
+  border-left-color: #D3D3D3;
+  border-right-style: none;
+  border-right-width: 1px;
+  border-right-color: #D3D3D3;
+  vertical-align: middle;
+  text-align: left;
+}
+
+#cwhjjhsxom .gt_empty_group_heading {
+  padding: 0.5px;
+  color: #333333;
+  background-color: #FFFFFF;
+  font-size: 100%;
+  font-weight: initial;
+  border-top-style: solid;
+  border-top-width: 2px;
+  border-top-color: #D3D3D3;
+  border-bottom-style: solid;
+  border-bottom-width: 2px;
+  border-bottom-color: #D3D3D3;
+  vertical-align: middle;
+}
+
+#cwhjjhsxom .gt_from_md > :first-child {
+  margin-top: 0;
+}
+
+#cwhjjhsxom .gt_from_md > :last-child {
+  margin-bottom: 0;
+}
+
+#cwhjjhsxom .gt_row {
+  padding-top: 8px;
+  padding-bottom: 8px;
+  padding-left: 5px;
+  padding-right: 5px;
+  margin: 10px;
+  border-top-style: solid;
+  border-top-width: 1px;
+  border-top-color: #D3D3D3;
+  border-left-style: none;
+  border-left-width: 1px;
+  border-left-color: #D3D3D3;
+  border-right-style: none;
+  border-right-width: 1px;
+  border-right-color: #D3D3D3;
+  vertical-align: middle;
+  overflow-x: hidden;
+}
+
+#cwhjjhsxom .gt_stub {
+  color: #333333;
+  background-color: #FFFFFF;
+  font-size: 100%;
+  font-weight: initial;
+  text-transform: inherit;
+  border-right-style: solid;
+  border-right-width: 2px;
+  border-right-color: #D3D3D3;
+  padding-left: 5px;
+  padding-right: 5px;
+}
+
+#cwhjjhsxom .gt_stub_row_group {
+  color: #333333;
+  background-color: #FFFFFF;
+  font-size: 100%;
+  font-weight: initial;
+  text-transform: inherit;
+  border-right-style: solid;
+  border-right-width: 2px;
+  border-right-color: #D3D3D3;
+  padding-left: 5px;
+  padding-right: 5px;
+  vertical-align: top;
+}
+
+#cwhjjhsxom .gt_row_group_first td {
+  border-top-width: 2px;
+}
+
+#cwhjjhsxom .gt_row_group_first th {
+  border-top-width: 2px;
+}
+
+#cwhjjhsxom .gt_summary_row {
+  color: #333333;
+  background-color: #FFFFFF;
+  text-transform: inherit;
+  padding-top: 8px;
+  padding-bottom: 8px;
+  padding-left: 5px;
+  padding-right: 5px;
+}
+
+#cwhjjhsxom .gt_first_summary_row {
+  border-top-style: solid;
+  border-top-color: #D3D3D3;
+}
+
+#cwhjjhsxom .gt_first_summary_row.thick {
+  border-top-width: 2px;
+}
+
+#cwhjjhsxom .gt_last_summary_row {
+  padding-top: 8px;
+  padding-bottom: 8px;
+  padding-left: 5px;
+  padding-right: 5px;
+  border-bottom-style: solid;
+  border-bottom-width: 2px;
+  border-bottom-color: #D3D3D3;
+}
+
+#cwhjjhsxom .gt_grand_summary_row {
+  color: #333333;
+  background-color: #FFFFFF;
+  text-transform: inherit;
+  padding-top: 8px;
+  padding-bottom: 8px;
+  padding-left: 5px;
+  padding-right: 5px;
+}
+
+#cwhjjhsxom .gt_first_grand_summary_row {
+  padding-top: 8px;
+  padding-bottom: 8px;
+  padding-left: 5px;
+  padding-right: 5px;
+  border-top-style: double;
+  border-top-width: 6px;
+  border-top-color: #D3D3D3;
+}
+
+#cwhjjhsxom .gt_last_grand_summary_row_top {
+  padding-top: 8px;
+  padding-bottom: 8px;
+  padding-left: 5px;
+  padding-right: 5px;
+  border-bottom-style: double;
+  border-bottom-width: 6px;
+  border-bottom-color: #D3D3D3;
+}
+
+#cwhjjhsxom .gt_striped {
+  background-color: rgba(128, 128, 128, 0.05);
+}
+
+#cwhjjhsxom .gt_table_body {
+  border-top-style: solid;
+  border-top-width: 2px;
+  border-top-color: #D3D3D3;
+  border-bottom-style: solid;
+  border-bottom-width: 2px;
+  border-bottom-color: #D3D3D3;
+}
+
+#cwhjjhsxom .gt_footnotes {
+  color: #333333;
+  background-color: #FFFFFF;
+  border-bottom-style: none;
+  border-bottom-width: 2px;
+  border-bottom-color: #D3D3D3;
+  border-left-style: none;
+  border-left-width: 2px;
+  border-left-color: #D3D3D3;
+  border-right-style: none;
+  border-right-width: 2px;
+  border-right-color: #D3D3D3;
+}
+
+#cwhjjhsxom .gt_footnote {
+  margin: 0px;
+  font-size: 90%;
+  padding-top: 4px;
+  padding-bottom: 4px;
+  padding-left: 5px;
+  padding-right: 5px;
+}
+
+#cwhjjhsxom .gt_sourcenotes {
+  color: #333333;
+  background-color: #FFFFFF;
+  border-bottom-style: none;
+  border-bottom-width: 2px;
+  border-bottom-color: #D3D3D3;
+  border-left-style: none;
+  border-left-width: 2px;
+  border-left-color: #D3D3D3;
+  border-right-style: none;
+  border-right-width: 2px;
+  border-right-color: #D3D3D3;
+}
+
+#cwhjjhsxom .gt_sourcenote {
+  font-size: 90%;
+  padding-top: 4px;
+  padding-bottom: 4px;
+  padding-left: 5px;
+  padding-right: 5px;
+}
+
+#cwhjjhsxom .gt_left {
+  text-align: left;
+}
+
+#cwhjjhsxom .gt_center {
+  text-align: center;
+}
+
+#cwhjjhsxom .gt_right {
+  text-align: right;
+  font-variant-numeric: tabular-nums;
+}
+
+#cwhjjhsxom .gt_font_normal {
+  font-weight: normal;
+}
+
+#cwhjjhsxom .gt_font_bold {
+  font-weight: bold;
+}
+
+#cwhjjhsxom .gt_font_italic {
+  font-style: italic;
+}
+
+#cwhjjhsxom .gt_super {
+  font-size: 65%;
+}
+
+#cwhjjhsxom .gt_footnote_marks {
+  font-size: 75%;
+  vertical-align: 0.4em;
+  position: initial;
+}
+
+#cwhjjhsxom .gt_asterisk {
+  font-size: 100%;
+  vertical-align: 0;
+}
+
+#cwhjjhsxom .gt_indent_1 {
+  text-indent: 5px;
+}
+
+#cwhjjhsxom .gt_indent_2 {
+  text-indent: 10px;
+}
+
+#cwhjjhsxom .gt_indent_3 {
+  text-indent: 15px;
+}
+
+#cwhjjhsxom .gt_indent_4 {
+  text-indent: 20px;
+}
+
+#cwhjjhsxom .gt_indent_5 {
+  text-indent: 25px;
+}
+
+#cwhjjhsxom .katex-display {
+  display: inline-flex !important;
+  margin-bottom: 0.75em !important;
+}
+
+#cwhjjhsxom div.Reactable > div.rt-table > div.rt-thead > div.rt-tr.rt-tr-group-header > div.rt-th-group:after {
+  height: 0px !important;
+}
+</style>
+
+<table class="gt_table caption-top table table-sm table-striped small" data-quarto-bootstrap="false">
+<thead>
+<tr class="gt_heading header">
+<td colspan="6" class="gt_heading gt_title gt_font_normal">Top Bite-Sized Titles</td>
+</tr>
+<tr class="gt_heading even">
+<td colspan="6" class="gt_heading gt_subtitle gt_font_normal gt_bottom_border">Highest viewed titles in each period with short runtimes (Under 30 Minutes)</td>
+</tr>
+<tr class="gt_col_headings header">
+<th id="period" class="gt_col_heading gt_columns_bottom_border gt_left" data-quarto-table-cell-role="th" scope="col">Period</th>
+<th id="title" class="gt_col_heading gt_columns_bottom_border gt_left" data-quarto-table-cell-role="th" scope="col">Title</th>
+<th id="runtime" class="gt_col_heading gt_columns_bottom_border gt_right" data-quarto-table-cell-role="th" scope="col">Runtime</th>
+<th id="views" class="gt_col_heading gt_columns_bottom_border gt_right" data-quarto-table-cell-role="th" scope="col">Views</th>
+<th id="hours_viewed" class="gt_col_heading gt_columns_bottom_border gt_right" data-quarto-table-cell-role="th" scope="col">Hours Viewed</th>
+<th id="title_type" class="gt_col_heading gt_columns_bottom_border gt_left" data-quarto-table-cell-role="th" scope="col">Title Type</th>
+</tr>
+</thead>
+<tbody class="gt_table_body">
+<tr class="odd">
+<td class="gt_row gt_left" headers="period">2023H1</td>
+<td class="gt_row gt_left" headers="title">The Boss Baby: Get That Baby!</td>
+<td class="gt_row gt_right" headers="runtime">24</td>
+<td class="gt_row gt_right" headers="views">NA</td>
+<td class="gt_row gt_right" headers="hours_viewed">7,400,000</td>
+<td class="gt_row gt_left" headers="title_type">Movies</td>
+</tr>
+<tr class="even">
+<td class="gt_row gt_left" headers="period">2023H2</td>
+<td class="gt_row gt_left" headers="title">The Bad Guys: A Very Bad Holiday</td>
+<td class="gt_row gt_right" headers="runtime">25</td>
+<td class="gt_row gt_right" headers="views">23,500,000</td>
+<td class="gt_row gt_right" headers="hours_viewed">9,800,000</td>
+<td class="gt_row gt_left" headers="title_type">Movies</td>
+</tr>
+<tr class="odd">
+<td class="gt_row gt_left" headers="period">2024H1</td>
+<td class="gt_row gt_left" headers="title">Headspace: Unwind Your Mind</td>
+<td class="gt_row gt_right" headers="runtime">15</td>
+<td class="gt_row gt_right" headers="views">21,600,000</td>
+<td class="gt_row gt_right" headers="hours_viewed">5,400,000</td>
+<td class="gt_row gt_left" headers="title_type">Movies</td>
+</tr>
+<tr class="even">
+<td class="gt_row gt_left" headers="period">2024H2</td>
+<td class="gt_row gt_left" headers="title">Sing: Thriller</td>
+<td class="gt_row gt_right" headers="runtime">12</td>
+<td class="gt_row gt_right" headers="views">77,000,000</td>
+<td class="gt_row gt_right" headers="hours_viewed">15,400,000</td>
+<td class="gt_row gt_left" headers="title_type">Movies</td>
+</tr>
+<tr class="odd">
+<td class="gt_row gt_left" headers="period">2025H1</td>
+<td class="gt_row gt_left" headers="title">Sing: Thriller</td>
+<td class="gt_row gt_right" headers="runtime">12</td>
+<td class="gt_row gt_right" headers="views">27,000,000</td>
+<td class="gt_row gt_right" headers="hours_viewed">5,400,000</td>
+<td class="gt_row gt_left" headers="title_type">Movies</td>
+</tr>
+<tr class="even">
+<td class="gt_row gt_left" headers="period">2025H2</td>
+<td class="gt_row gt_left" headers="title">KPop Demon Hunters Lyric Videos</td>
+<td class="gt_row gt_right" headers="runtime">16</td>
+<td class="gt_row gt_right" headers="views">31,900,000</td>
+<td class="gt_row gt_right" headers="hours_viewed">8,500,000</td>
+<td class="gt_row gt_left" headers="title_type">TV</td>
+</tr>
+<tr class="odd">
+<td class="gt_row gt_left" headers="period">2026H1</td>
+<td class="gt_row gt_left" headers="title">KPop Demon Hunters Lyric Videos</td>
+<td class="gt_row gt_right" headers="runtime">24</td>
+<td class="gt_row gt_right" headers="views">18,800,000</td>
+<td class="gt_row gt_right" headers="hours_viewed">7,500,000</td>
+<td class="gt_row gt_left" headers="title_type">TV</td>
+</tr>
+</tbody><tfoot>
+<tr class="gt_sourcenotes odd">
+<td colspan="6" class="gt_sourcenote">Note: Views were not recorded in 2023H1. Title shown has the most hours viewed.</td>
+</tr>
+</tfoot>
+
+</table>
+
+</div>
+</div>
+</div>
+<p>When we look at the top bite-sized title for each period, we can see that 6 out of the 7 titles were based on already existing titles. This is especially true for the most viewed title “KPop Demon Hunters Lyric Videos”.</p>
+<p>Bite-sized content on its own might not make a huge impact, but is good for promoting and supporting longer titles. Netflix can also provide their audience with higher quality bite-sized content than competitors, and utilize IPs that they own or partner with.&nbsp;</p>
+<p><strong>Allow More Titles to be Globally Available</strong><br>
+As shown in Step 5, only 21.7% of titles on Netflix are available globally. However, globally available titles drive almost half of the audience engagement, accounting for 48.0% of total views, and 49.0% of hours viewed.<br>
+</p>
+<p>Allowing content to be available globally introduces new audiences to titles they might not have seen otherwise. Expanding global distribution rights for existing popular region-locked titles, and ensuring global releases for new titles can increase viewership and platform engagement.<br>
+</p>
+<p><strong>A Runtime Sweet Spot</strong><br>
+Netflix has invested a lot of time and money in TV shows, both their own original titles and titles they acquired distributing rights to. From the analysis done in Step 6.4, we know about two-thirds of the total hours spent watching Netflix are spent watching TV shows. This makes sense when we take runtime into account. The average TV show runtime is 468, meanwhile the average movie runtime is 106.<br>
+</p>
+<p>Let’s focus in on TV shows and runtimes. Longer shows will obviously lead to more hours viewed, but will they lead to more total views?<br>
+</p>
+<div class="cell">
+<details class="code-fold">
+<summary>Show Code</summary>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb14"><pre class="sourceCode r code-overflow-wrap code-with-copy"><code class="sourceCode r"><span id="cb14-1"><a href="#cb14-1" aria-hidden="true" tabindex="-1"></a>NETFLIX_DATA <span class="sc">|&gt;</span></span>
+<span id="cb14-2"><a href="#cb14-2" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb14-3"><a href="#cb14-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">filter</span>(title_type <span class="sc">==</span> <span class="st">"TV"</span>) <span class="sc">|&gt;</span></span>
+<span id="cb14-4"><a href="#cb14-4" aria-hidden="true" tabindex="-1"></a>  <span class="fu">mutate</span>(</span>
+<span id="cb14-5"><a href="#cb14-5" aria-hidden="true" tabindex="-1"></a>    <span class="at">runtime =</span> <span class="fu">as.numeric</span>(runtime),</span>
+<span id="cb14-6"><a href="#cb14-6" aria-hidden="true" tabindex="-1"></a>    <span class="at">views =</span> <span class="fu">as.numeric</span>(views)</span>
+<span id="cb14-7"><a href="#cb14-7" aria-hidden="true" tabindex="-1"></a>  ) <span class="sc">|&gt;</span></span>
+<span id="cb14-8"><a href="#cb14-8" aria-hidden="true" tabindex="-1"></a>  </span>
+<span id="cb14-9"><a href="#cb14-9" aria-hidden="true" tabindex="-1"></a>  <span class="fu">mutate</span>(</span>
+<span id="cb14-10"><a href="#cb14-10" aria-hidden="true" tabindex="-1"></a>    <span class="at">runtime_bucket =</span> <span class="fu">case_when</span>(</span>
+<span id="cb14-11"><a href="#cb14-11" aria-hidden="true" tabindex="-1"></a>      runtime <span class="sc">&lt;</span> <span class="dv">300</span> <span class="sc">~</span> <span class="st">"Under 300 mins"</span>,</span>
+<span id="cb14-12"><a href="#cb14-12" aria-hidden="true" tabindex="-1"></a>      runtime <span class="sc">&gt;=</span> <span class="dv">300</span> <span class="sc">&amp;</span> runtime <span class="sc">&lt;</span> <span class="dv">360</span> <span class="sc">~</span> <span class="st">"300-360 mins"</span>,</span>
+<span id="cb14-13"><a href="#cb14-13" aria-hidden="true" tabindex="-1"></a>      runtime <span class="sc">&gt;=</span> <span class="dv">360</span> <span class="sc">&amp;</span> runtime <span class="sc">&lt;</span> <span class="dv">420</span> <span class="sc">~</span> <span class="st">"360-420 mins"</span>,</span>
+<span id="cb14-14"><a href="#cb14-14" aria-hidden="true" tabindex="-1"></a>      runtime <span class="sc">&gt;=</span> <span class="dv">420</span> <span class="sc">&amp;</span> runtime <span class="sc">&lt;</span> <span class="dv">480</span> <span class="sc">~</span> <span class="st">"420-480 mins"</span>,</span>
+<span id="cb14-15"><a href="#cb14-15" aria-hidden="true" tabindex="-1"></a>      runtime <span class="sc">&gt;=</span> <span class="dv">480</span> <span class="sc">&amp;</span> runtime <span class="sc">&lt;</span> <span class="dv">540</span> <span class="sc">~</span> <span class="st">"480-540 mins"</span>,</span>
+<span id="cb14-16"><a href="#cb14-16" aria-hidden="true" tabindex="-1"></a>      runtime <span class="sc">&gt;=</span> <span class="dv">540</span> <span class="sc">~</span> <span class="st">"540+ mins"</span></span>
+<span id="cb14-17"><a href="#cb14-17" aria-hidden="true" tabindex="-1"></a>    ),</span>
+<span id="cb14-18"><a href="#cb14-18" aria-hidden="true" tabindex="-1"></a>    <span class="at">runtime_bucket =</span> <span class="fu">factor</span>(runtime_bucket, <span class="at">levels =</span> <span class="fu">c</span>(<span class="st">"Under 300 mins"</span>, </span>
+<span id="cb14-19"><a href="#cb14-19" aria-hidden="true" tabindex="-1"></a>                                                       <span class="st">"300-360 mins"</span>, <span class="st">"360-420 mins"</span>, </span>
+<span id="cb14-20"><a href="#cb14-20" aria-hidden="true" tabindex="-1"></a>                                                       <span class="st">"420-480 mins"</span>, <span class="st">"480-540 mins"</span>, </span>
+<span id="cb14-21"><a href="#cb14-21" aria-hidden="true" tabindex="-1"></a>                                                       <span class="st">"540+ mins"</span>))) <span class="sc">|&gt;</span></span>
+<span id="cb14-22"><a href="#cb14-22" aria-hidden="true" tabindex="-1"></a>  </span>
+<span id="cb14-23"><a href="#cb14-23" aria-hidden="true" tabindex="-1"></a>  <span class="fu">filter</span>(<span class="sc">!</span><span class="fu">is.na</span>(runtime_bucket)) <span class="sc">|&gt;</span></span>
+<span id="cb14-24"><a href="#cb14-24" aria-hidden="true" tabindex="-1"></a>  </span>
+<span id="cb14-25"><a href="#cb14-25" aria-hidden="true" tabindex="-1"></a>  <span class="fu">group_by</span>(runtime_bucket) <span class="sc">|&gt;</span></span>
+<span id="cb14-26"><a href="#cb14-26" aria-hidden="true" tabindex="-1"></a>  <span class="fu">summarise</span>(<span class="at">avg_views =</span> <span class="fu">mean</span>(views, <span class="at">na.rm =</span> <span class="cn">TRUE</span>), <span class="at">.groups =</span> <span class="st">"drop"</span>) <span class="sc">|&gt;</span></span>
+<span id="cb14-27"><a href="#cb14-27" aria-hidden="true" tabindex="-1"></a>  </span>
+<span id="cb14-28"><a href="#cb14-28" aria-hidden="true" tabindex="-1"></a>  <span class="fu">ggplot</span>(<span class="fu">aes</span>(<span class="at">x =</span> runtime_bucket, <span class="at">y =</span> avg_views)) <span class="sc">+</span></span>
+<span id="cb14-29"><a href="#cb14-29" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_col</span>(<span class="at">fill =</span> <span class="st">"#828df9"</span>, <span class="at">width =</span> <span class="fl">0.6</span>, <span class="at">show.legend =</span> <span class="cn">FALSE</span>) <span class="sc">+</span></span>
+<span id="cb14-30"><a href="#cb14-30" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb14-31"><a href="#cb14-31" aria-hidden="true" tabindex="-1"></a>  <span class="fu">scale_y_continuous</span>(<span class="at">labels =</span> comma)<span class="sc">+</span> </span>
+<span id="cb14-32"><a href="#cb14-32" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb14-33"><a href="#cb14-33" aria-hidden="true" tabindex="-1"></a>  <span class="fu">labs</span>(</span>
+<span id="cb14-34"><a href="#cb14-34" aria-hidden="true" tabindex="-1"></a>    <span class="at">title =</span> <span class="st">"TV Show Viewership by Runtime"</span>,</span>
+<span id="cb14-35"><a href="#cb14-35" aria-hidden="true" tabindex="-1"></a>    <span class="at">subtitle =</span> <span class="st">"Comparing average views for TV titles by runtime"</span>,</span>
+<span id="cb14-36"><a href="#cb14-36" aria-hidden="true" tabindex="-1"></a>    <span class="at">x =</span> <span class="st">"Runtime"</span>,</span>
+<span id="cb14-37"><a href="#cb14-37" aria-hidden="true" tabindex="-1"></a>    <span class="at">y =</span> <span class="st">"Average Total Views"</span></span>
+<span id="cb14-38"><a href="#cb14-38" aria-hidden="true" tabindex="-1"></a>  ) <span class="sc">+</span></span>
+<span id="cb14-39"><a href="#cb14-39" aria-hidden="true" tabindex="-1"></a>  <span class="fu">theme_minimal</span>(<span class="at">base_size =</span> <span class="dv">12</span>) <span class="sc">+</span></span>
+<span id="cb14-40"><a href="#cb14-40" aria-hidden="true" tabindex="-1"></a>  <span class="fu">theme</span>(</span>
+<span id="cb14-41"><a href="#cb14-41" aria-hidden="true" tabindex="-1"></a>    <span class="at">plot.title =</span> <span class="fu">element_text</span>(<span class="at">face =</span> <span class="st">"bold"</span>, <span class="at">size =</span> <span class="dv">14</span>),</span>
+<span id="cb14-42"><a href="#cb14-42" aria-hidden="true" tabindex="-1"></a>    <span class="at">panel.grid.minor =</span> <span class="fu">element_blank</span>(),</span>
+<span id="cb14-43"><a href="#cb14-43" aria-hidden="true" tabindex="-1"></a>    <span class="at">strip.text =</span> <span class="fu">element_text</span>(<span class="at">face =</span> <span class="st">"bold"</span>, <span class="at">size =</span> <span class="dv">11</span>),</span>
+<span id="cb14-44"><a href="#cb14-44" aria-hidden="true" tabindex="-1"></a>    <span class="at">axis.text.x =</span> <span class="fu">element_text</span>(<span class="at">angle =</span> <span class="dv">0</span>, <span class="at">hjust =</span> <span class="fl">0.5</span>, <span class="at">vjust =</span> <span class="dv">5</span>)</span>
+<span id="cb14-45"><a href="#cb14-45" aria-hidden="true" tabindex="-1"></a>  )</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+</details>
+<div class="cell-output-display">
+<div>
+<figure class="figure">
+<p><img src="mp01_files/figure-html/unnamed-chunk-14-1.png" class="img-fluid figure-img" width="672"></p>
+</figure>
+</div>
+</div>
+</div>
+<p>When analyzing TV show viewership by runtime, we can see that audiences prefer a TV show that has about 6-9 hours of content, with the 7-8 hour category having the highest average views at 2,013,414. After 9 hours, average views drop significantly.<br>
+<br>
+From this chart, it is clear that viewers prefer longer series, but not ones that drag out. Netflix’s average TV show runtime falls within the most ideal window of 7-8 hours, so Netflix’s current catalog is likely working in this trend’s favor. TV shows should be kept to 6-9 hours long.<br>
+<br>
+</p>
+<div class="callout callout-style-default callout-note callout-titled" title="AI Usage Statement">
+<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-1-contents" aria-controls="callout-1" aria-expanded="true" aria-label="Toggle callout">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+<span class="screen-reader-only">Note</span>AI Usage Statement
+</div>
+<div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
+</div>
+<div id="callout-1" class="callout-1-contents callout-collapse collapse show">
+<div class="callout-body-container callout-body">
+<p>Gemini was used to troubleshoot code errors while completing this project, as well as assist in making the bar chart in the memo. No other generative AI tools were used.</p>
+</div>
+</div>
+</div>
 
 
+</section>
 
 </main> <!-- /main -->
 <script id="quarto-html-after-body" type="application/javascript">
